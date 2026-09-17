@@ -40,7 +40,7 @@
 (طبق یادداشت انتشار روز قبل، خطای «Instagram was disconnected» وجود داشت)،
 سپس لینک عمومی هر عکس بعد از پوش‌شدن به این شکل در دسترس است:
 
-`https://raw.githubusercontent.com/aftabcollege-gif/AI_Learning/main/stories/2026-09-17/IMG_6561.png`
+لینک نسخه ۱۰۸۰×۱۳۵۰ که ورک‌فلو می‌سازد: `stories/2026-09-17/feed/IMG_6561.png` (بعد از اولین اجرا)
 
 و می‌توان ۱۱ پست را با فاصله ۶۰ ثانیه در صف Metricool قرار داد.
 

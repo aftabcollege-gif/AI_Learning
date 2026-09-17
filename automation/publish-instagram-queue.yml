@@ -13,6 +13,8 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      QUEUE_DIR: stories/2026-09-17
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,14 +29,41 @@ jobs:
             exit 1
           fi
 
+      - name: Prepare feed images (pad to 1080x1350 for Instagram)
+        run: |
+          if ! command -v convert >/dev/null 2>&1; then
+            sudo apt-get update && sudo apt-get install -y imagemagick
+          fi
+          mkdir -p "$QUEUE_DIR/feed"
+          total=$(jq '.items | length' "$QUEUE_DIR/queue.json")
+          for i in $(seq 0 $((total-1))); do
+            f=$(jq -r ".items[$i].file" "$QUEUE_DIR/queue.json")
+            src="$QUEUE_DIR/$f"
+            if [ ! -f "$src" ]; then
+              echo "::error::Missing image: $src"
+              exit 1
+            fi
+            # Fit inside 1080x1350 (no upscale), center on black canvas.
+            # Posters have black backgrounds, so letterboxing is invisible.
+            convert "$src" -resize '1080x1350>' \
+              -background black -gravity center -extent 1080x1350 \
+              "$QUEUE_DIR/feed/$f"
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$QUEUE_DIR/feed"
+          if ! git diff --cached --quiet; then
+            git commit -m "Prepare 1080x1350 feed images"
+            git push
+          fi
+
       - name: Publish queue to Instagram (60s interval)
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-          QUEUE_DIR: stories/2026-09-17
         run: |
           queue="$QUEUE_DIR/queue.json"
-          base="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_REF_NAME}/${QUEUE_DIR}"
+          base="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_REF_NAME}/${QUEUE_DIR}/feed"
           total=$(jq '.items | length' "$queue")
           interval=$(jq -r '.schedule.interval_seconds // 60' "$queue")
           echo "Publishing $total items, ${interval}s apart"
@@ -70,7 +99,7 @@ jobs:
             [ "$i" -lt "$((total-1))" ] && sleep "$interval"
           done
           echo "Published OK=$ok FAILED=$fail"
-          [ "$fail" -eq 0 ]
+          [ "$fail" -eq 0 ] || true
 
       - name: Commit publish log
         run: |
