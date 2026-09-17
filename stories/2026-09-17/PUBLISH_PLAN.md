@@ -23,12 +23,15 @@
 ## مراحل فعال‌سازی انتشار خودکار
 
 1. **افزودن عکس‌ها:** فایل‌های PNG در همین پوشه (`stories/2026-09-17/`) با همان نام‌ها کامیت شوند.
-2. **اتصال اینستاگرام (یک بار):** دو Secret در گیت‌هاب اضافه شود:
+2. **نصب ورک‌فلو (یک بار):** فایل `automation/publish-instagram-queue.yml` را در مسیر `.github/workflows/publish-instagram-queue.yml` قرار دهید
+   (در GitHub: Add file → Create new file → مسیر را تایپ کنید و محتوای فایل را Paste کنید).
+   نکته: دستیار Arena اجازه پوش مستقیم فایل‌های workflow را ندارد، بنابراین این یک مرحله دستی است.
+3. **اتصال اینستاگرام (یک بار):** دو Secret در گیت‌هاب اضافه شود:
    - `IG_USER_ID` — شناسه اکانت Business/Creator اینستاگرام متصل به یک صفحه فیسبوک
    - `IG_ACCESS_TOKEN` — توکن Graph API با دسترسی `instagram_content_publish`
    - مسیر: Settings → Secrets and variables → Actions → New repository secret
    - توجه: توکن را هرگز در چت یا کامیت قرار ندهید.
-3. **اجرای انتشار:** تب Actions → «Publish Instagram Queue» → Run workflow.
+4. **اجرای انتشار:** تب Actions → «Publish Instagram Queue» → Run workflow.
    ربات ۱۱ پست را پشت‌سرهم با ۶۰ ثانیه فاصله منتشر می‌کند و گزارش را در `publish-log.md` ثبت می‌کند.
 
 ## گزینه جایگزین — Metricool
