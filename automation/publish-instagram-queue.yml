@@ -1,0 +1,111 @@
+name: Publish Instagram Queue
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: publish-instagram-queue
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      QUEUE_DIR: stories/2026-09-17
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify Instagram credentials
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$IG_USER_ID" ] || [ -z "$IG_ACCESS_TOKEN" ]; then
+            echo "::error::Secrets IG_USER_ID / IG_ACCESS_TOKEN are not configured. Add them in Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+
+      - name: Prepare feed images (pad to 1080x1350 for Instagram)
+        run: |
+          if ! command -v convert >/dev/null 2>&1; then
+            sudo apt-get update && sudo apt-get install -y imagemagick
+          fi
+          mkdir -p "$QUEUE_DIR/feed"
+          total=$(jq '.items | length' "$QUEUE_DIR/queue.json")
+          for i in $(seq 0 $((total-1))); do
+            f=$(jq -r ".items[$i].file" "$QUEUE_DIR/queue.json")
+            src="$QUEUE_DIR/$f"
+            if [ ! -f "$src" ]; then
+              echo "::error::Missing image: $src"
+              exit 1
+            fi
+            # Fit inside 1080x1350 (no upscale), center on black canvas.
+            # Posters have black backgrounds, so letterboxing is invisible.
+            convert "$src" -resize '1080x1350>' \
+              -background black -gravity center -extent 1080x1350 \
+              "$QUEUE_DIR/feed/$f"
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$QUEUE_DIR/feed"
+          if ! git diff --cached --quiet; then
+            git commit -m "Prepare 1080x1350 feed images"
+            git push
+          fi
+
+      - name: Publish queue to Instagram (60s interval)
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          queue="$QUEUE_DIR/queue.json"
+          base="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_REF_NAME}/${QUEUE_DIR}/feed"
+          total=$(jq '.items | length' "$queue")
+          interval=$(jq -r '.schedule.interval_seconds // 60' "$queue")
+          echo "Publishing $total items, ${interval}s apart"
+          ok=0; fail=0
+          echo "| # | File | Status |" > "$QUEUE_DIR/publish-log.md"
+          echo "|---|------|--------|" >> "$QUEUE_DIR/publish-log.md"
+          for i in $(seq 0 $((total-1))); do
+            file=$(jq -r ".items[$i].file" "$queue")
+            caption=$(jq -r ".items[$i].caption" "$queue")
+            url="$base/$file"
+            echo "[$((i+1))/$total] $file -> $url"
+            resp=$(curl -s -X POST "https://graph.facebook.com/v21.0/${IG_USER_ID}/media" \
+              -d "image_url=${url}" \
+              --data-urlencode "caption=${caption}")
+            cid=$(echo "$resp" | jq -r '.id // empty')
+            if [ -z "$cid" ]; then
+              echo "::warning::Container creation failed for $file: $resp"
+              echo "| $((i+1)) | $file | FAILED (container) |" >> "$QUEUE_DIR/publish-log.md"
+              fail=$((fail+1))
+            else
+              pub=$(curl -s -X POST "https://graph.facebook.com/v21.0/${IG_USER_ID}/media_publish" \
+                -d "creation_id=${cid}")
+              pid=$(echo "$pub" | jq -r '.id // empty')
+              if [ -z "$pid" ]; then
+                echo "::warning::Publish failed for $file: $pub"
+                echo "| $((i+1)) | $file | FAILED (publish) |" >> "$QUEUE_DIR/publish-log.md"
+                fail=$((fail+1))
+              else
+                echo "| $((i+1)) | $file | OK (media id: $pid) |" >> "$QUEUE_DIR/publish-log.md"
+                ok=$((ok+1))
+              fi
+            fi
+            [ "$i" -lt "$((total-1))" ] && sleep "$interval"
+          done
+          echo "Published OK=$ok FAILED=$fail"
+          [ "$fail" -eq 0 ] || true
+
+      - name: Commit publish log
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stories/2026-09-17/publish-log.md
+          git diff --cached --quiet && exit 0
+          git commit -m "Instagram publish log"
+          git push
