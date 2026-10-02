@@ -2,7 +2,7 @@
 
 ## Visual
 Public image URL:
-https://image.pollinations.ai/prompt/vertical%20Instagram%20AI%20news%20bulletin%2C%20professional%20editorial%20design%2C%20black%20background%2C%20dark%20sapphire%20green%20and%20ruby%20green%20glow%2C%20gold%20accents%2C%20futuristic%20AI%20interface%2C%20clean%20high%20contrast%20typography%2C%20no%20SUN%20branding%2C%20headline%20%22AI%20NEWS%20%7C%2002%20OCT%202026%22%2C%20four%20compact%20news%20cards%20labeled%20Gemini%204%20Argon%2C%20OpenAI%20Dots%2C%20Claude%20Sonnet%205.5%2C%20Microsoft%20MAI-Transcribe-2%2C%20premium%20technology%20magazine%20style%2C%20no%20photorealistic%20people%2C%20no%20watermark%3Fwidth%3D1080%26height%3D1350%26nologo%3Dtrue
+https://image.pollinations.ai/prompt/AI%20NEWS%20%7C%2002%20OCT%202026%2C%20vertical%20Instagram%20news%20bulletin%2C%20premium%20editorial%20design%2C%20black%20background%2C%20dark%20sapphire%20green%20and%20ruby%20green%20glow%2C%20gold%20accents%2C%20futuristic%20AI%20interface%2C%20four%20news%20cards%3A%20Gemini%204%20Argon%2C%20OpenAI%20Dots%2C%20Claude%20Sonnet%205.5%2C%20Microsoft%20MAI-Transcribe-2%2C%20clean%20high-contrast%20typography%2C%20modern%20technology%20magazine%2C%20no%20SUN%20branding%2C%20no%20watermark?width=1080&height=1350&nologo=true
 
 ## Selected news
 - Google unveiled Gemini 4 "Argon" on Sep 30, initially to selected partners; Reuters reported it as Google's flagship model.
