@@ -484,11 +484,14 @@ def _cross_renderer_check(suite: Suite, tc: Toolchain, workdir: str, root: str) 
             if len(rasters) < 2:
                 print(f"  [SKIP] {os.path.relpath(src, root)} — a renderer produced no raster")
                 continue
-            diff = mc.rmse(tc, rasters[0][1], rasters[1][1])
             rel = os.path.relpath(src, root).replace(os.sep, "/")
-            suite.expect(f"renderers agree on {rel}",
-                         diff is not None and diff < 0.05,
-                         f"RMSE={diff} — {a.name} and {b.name} lay this source out differently")
+            # Layout comparison, not pixel comparison: two engines never
+            # rasterise Persian text identically, but the layout must match.
+            agree = mc.layout_agreement(tc, rasters[0][1], rasters[1][1], w, h)
+            suite.expect(f"renderers agree on the layout of {rel}",
+                         bool(agree.get("ok")),
+                         f"{a.name} vs {b.name}: {agree.get('reason')} "
+                         f"(raw RMSE {mc.rmse(tc, rasters[0][1], rasters[1][1])})")
             # A renderer that pushes content off the canvas is caught by ink on
             # the border, which RMSE alone can miss on large flat backgrounds.
             for name, png in rasters:
@@ -500,6 +503,27 @@ def _cross_renderer_check(suite: Suite, tc: Toolchain, workdir: str, root: str) 
     else:
         print("  [SKIP] cross-renderer comparison (needs two independent renderers: "
               "e.g. rsvg-convert and resvg)")
+
+    # Validate the comparator itself, so a green comparison is meaningful.
+    probe = os.path.join(workdir, "calibration.svg")
+    with open(probe, "w", encoding="utf-8") as fh:
+        fh.write('<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" '
+                 'viewBox="0 0 1080 1350"><rect width="1080" height="1350" fill="#07110f"/>'
+                 '<text x="540" y="300" text-anchor="middle" font-family="DejaVu Sans" '
+                 'font-size="70" fill="#ffffff">CALIBRATION</text>'
+                 '<text x="540" y="420" text-anchor="middle" font-family="DejaVu Sans" '
+                 'font-size="40" fill="#f6d06b">layout comparator</text></svg>')
+    base = os.path.join(workdir, "calibration.png")
+    render_mod.rasterize(independent[0], probe, base, 1080, 1350, 0)
+    if os.path.exists(base) and os.path.getsize(base) > 0:
+        shifted = os.path.join(workdir, "calibration-shifted.png")
+        subprocess.run([tc._im("convert")[0], "convert", base, "-crop", "1080x1350+120+0",
+                        "+repage", shifted], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        control = mc.layout_agreement(tc, base, shifted, 1080, 1350)
+        suite.record("layout comparator detects a 120px shift (calibration)",
+                     not control.get("ok"),
+                     f"the comparator reported {control.get('verdict')} for a real shift "
+                     f"({control.get('reason')}) — a green comparison would be meaningless")
 
     # Fail-safe: a broken source must NOT produce an output file.
     broken = os.path.join(workdir, "broken-source.svg")

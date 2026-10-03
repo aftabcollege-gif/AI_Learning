@@ -116,6 +116,16 @@ class Toolchain:
         return run(self._im("convert") + [src, "-strip", dst])
 
 
+def run_bytes(cmd: Sequence[str], timeout: int = 300) -> subprocess.CompletedProcess:
+    """Run a command returning raw bytes (binary output such as PGM)."""
+    return subprocess.run(
+        list(cmd),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        timeout=timeout,
+    )
+
+
 def first_line(text: str) -> str:
     for line in (text or "").splitlines():
         line = line.strip()
@@ -264,6 +274,132 @@ def border_mean_color(tc: Toolchain, path: str) -> Optional[List[float]]:
 
 def rgb_to_hex(vals: Sequence[float]) -> str:
     return "#" + "".join(f"{max(0, min(255, round(v * 255))):02x}" for v in vals)
+
+
+def _parse_pgm(data: bytes) -> List[int]:
+    """Parse a PGM image (both P2 ASCII and P5 binary) into pixel values."""
+    if not data[:2] in (b"P2", b"P5"):
+        return []
+    binary = data[:2] == b"P5"
+    pos = 2
+    fields: List[int] = []
+    while len(fields) < 3 and pos < len(data):
+        while pos < len(data) and data[pos:pos + 1].isspace():
+            pos += 1
+        if data[pos:pos + 1] == b"#":
+            while pos < len(data) and data[pos:pos + 1] != b"\n":
+                pos += 1
+            continue
+        start = pos
+        while pos < len(data) and not data[pos:pos + 1].isspace():
+            pos += 1
+        try:
+            fields.append(int(data[start:pos]))
+        except ValueError:
+            return []
+    if len(fields) < 3:
+        return []
+    width, height, _maxval = fields
+    count = width * height
+    if binary:
+        pos += 1
+        return list(data[pos:pos + count])
+    return [int(tok) for tok in data[pos:].split()[:count]]
+
+
+def ink_profiles(tc: Toolchain, path: str, width: int, height: int,
+                 threshold: str = "40%") -> Dict[str, List[int]]:
+    """Row and column ink projections of an image.
+
+    Comparing projections rather than raw pixels lets two different renderers be
+    compared on *layout*: glyph rasterisation, hinting and text shaping differ
+    between engines (which makes raw RMSE useless), but where the lines, blocks
+    and margins sit must match.
+    """
+    base = tc._im("convert") + [path, "-colorspace", "Gray", "-threshold", threshold]
+    rows_res = run_bytes(base + ["-resize", f"1x{height}!", "-depth", "8", "pgm:-"])
+    cols_res = run_bytes(base + ["-resize", f"{width}x1!", "-depth", "8", "pgm:-"])
+    return {
+        "rows": _parse_pgm(rows_res.stdout or b""),
+        "cols": _parse_pgm(cols_res.stdout or b""),
+    }
+
+
+def profile_distance(a: Sequence[int], b: Sequence[int]) -> float:
+    """Mean absolute difference (0..1) between two normalised ink profiles."""
+    n = min(len(a), len(b))
+    if n == 0:
+        return -1.0
+    total = 0
+    for i in range(n):
+        total += abs(a[i] - b[i])
+    return total / n / 255.0
+
+
+def ink_extent(profile: Sequence[int]) -> Optional[Tuple[int, int]]:
+    idx = [i for i, v in enumerate(profile) if v > 0]
+    if not idx:
+        return None
+    return idx[0], idx[-1]
+
+
+# Layout agreement tolerances, calibrated on real renderer pairs:
+#   rsvg-convert vs resvg on the same source .... max MAD 0.0075, ink delta 1px
+#   the same image shifted 60px ................ max MAD 0.032
+#   the same image scaled to 83% ............... max MAD 0.085
+# A real layout difference is therefore separated from shaping/hinting noise by
+# roughly a factor of four.
+LAYOUT_MAD_FAIL = 0.020
+LAYOUT_MAD_WARN = 0.010
+LAYOUT_EXTENT_FAIL_PX = 8
+
+
+def layout_agreement(tc: Toolchain, a: str, b: str, width: int, height: int,
+                     threshold: str = "40%") -> Dict[str, object]:
+    """Compare two renders of the same source on *layout*, not pixels.
+
+    Two engines never rasterise Persian text identically (different shapers,
+    hinting and font fallback), so raw pixel RMSE is meaningless here. Where the
+    lines, blocks and margins sit, however, must agree — that is what this
+    measures, via row/column ink projections.
+    """
+    pa = ink_profiles(tc, a, width, height, threshold)
+    pb = ink_profiles(tc, b, width, height, threshold)
+    rows_a, rows_b = pa["rows"], pb["rows"]
+    cols_a, cols_b = pa["cols"], pb["cols"]
+
+    mad_row = profile_distance(rows_a, rows_b)
+    mad_col = profile_distance(cols_a, cols_b)
+    worst = max(mad_row, mad_col)
+
+    ea_r, eb_r = ink_extent(rows_a), ink_extent(rows_b)
+    ea_c, eb_c = ink_extent(cols_a), ink_extent(cols_b)
+    if not all((ea_r, eb_r, ea_c, eb_c)):
+        return {"ok": False, "reason": "an ink profile contained no content",
+                "mad_row": mad_row, "mad_col": mad_col}
+
+    extent_delta = max(abs(ea_r[0] - eb_r[0]), abs(ea_r[1] - eb_r[1]),
+                       abs(ea_c[0] - eb_c[0]), abs(ea_c[1] - eb_c[1]))
+
+    verdict = "PASS"
+    if worst > LAYOUT_MAD_FAIL or extent_delta > LAYOUT_EXTENT_FAIL_PX:
+        verdict = "FAIL"
+    elif worst > LAYOUT_MAD_WARN:
+        verdict = "WARN"
+
+    return {
+        "ok": verdict != "FAIL",
+        "verdict": verdict,
+        "mad_row": round(mad_row, 5),
+        "mad_col": round(mad_col, 5),
+        "worst_mad": round(worst, 5),
+        "extent_delta_px": extent_delta,
+        "ink_rows_a": ea_r, "ink_rows_b": eb_r,
+        "ink_cols_a": ea_c, "ink_cols_b": eb_c,
+        "reason": (f"row/col ink projections differ by {worst:.4f} "
+                   f"(fail > {LAYOUT_MAD_FAIL}) and ink extents differ by "
+                   f"{extent_delta}px (fail > {LAYOUT_EXTENT_FAIL_PX}px)"),
+    }
 
 
 def jpeg_magic_ok(path: str) -> bool:
