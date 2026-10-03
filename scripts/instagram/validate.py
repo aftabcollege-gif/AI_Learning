@@ -52,6 +52,16 @@ DARK_MEAN_FLOOR = 0.015
 DARK_MEAN_WARN = 0.03
 MIN_COLORS = 2
 
+# Raster-level clipping detection. A renderer that positions text differently
+# (RTL + text-anchor semantics differ between librsvg and resvg) pushes content
+# off the canvas edge; the SVG-level extent model cannot catch that because the
+# disagreement happens inside the renderer. Bright ink sitting on the outermost
+# pixels is therefore treated as clipped content.
+BORDER_PIXELS = 3
+BORDER_BRIGHT_THRESHOLD = 50          # percent luminance that counts as "ink"
+BORDER_FAIL_FRACTION = 0.01           # >1% of a border strip is ink -> clipped
+BORDER_WARN_FRACTION = 0.0015         # >0.15% is suspicious
+
 
 @dataclass
 class AssetResult:
@@ -155,6 +165,33 @@ def renderer_inventory() -> Dict[str, str]:
 # --------------------------------------------------------------------------
 # checks
 # --------------------------------------------------------------------------
+
+def border_ink(tc: Toolchain, path: str, width: int, height: int) -> Dict[str, float]:
+    """Fraction of bright (ink-like) pixels on each 3px border strip.
+
+    ``convert "img[WxH+X+Y]" ... -threshold 50% -format %[fx:mean]`` returns the
+    share of that strip above the luminance threshold, which is a renderer
+    independent way to notice that content runs off the canvas.
+    """
+    band = BORDER_PIXELS
+    strips = {
+        "top": f"{path}[{width}x{band}+0+0]",
+        "bottom": f"{path}[{width}x{band}+0+{height - band}]",
+        "left": f"{path}[{band}x{height}+0+0]",
+        "right": f"{path}[{band}x{height}+{width - band}+0]",
+    }
+    result: Dict[str, float] = {}
+    for name, spec in strips.items():
+        # threshold first so %[fx:mean] is the *fraction of ink pixels*, not the
+        # average brightness of the strip.
+        value = tc.info_fmt(["-colorspace", "Gray", "-threshold",
+                             f"{BORDER_BRIGHT_THRESHOLD}%"], spec, "%[fx:mean]")
+        try:
+            result[name] = round(float(value), 6)
+        except ValueError:
+            result[name] = -1.0
+    return result
+
 
 def check_asset(tc: Toolchain, root: str, rel: str, kind: str, role: str,
                 expected_renderer: Optional[str],
@@ -274,6 +311,26 @@ def check_asset(tc: Toolchain, root: str, rel: str, kind: str, role: str,
         res.add("PASS", "VISUAL_INTEGRITY",
                 f"std={stats.gray_std:.4f} mean={stats.gray_mean:.4f} colors={stats.unique_colors}")
 
+    # Clipped content: bright ink sitting on the canvas border.
+    ink = border_ink(tc, path, meta.width, meta.height)
+    res.metrics["border_ink"] = ink
+    if any(v < 0 for v in ink.values()):
+        res.add("WARN", "BORDER_INK_UNMEASURED",
+                f"could not measure border strips ({ink})")
+    else:
+        worst_side = max(ink, key=lambda k: ink[k])
+        worst = ink[worst_side]
+        if worst > BORDER_FAIL_FRACTION:
+            res.add("FAIL", "CONTENT_CLIPPED_AT_EDGE",
+                    f"{worst * 100:.1f}% of the {worst_side} {BORDER_PIXELS}px border is bright "
+                    f"ink (ink={ink}) — text or graphics run off the canvas and are cut off")
+        elif worst > BORDER_WARN_FRACTION:
+            res.add("WARN", "CONTENT_NEAR_EDGE",
+                    f"{worst * 100:.2f}% of the {worst_side} border is bright ink (ink={ink})")
+        else:
+            res.add("PASS", "EDGE_CLEAR",
+                    f"no bright ink on the canvas border (ink={ink})")
+
     # ---- E. source / output mapping ------------------------------------
     if is_jpeg and role == "canonical":
         svg = os.path.splitext(path)[0] + ".svg"
@@ -391,10 +448,15 @@ def check_legacy_asset(tc: Toolchain, root: str, rel: str, kind: str) -> AssetRe
     if not stats.ok:
         res.add("FAIL", "PIXELS_UNREADABLE", stats.error)
         return res
+    ink = border_ink(tc, path, meta.width, meta.height)
+    res.metrics["border_ink"] = ink
     if stats.unique_colors == 1 or stats.gray_std < BLANK_STD_FLOOR:
         res.add("FAIL", "IMAGE_BLANK",
                 f"legacy asset is a blank frame (std={stats.gray_std:.4f}, "
                 f"colors={stats.unique_colors}) — it must not be published or kept")
+    elif ink and max(ink.values()) > BORDER_FAIL_FRACTION:
+        res.add("FAIL", "CONTENT_CLIPPED_AT_EDGE",
+                f"legacy asset has bright ink on its border (ink={ink}) — content is cut off")
     else:
         res.add("INFO", "LEGACY_ASSET",
                 "valid PNG retained for backwards compatibility; publishing uses the canonical JPEG")
@@ -594,6 +656,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
          not ({"FILE_TOO_LARGE", "FILE_TOO_SMALL", "FILE_EMPTY"} & failure_codes)),
         ("Visual integrity (not blank/flat/dark)",
          not ({"IMAGE_BLANK", "IMAGE_FLAT", "IMAGE_TOO_DARK"} & failure_codes)),
+        ("No content clipped at the canvas edge",
+         "CONTENT_CLIPPED_AT_EDGE" not in failure_codes),
         ("Source/output aspect match",
          not ({"SOURCE_OUTPUT_ASPECT_MISMATCH", "SOURCE_SVG_MISSING"} & failure_codes)),
         ("No stale asset (hash matches manifest)", "STALE_ASSET" not in failure_codes),

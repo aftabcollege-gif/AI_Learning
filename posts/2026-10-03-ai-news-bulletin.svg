@@ -16,38 +16,38 @@
   <rect x="55" y="225" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
   <rect x="80" y="250" width="180" height="48" rx="24" fill="url(#green)"/>
   <text x="170" y="284" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">خودرو</text>
-  <text x="980.0" y="315" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">هیوندای؛ AI و رباتیک در مسیر خودرو</text>
-  <text x="980.0" y="351" text-anchor="end" fill="#d8e5e1" font-size="21">گزارش امروز WSJ از تمرکز هیوندای بر رانندگی</text>
-  <text x="980.0" y="377" text-anchor="end" fill="#d8e5e1" font-size="21">خودکار، Waymo و Boston Dynamics خبر می‌دهد.</text>
-  <text x="980.0" y="403" text-anchor="end" fill="#8edbc9" font-size="17">تمرکز: خودران • داده • ربات‌های انسان‌نما</text>
+  <text x="708.4" y="315" text-anchor="middle" fill="#f6d87d" font-size="31" font-weight="700">هیوندای؛ AI و رباتیک در مسیر خودرو</text>
+  <text x="754.9" y="351" text-anchor="middle" fill="#d8e5e1" font-size="21">گزارش امروز WSJ از تمرکز هیوندای بر رانندگی</text>
+  <text x="757.3" y="377" text-anchor="middle" fill="#d8e5e1" font-size="21">خودکار، Waymo و Boston Dynamics خبر می‌دهد.</text>
+  <text x="823.8" y="403" text-anchor="middle" fill="#8edbc9" font-size="17">تمرکز: خودران • داده • ربات‌های انسان‌نما</text>
   <rect x="55" y="435" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
   <rect x="80" y="460" width="180" height="48" rx="24" fill="url(#green)"/>
   <text x="170" y="494" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">هوافضا</text>
-  <text x="980.0" y="525" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">پردازش هوش مصنوعی در فضا</text>
-  <text x="980.0" y="561" text-anchor="end" fill="#d8e5e1" font-size="21">پروژه‌های محاسبات مداری نشان می‌دهند پردازش</text>
-  <text x="980.0" y="587" text-anchor="end" fill="#d8e5e1" font-size="21">AI می‌تواند به ماهواره‌ها و مدار ماه منتقل شود.</text>
-  <text x="980.0" y="613" text-anchor="end" fill="#8edbc9" font-size="17">نمونه تازه: محموله محاسباتی Starcloud در مدار ماه</text>
+  <text x="754.8" y="525" text-anchor="middle" fill="#f6d87d" font-size="31" font-weight="700">پردازش هوش مصنوعی در فضا</text>
+  <text x="750.0" y="561" text-anchor="middle" fill="#d8e5e1" font-size="21">پروژه‌های محاسبات مداری نشان می‌دهند پردازش</text>
+  <text x="757.1" y="587" text-anchor="middle" fill="#d8e5e1" font-size="21">AI می‌تواند به ماهواره‌ها و مدار ماه منتقل شود.</text>
+  <text x="777.8" y="613" text-anchor="middle" fill="#8edbc9" font-size="17">نمونه تازه: محموله محاسباتی Starcloud در مدار ماه</text>
   <rect x="55" y="645" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
   <rect x="80" y="670" width="180" height="48" rx="24" fill="url(#green)"/>
   <text x="170" y="704" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">پزشکی</text>
-  <text x="980.0" y="735" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">AI برای تشخیص زودهنگام خطر</text>
-  <text x="980.0" y="771" text-anchor="end" fill="#d8e5e1" font-size="21">پژوهش‌های تازه از استفاده مدل‌های AI برای شناسایی ریسک</text>
-  <text x="980.0" y="797" text-anchor="end" fill="#d8e5e1" font-size="21">بیماری و ظرفیت بیشتر خدمات تخصصی خبر می‌دهند.</text>
-  <text x="980.0" y="823" text-anchor="end" fill="#8edbc9" font-size="17">نمونه: پیش‌بینی ریسک سرطان پانکراس از داده‌های سلامت</text>
+  <text x="744.6" y="735" text-anchor="middle" fill="#f6d87d" font-size="31" font-weight="700">AI برای تشخیص زودهنگام خطر</text>
+  <text x="686.1" y="771" text-anchor="middle" fill="#d8e5e1" font-size="21">پژوهش‌های تازه از استفاده مدل‌های AI برای شناسایی ریسک</text>
+  <text x="701.6" y="797" text-anchor="middle" fill="#d8e5e1" font-size="21">بیماری و ظرفیت بیشتر خدمات تخصصی خبر می‌دهند.</text>
+  <text x="736.4" y="823" text-anchor="middle" fill="#8edbc9" font-size="17">نمونه: پیش‌بینی ریسک سرطان پانکراس از داده‌های سلامت</text>
   <rect x="55" y="855" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
   <rect x="80" y="880" width="180" height="48" rx="24" fill="url(#green)"/>
   <text x="170" y="914" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">برق</text>
-  <text x="980.0" y="945" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">ارزان‌تر شدن AI؛ مصرف برق بیشتر؟</text>
-  <text x="980.0" y="981" text-anchor="end" fill="#d8e5e1" font-size="21">گزارش‌های McKinsey و BCG می‌گویند کاهش هزینه AI می‌تواند استفاده</text>
-  <text x="980.0" y="1007" text-anchor="end" fill="#d8e5e1" font-size="21">گسترده‌تر و فشار بیشتر بر شبکه را به‌دنبال داشته باشد.</text>
-  <text x="980.0" y="1033" text-anchor="end" fill="#8edbc9" font-size="17">داده‌مرکزها: یکی از سریع‌ترین بخش‌های رو به رشد تقاضای برق</text>
+  <text x="703.1" y="945" text-anchor="middle" fill="#f6d87d" font-size="31" font-weight="700">ارزان‌تر شدن AI؛ مصرف برق بیشتر؟</text>
+  <text x="635.7" y="981" text-anchor="middle" fill="#d8e5e1" font-size="21">گزارش‌های McKinsey و BCG می‌گویند کاهش هزینه AI می‌تواند استفاده</text>
+  <text x="657.6" y="1007" text-anchor="middle" fill="#d8e5e1" font-size="21">گسترده‌تر و فشار بیشتر بر شبکه را به‌دنبال داشته باشد.</text>
+  <text x="727.1" y="1033" text-anchor="middle" fill="#8edbc9" font-size="17">داده‌مرکزها: یکی از سریع‌ترین بخش‌های رو به رشد تقاضای برق</text>
   <rect x="55" y="1065" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
   <rect x="80" y="1090" width="280" height="48" rx="24" fill="url(#green)"/>
   <text x="220" y="1124" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">عامل‌های AI / کاربردی</text>
-  <text x="980.0" y="1155" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">AI از پاسخ‌گویی به اجرای مداوم کارها</text>
-  <text x="980.0" y="1191" text-anchor="end" fill="#d8e5e1" font-size="21">روند تازه عامل‌های همیشه‌فعال و چندمرحله‌ای، مرز</text>
-  <text x="980.0" y="1217" text-anchor="end" fill="#d8e5e1" font-size="21">میان «دستیار» و «اجراکننده» را جابه‌جا می‌کند.</text>
-  <text x="980.0" y="1243" text-anchor="end" fill="#8edbc9" font-size="17">محور ترند: عامل‌های خودمختار • ابزارها • اجرای چندمرحله‌ای</text>
+  <text x="708.8" y="1155" text-anchor="middle" fill="#f6d87d" font-size="31" font-weight="700">AI از پاسخ‌گویی به اجرای مداوم کارها</text>
+  <text x="746.2" y="1191" text-anchor="middle" fill="#d8e5e1" font-size="21">روند تازه عامل‌های همیشه‌فعال و چندمرحله‌ای، مرز</text>
+  <text x="750.0" y="1217" text-anchor="middle" fill="#d8e5e1" font-size="21">میان «دستیار» و «اجراکننده» را جابه‌جا می‌کند.</text>
+  <text x="760.9" y="1243" text-anchor="middle" fill="#8edbc9" font-size="17">محور ترند: عامل‌های خودمختار • ابزارها • اجرای چندمرحله‌ای</text>
 </g>
 <rect x="70" y="1290" width="940" height="2" fill="url(#gold)"/>
 <text x="540" y="1325" text-anchor="middle" fill="#9fb5ae" font-family="Vazirmatn, 'Noto Naskh Arabic', 'Noto Sans Arabic', Tahoma, DejaVu Sans, sans-serif" font-size="18" direction="rtl">منابع معتبر و تازه • بدون شایعه و خبر تکراری • AI_Learning</text>

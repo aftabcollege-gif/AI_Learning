@@ -274,10 +274,30 @@ jobs:
           python-version: '3.11'
       - name: Install and verify toolchain
         run: bash scripts/instagram/ensure_toolchain.sh
+      - name: Install a second independent renderer for cross-checking
+        run: |
+          python3 -m pip install --quiet --disable-pip-version-check resvg-py \
+            && echo "resvg-py installed (independent Rust renderer)" \
+            || echo "::warning::resvg-py unavailable; cross-renderer comparison will be skipped"
+
       - name: Enumerate renderers
         run: python3 scripts/instagram/render.py --root . --list-renderers
-      - name: Exercise the recovery chain
-        run: python3 scripts/instagram/selftest.py --root . --renderer-recovery
+
+      # Renders every source with two independent renderers and fails if they
+      # disagree or if either one runs content off the canvas edge. This is the
+      # check that catches renderer-specific RTL text anchoring, which produces
+      # a technically valid JPEG whose text is clipped.
+      - name: Exercise the recovery chain and cross-renderer agreement
+        run: |
+          set +e
+          python3 scripts/instagram/selftest.py --root . --renderer-recovery 2>&1 | tee /tmp/crossrender.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            grep -E 'FAILED CHECK' /tmp/crossrender.log | head -25 | while IFS= read -r line; do
+              echo "::error::${line}"
+            done
+          fi
+          exit "$status"
 
   # ---------------------------------------------------------------------
   # 4. Publishing gate. On push this only produces and verifies the plan;
@@ -285,7 +305,7 @@ jobs:
   # ---------------------------------------------------------------------
   publish-gate:
     name: Publish gate
-    needs: render-and-validate
+    needs: [render-and-validate, renderer-fallback-check]
     if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20

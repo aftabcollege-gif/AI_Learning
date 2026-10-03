@@ -448,23 +448,49 @@ def run_renderer_recovery(suite: Suite, tc: Toolchain, workdir: str) -> None:
                      stats.ok and stats.gray_std >= gate.BLANK_STD_FLOOR,
                      f"std={stats.gray_std}")
 
-    # Cross-renderer agreement: two independent renderers must agree closely.
-    if len(renderers) >= 2:
-        import tempfile
-        rends = []
-        for rnd in renderers[:3]:
-            png = os.path.join(workdir, f"cross-{rnd.name}.png")
-            res = render_mod.rasterize(rnd, svg, png, 1080, 1920, 0)
-            if os.path.exists(png) and os.path.getsize(png) > 0:
-                rends.append((rnd.name, png))
-        if len(rends) >= 2:
-            a, b = rends[0], rends[1]
-            diff = mc.rmse(tc, a[1], b[1])
-            suite.expect(f"independent renderers agree ({a[0]} vs {b[0]})",
-                         diff is not None and diff < 0.10,
-                         f"RMSE={diff} (layout differs between renderers)")
-        else:
-            print("  [SKIP] cross-renderer comparison (insufficient independent renderers)")
+    # Cross-renderer agreement. Renderers disagree about RTL text anchoring and
+    # font fallback, and only one of them runs in production while the other may
+    # become the fallback. Disagreement is a defect, not a curiosity.
+    independent = [r for r in renderers if r.kind in ("rsvg", "resvg", "inkscape", "pyresvg")]
+    if len(independent) >= 2:
+        a, b = independent[0], independent[1]
+        print(f"  comparing {a.name} against {b.name} on every source in the repository")
+        sources = []
+        for sub, kind in (("stories", "story"), ("posts", "post")):
+            base = os.path.join(root, sub)
+            if not os.path.isdir(base):
+                continue
+            for dirpath, _d, files in os.walk(base):
+                for name in sorted(files):
+                    if name.lower().endswith(".svg"):
+                        sources.append((os.path.join(dirpath, name), kind))
+        for src, kind in sources:
+            w, h = gate.KIND_GEOMETRY[kind]
+            rasters = []
+            for rnd in (a, b):
+                png = os.path.join(workdir, f"x-{rnd.name}-{os.path.basename(src)}.png")
+                render_mod.rasterize(rnd, src, png, w, h, 0)
+                if os.path.exists(png) and os.path.getsize(png) > 0:
+                    rasters.append((rnd.name, png))
+            if len(rasters) < 2:
+                print(f"  [SKIP] {os.path.relpath(src, root)} — a renderer produced no raster")
+                continue
+            diff = mc.rmse(tc, rasters[0][1], rasters[1][1])
+            rel = os.path.relpath(src, root).replace(os.sep, "/")
+            suite.expect(f"renderers agree on {rel}",
+                         diff is not None and diff < 0.05,
+                         f"RMSE={diff} — {a.name} and {b.name} lay this source out differently")
+            # A renderer that pushes content off the canvas is caught by ink on
+            # the border, which RMSE alone can miss on large flat backgrounds.
+            for name, png in rasters:
+                ink = gate.border_ink(tc, png, w, h)
+                worst = max(ink.values())
+                suite.expect(f"{name} keeps content inside the canvas: {rel}",
+                             worst <= gate.BORDER_FAIL_FRACTION,
+                             f"ink on border {ink} — {name} clips content at the edge")
+    else:
+        print("  [SKIP] cross-renderer comparison (needs two independent renderers: "
+              "e.g. rsvg-convert and resvg)")
 
     # Fail-safe: a broken source must NOT produce an output file.
     broken = os.path.join(workdir, "broken-source.svg")
