@@ -1,9 +1,10 @@
-name: Render Story Images
+name: Render Instagram Images
 
 on:
   push:
     paths:
       - 'stories/**/*.svg'
+      - 'posts/**/*.svg'
       - '.github/workflows/render-story-images.yml'
   workflow_dispatch:
 
@@ -16,19 +17,40 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Render SVG to PNG
+
+      - name: Install SVG renderer
         run: |
           sudo apt-get update
-          sudo apt-get install -y librsvg2-bin
+          sudo apt-get install -y librsvg2-bin imagemagick
+
+      - name: Render Story SVGs to Instagram JPEG
+        run: |
           find stories -type f -name '*.svg' -print0 | while IFS= read -r -d '' f; do
-            out="${f%.svg}.png"
-            rsvg-convert -w 1080 -h 1920 "$f" -o "$out"
+            out="${f%.svg}.jpg"
+            rsvg-convert -w 1080 -h 1920 -f png "$f" -o /tmp/story.png
+            magick /tmp/story.png -colorspace sRGB -quality 100 -sampling-factor 4:4:4 "$out"
           done
-      - name: Commit rendered PNG files
+
+      - name: Render Post SVGs to Instagram JPEG
+        run: |
+          find posts -type f -name '*.svg' -print0 | while IFS= read -r -d '' f; do
+            out="${f%.svg}.jpg"
+            rsvg-convert -w 1080 -h 1350 -f png "$f" -o /tmp/post.png
+            magick /tmp/post.png -colorspace sRGB -quality 100 -sampling-factor 4:4:4 "$out"
+            rm "$f"
+          done
+
+      - name: Validate Instagram media
+        run: |
+          find stories posts -type f \( -name '*.jpg' -o -name '*.jpeg' \) -print0 | while IFS= read -r -d '' f; do
+            identify "$f"
+          done
+
+      - name: Commit rendered files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stories/**/*.png
+          git add stories posts
           git diff --cached --quiet && exit 0
-          git commit -m "Render story images for public media URLs"
+          git commit -m "Format Instagram media as publish-ready JPEG"
           git push
