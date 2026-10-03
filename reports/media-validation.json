@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T22:22:39Z",
+  "generated_at": "2026-10-03T22:24:12Z",
   "run_id": "",
   "commit_sha": "",
   "status": "PASS",
@@ -14,25 +14,31 @@
       "kind": "post",
       "role": "canonical",
       "status": "PASS",
-      "sha256": "3f6d196eb0887b5c251708fed0dbd98ba2a3c2c340ee6b262488e60c035854ca",
-      "size_bytes": 190095,
+      "sha256": "ceee6e57798cb357ee75997354ba76d38ebe479641bfc249008ba04f8c3128e2",
+      "size_bytes": 324822,
       "dimensions": "1080x1350",
       "colorspace": "sRGB",
       "source_svg": "posts/2026-10-03-ai-news-bulletin.svg",
-      "source_sha256": "23ced8b2b81d63588951a6913ec2c85b01d83738bc1fe561289613b3720209dc",
-      "renderer": "convert",
-      "renderer_version": "",
+      "source_sha256": "4279db5a364ac99170093180aac9f57b8282978144b0ec0b40f5e5b291e9080a",
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
       "metrics": {
-        "gray_std": 0.14119,
-        "gray_mean": 0.09256,
-        "unique_colors": 20459,
+        "gray_std": 0.17106,
+        "gray_mean": 0.108,
+        "unique_colors": 24153,
         "channel_means": [
-          0.04419,
-          0.10666,
-          0.09534
+          0.06024,
+          0.12223,
+          0.10772
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
       "checks": [
         {
@@ -53,17 +59,17 @@
         {
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
-          "detail": "std=0.1412 mean=0.0926 colors=20459"
-        },
-        {
-          "status": "WARN",
-          "code": "PROVENANCE_UNKNOWN",
-          "detail": "no render-log entry for this asset; the producing renderer is not recorded"
+          "detail": "std=0.1711 mean=0.1080 colors=24153"
         },
         {
           "status": "PASS",
-          "code": "MANIFEST_HASH",
-          "detail": "matches the recorded manifest hash"
+          "code": "EDGE_CLEAR",
+          "detail": "no bright ink on the canvas border (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.0, 'right': 0.0})"
+        },
+        {
+          "status": "INFO",
+          "code": "OUTPUT_REFRESHED",
+          "detail": "output hash differs from the last manifest because the source SVG changed; the manifest is refreshed by this run"
         }
       ]
     },
@@ -90,7 +96,13 @@
           0.14597
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
       "checks": [
         {
@@ -112,6 +124,11 @@
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
           "detail": "std=0.1432 mean=0.1482 colors=29980"
+        },
+        {
+          "status": "PASS",
+          "code": "EDGE_CLEAR",
+          "detail": "no bright ink on the canvas border (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.0, 'right': 0.0})"
         },
         {
           "status": "WARN",
@@ -148,7 +165,13 @@
           0.12979
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
       "checks": [
         {
@@ -170,6 +193,11 @@
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
           "detail": "std=0.1198 mean=0.1318 colors=20084"
+        },
+        {
+          "status": "PASS",
+          "code": "EDGE_CLEAR",
+          "detail": "no bright ink on the canvas border (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.0, 'right': 0.0})"
         },
         {
           "status": "WARN",
@@ -206,7 +234,13 @@
           0.10283
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
       "checks": [
         {
@@ -228,6 +262,11 @@
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
           "detail": "std=0.1418 mean=0.1087 colors=25833"
+        },
+        {
+          "status": "PASS",
+          "code": "EDGE_CLEAR",
+          "detail": "no bright ink on the canvas border (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.0, 'right': 0.0})"
         },
         {
           "status": "WARN",
@@ -264,7 +303,13 @@
           0.10031
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
       "checks": [
         {
@@ -286,6 +331,11 @@
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
           "detail": "std=0.1370 mean=0.1057 colors=22831"
+        },
+        {
+          "status": "PASS",
+          "code": "EDGE_CLEAR",
+          "detail": "no bright ink on the canvas border (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.0, 'right': 0.0})"
         },
         {
           "status": "WARN",
@@ -315,7 +365,13 @@
       "metrics": {
         "gray_std": 0.15364,
         "gray_mean": 0.1522,
-        "unique_colors": 9125
+        "unique_colors": 9125,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
       "checks": [
         {

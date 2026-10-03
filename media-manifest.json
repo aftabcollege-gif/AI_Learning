@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "generated_at": "2026-10-03T22:21:58Z",
-  "run_id": "37158086038",
-  "commit_sha": "6a0be954256d2587ce2e5f126e065d1794c8c9ae",
-  "renderer": "rsvg-convert",
-  "preferred_renderer": "rsvg-convert",
-  "image_magick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org",
+  "generated_at": "2026-10-03T22:24:12Z",
+  "run_id": "",
+  "commit_sha": "",
+  "renderer": "convert, resvg-py",
+  "preferred_renderer": "convert",
+  "image_magick": "Version: ImageMagick 6.9.11-60 Q16 x86_64 2021-01-25 https://imagemagick.org",
   "gate_status": "PASS",
   "policy": {
     "story": "1080x1920",
@@ -20,29 +20,35 @@
       "kind": "post",
       "role": "final",
       "dimensions": "1080x1350",
-      "size_bytes": 190095,
-      "sha256": "3f6d196eb0887b5c251708fed0dbd98ba2a3c2c340ee6b262488e60c035854ca",
+      "size_bytes": 324822,
+      "sha256": "ceee6e57798cb357ee75997354ba76d38ebe479641bfc249008ba04f8c3128e2",
       "colorspace": "sRGB",
       "sampling_factor": "1x1,1x1,1x1",
       "source_svg": "posts/2026-10-03-ai-news-bulletin.svg",
-      "source_sha256": "23ced8b2b81d63588951a6913ec2c85b01d83738bc1fe561289613b3720209dc",
+      "source_sha256": "4279db5a364ac99170093180aac9f57b8282978144b0ec0b40f5e5b291e9080a",
       "metrics": {
-        "gray_std": 0.14119,
-        "gray_mean": 0.09256,
-        "unique_colors": 20459,
+        "gray_std": 0.17106,
+        "gray_mean": 0.108,
+        "unique_colors": 24153,
         "channel_means": [
-          0.04419,
-          0.10666,
-          0.09534
+          0.06024,
+          0.12223,
+          0.10772
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
-      "renderer": "rsvg-convert",
-      "renderer_version": "rsvg-convert version 2.58.0",
-      "validated_at": "2026-10-03T22:21:58Z",
-      "run_id": "37158086038",
-      "commit_sha": "6a0be954256d2587ce2e5f126e065d1794c8c9ae",
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "validated_at": "2026-10-03T22:24:12Z",
+      "run_id": "",
+      "commit_sha": "",
       "validated_status": "PASS"
     },
     "stories/2026-09-14/story01-ai-photo-editing.jpg": {
@@ -65,13 +71,19 @@
           0.14597
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
-      "renderer": "rsvg-convert",
-      "renderer_version": "rsvg-convert version 2.58.0",
-      "validated_at": "2026-10-03T22:21:58Z",
-      "run_id": "37158086038",
-      "commit_sha": "6a0be954256d2587ce2e5f126e065d1794c8c9ae",
+      "renderer": "convert",
+      "renderer_version": "",
+      "validated_at": "2026-10-03T22:24:12Z",
+      "run_id": "",
+      "commit_sha": "",
       "validated_status": "PASS"
     },
     "stories/2026-09-18/01-ai-photo-editing-prompts.jpg": {
@@ -94,13 +106,19 @@
           0.12979
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
-      "renderer": "rsvg-convert",
-      "renderer_version": "rsvg-convert version 2.58.0",
-      "validated_at": "2026-10-03T22:21:58Z",
-      "run_id": "37158086038",
-      "commit_sha": "6a0be954256d2587ce2e5f126e065d1794c8c9ae",
+      "renderer": "convert",
+      "renderer_version": "",
+      "validated_at": "2026-10-03T22:24:12Z",
+      "run_id": "",
+      "commit_sha": "",
       "validated_status": "PASS"
     },
     "stories/2026-10-02/01-ai-agent-prompt.jpg": {
@@ -123,13 +141,19 @@
           0.10283
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
-      "renderer": "rsvg-convert",
-      "renderer_version": "rsvg-convert version 2.58.0",
-      "validated_at": "2026-10-03T22:21:58Z",
-      "run_id": "37158086038",
-      "commit_sha": "6a0be954256d2587ce2e5f126e065d1794c8c9ae",
+      "renderer": "convert",
+      "renderer_version": "",
+      "validated_at": "2026-10-03T22:24:12Z",
+      "run_id": "",
+      "commit_sha": "",
       "validated_status": "PASS"
     },
     "stories/2026-10-03/01-guided-vision-story.jpg": {
@@ -152,13 +176,19 @@
           0.10031
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
       },
-      "renderer": "rsvg-convert",
-      "renderer_version": "rsvg-convert version 2.58.0",
-      "validated_at": "2026-10-03T22:21:58Z",
-      "run_id": "37158086038",
-      "commit_sha": "6a0be954256d2587ce2e5f126e065d1794c8c9ae",
+      "renderer": "convert",
+      "renderer_version": "",
+      "validated_at": "2026-10-03T22:24:12Z",
+      "run_id": "",
+      "commit_sha": "",
       "validated_status": "PASS"
     }
   }
