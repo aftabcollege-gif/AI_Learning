@@ -156,10 +156,8 @@ def rasterize(rnd: Renderer, svg: str, png: str, width: int, height: int,
             return _Result(1, stderr=f"{type(exc).__name__}: {exc}")
     if rnd.kind == "rsvg":
         cmd = [rnd.path, "-f", "png", "-w", str(width), "-h", str(height)]
-        if variant == 0:
-            cmd.append("--keep-image-data")
-        elif variant == 1:
-            cmd += ["--dpi", "96", "--no-keep-image-data"]
+        if variant == 1:
+            cmd += ["--dpi", "96"]
         cmd += ["-o", png, svg]
         return mc.run(cmd)
     if rnd.kind == "resvg":

@@ -283,13 +283,22 @@ def run_lint_rules(suite: Suite, tc: Toolchain, workdir: str) -> None:
                  "SVG_FOREIGNOBJECT" in codes(foreign), f"got {sorted(codes(foreign))}")
 
     if fonts.have_fonttools:
+        # Unicode private-use codepoints: by definition no font maps them, so
+        # this test is valid whether or not an emoji font is installed.
         tofu = lint("tofu.svg",
                     '<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" '
                     'viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#000"/>'
-                    '<text x="540" y="900" font-family="DejaVu Sans" font-size="60" fill="#fff">'
-                    '\U0001F3C6\U0001FAE0</text></svg>')
-        suite.expect("emoji without any covering font is rejected",
+                    '<text x="540" y="900" font-family="Vazirmatn, DejaVu Sans, sans-serif" '
+                    'font-size="60" fill="#fff">\uE123\U000F0123</text></svg>')
+        suite.expect("characters with no glyph in any font are rejected",
                      "FONT_GLYPH_MISSING" in codes(tofu), f"got {sorted(codes(tofu))}")
+        emoji = lint("emoji.svg",
+                     '<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" '
+                     'viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#000"/>'
+                     '<text x="540" y="900" font-family="Vazirmatn, DejaVu Sans, sans-serif" '
+                     'font-size="60" fill="#fff">پست ۱۲۳</text></svg>')
+        suite.expect("Persian text with an Arabic-capable stack passes",
+                     emoji.ok, "; ".join(f.message for f in emoji.findings if f.level == "fail"))
     else:
         print("  [SKIP] glyph-coverage rules (fontTools unavailable)")
     print("")
