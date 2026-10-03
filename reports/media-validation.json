@@ -1,35 +1,248 @@
 {
-  "generated_at": "2026-10-03T22:20:09Z",
-  "run_id": "",
-  "commit_sha": "",
+  "generated_at": "2026-10-03T22:22:03Z",
+  "run_id": "37158086038",
+  "commit_sha": "6a0be954256d2587ce2e5f126e065d1794c8c9ae",
   "status": "PASS",
-  "renderer": "convert",
+  "renderer": "rsvg-convert",
   "renderers": {
-    "convert": "Version: ImageMagick 6.9.11-60 Q16 x86_64 2021-01-25 https://imagemagick.org"
+    "rsvg-convert": "rsvg-convert version 2.58.0",
+    "convert": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
   },
-  "imagemagick": "Version: ImageMagick 6.9.11-60 Q16 x86_64 2021-01-25 https://imagemagick.org",
+  "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org",
   "assets": [
+    {
+      "path": "stories/2026-09-14/story01-ai-photo-editing.jpg",
+      "kind": "story",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "c1ea0a3766133c4fd71321a30744ed86d54250c788578e0d1da3e2a8d63f056f",
+      "size_bytes": 344211,
+      "dimensions": "1080x1920",
+      "colorspace": "sRGB",
+      "source_svg": "stories/2026-09-14/story01-ai-photo-editing.svg",
+      "source_sha256": "7d8560052ff3da46866541a068707e29a56010a1c7c9d3e00fabfb224511d55c",
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "metrics": {
+        "gray_std": 0.1432,
+        "gray_mean": 0.14825,
+        "unique_colors": 29980,
+        "channel_means": [
+          0.06445,
+          0.1734,
+          0.14597
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1920 matches story target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1432 mean=0.1482 colors=29980"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "stories/2026-09-18/01-ai-photo-editing-prompts.jpg",
+      "kind": "story",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "bea3bda179bffb71dd171c71deb115f0660d1c7045cb15d3c66f1d32b952f5ed",
+      "size_bytes": 272810,
+      "dimensions": "1080x1920",
+      "colorspace": "sRGB",
+      "source_svg": "stories/2026-09-18/01-ai-photo-editing-prompts.svg",
+      "source_sha256": "774ba4e90e6e241f332e80a6e38183a8ce32a9eb676e512b200bcade986374cd",
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "metrics": {
+        "gray_std": 0.11978,
+        "gray_mean": 0.13185,
+        "unique_colors": 20084,
+        "channel_means": [
+          0.05098,
+          0.1561,
+          0.12979
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1920 matches story target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1198 mean=0.1318 colors=20084"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "stories/2026-10-02/01-ai-agent-prompt.jpg",
+      "kind": "story",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "0c7811fb09fa194913dae9d6e95e8daff83433a47f4d18336557a7a337af7db4",
+      "size_bytes": 298003,
+      "dimensions": "1080x1920",
+      "colorspace": "sRGB",
+      "source_svg": "stories/2026-10-02/01-ai-agent-prompt.svg",
+      "source_sha256": "f7f973c348701abf7970806f0be9ce95ff0a2b4213e5c89f98228b6b04c67251",
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "metrics": {
+        "gray_std": 0.14179,
+        "gray_mean": 0.10865,
+        "unique_colors": 25833,
+        "channel_means": [
+          0.05603,
+          0.12489,
+          0.10283
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1920 matches story target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1418 mean=0.1087 colors=25833"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "stories/2026-10-03/01-guided-vision-story.jpg",
+      "kind": "story",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "c3791346987bac3864bdc20e3b757320dcbf218ab5b461735ae997aafeedee6c",
+      "size_bytes": 265327,
+      "dimensions": "1080x1920",
+      "colorspace": "sRGB",
+      "source_svg": "stories/2026-10-03/01-guided-vision-story.svg",
+      "source_sha256": "a5d9054de7daa5f57c609df9c91aa9401ef3f670a7a0a908e799b21620e0828b",
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "metrics": {
+        "gray_std": 0.13701,
+        "gray_mean": 0.10572,
+        "unique_colors": 22831,
+        "channel_means": [
+          0.05556,
+          0.12119,
+          0.10031
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1920 matches story target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1370 mean=0.1057 colors=22831"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
     {
       "path": "posts/2026-10-03-ai-news-bulletin.jpg",
       "kind": "post",
       "role": "canonical",
       "status": "PASS",
-      "sha256": "5a86ebf8f1bdb402c68d6f68d78dac0b5cffc4fe2fb6cbc20efbc0a217da2ed2",
-      "size_bytes": 324067,
+      "sha256": "3f6d196eb0887b5c251708fed0dbd98ba2a3c2c340ee6b262488e60c035854ca",
+      "size_bytes": 190095,
       "dimensions": "1080x1350",
       "colorspace": "sRGB",
       "source_svg": "posts/2026-10-03-ai-news-bulletin.svg",
       "source_sha256": "23ced8b2b81d63588951a6913ec2c85b01d83738bc1fe561289613b3720209dc",
-      "renderer": "resvg-py",
-      "renderer_version": "resvg 0.48.1 (python binding)",
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
       "metrics": {
-        "gray_std": 0.17106,
-        "gray_mean": 0.10799,
-        "unique_colors": 24173,
+        "gray_std": 0.14119,
+        "gray_mean": 0.09256,
+        "unique_colors": 20459,
         "channel_means": [
-          0.06023,
-          0.12222,
-          0.10771
+          0.04419,
+          0.10666,
+          0.09534
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
         "jpeg_depth": 8
@@ -53,219 +266,7 @@
         {
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
-          "detail": "std=0.1711 mean=0.1080 colors=24173"
-        },
-        {
-          "status": "PASS",
-          "code": "MANIFEST_HASH",
-          "detail": "matches the recorded manifest hash"
-        }
-      ]
-    },
-    {
-      "path": "stories/2026-09-14/story01-ai-photo-editing.jpg",
-      "kind": "story",
-      "role": "canonical",
-      "status": "PASS",
-      "sha256": "4ba31035515a65c0acdb1946bed0b9c1d7adea72841dc2c20c6fc77f196dff95",
-      "size_bytes": 346172,
-      "dimensions": "1080x1920",
-      "colorspace": "sRGB",
-      "source_svg": "stories/2026-09-14/story01-ai-photo-editing.svg",
-      "source_sha256": "7d8560052ff3da46866541a068707e29a56010a1c7c9d3e00fabfb224511d55c",
-      "renderer": "resvg-py",
-      "renderer_version": "resvg 0.48.1 (python binding)",
-      "metrics": {
-        "gray_std": 0.14277,
-        "gray_mean": 0.14802,
-        "unique_colors": 27503,
-        "channel_means": [
-          0.06416,
-          0.17319,
-          0.14582
-        ],
-        "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
-      },
-      "checks": [
-        {
-          "status": "PASS",
-          "code": "DIMENSIONS",
-          "detail": "1080x1920 matches story target"
-        },
-        {
-          "status": "PASS",
-          "code": "COLORSPACE",
-          "detail": "sRGB"
-        },
-        {
-          "status": "PASS",
-          "code": "CHROMA_SUBSAMPLING",
-          "detail": "4:4:4"
-        },
-        {
-          "status": "PASS",
-          "code": "VISUAL_INTEGRITY",
-          "detail": "std=0.1428 mean=0.1480 colors=27503"
-        },
-        {
-          "status": "PASS",
-          "code": "MANIFEST_HASH",
-          "detail": "matches the recorded manifest hash"
-        }
-      ]
-    },
-    {
-      "path": "stories/2026-09-18/01-ai-photo-editing-prompts.jpg",
-      "kind": "story",
-      "role": "canonical",
-      "status": "PASS",
-      "sha256": "f081f55014da983b09b82bb5a5c233b16b50f0e36ae9e327512b78f5a8370f94",
-      "size_bytes": 274186,
-      "dimensions": "1080x1920",
-      "colorspace": "sRGB",
-      "source_svg": "stories/2026-09-18/01-ai-photo-editing-prompts.svg",
-      "source_sha256": "774ba4e90e6e241f332e80a6e38183a8ce32a9eb676e512b200bcade986374cd",
-      "renderer": "resvg-py",
-      "renderer_version": "resvg 0.48.1 (python binding)",
-      "metrics": {
-        "gray_std": 0.11996,
-        "gray_mean": 0.13187,
-        "unique_colors": 18300,
-        "channel_means": [
-          0.05097,
-          0.15615,
-          0.12975
-        ],
-        "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
-      },
-      "checks": [
-        {
-          "status": "PASS",
-          "code": "DIMENSIONS",
-          "detail": "1080x1920 matches story target"
-        },
-        {
-          "status": "PASS",
-          "code": "COLORSPACE",
-          "detail": "sRGB"
-        },
-        {
-          "status": "PASS",
-          "code": "CHROMA_SUBSAMPLING",
-          "detail": "4:4:4"
-        },
-        {
-          "status": "PASS",
-          "code": "VISUAL_INTEGRITY",
-          "detail": "std=0.1200 mean=0.1319 colors=18300"
-        },
-        {
-          "status": "PASS",
-          "code": "MANIFEST_HASH",
-          "detail": "matches the recorded manifest hash"
-        }
-      ]
-    },
-    {
-      "path": "stories/2026-10-02/01-ai-agent-prompt.jpg",
-      "kind": "story",
-      "role": "canonical",
-      "status": "PASS",
-      "sha256": "f81d3a0d7135deacd39d61ce370e9049a5f6b03cf07e602c3a4e58afd14717c1",
-      "size_bytes": 300835,
-      "dimensions": "1080x1920",
-      "colorspace": "sRGB",
-      "source_svg": "stories/2026-10-02/01-ai-agent-prompt.svg",
-      "source_sha256": "f7f973c348701abf7970806f0be9ce95ff0a2b4213e5c89f98228b6b04c67251",
-      "renderer": "resvg-py",
-      "renderer_version": "resvg 0.48.1 (python binding)",
-      "metrics": {
-        "gray_std": 0.14202,
-        "gray_mean": 0.10868,
-        "unique_colors": 23186,
-        "channel_means": [
-          0.056,
-          0.12493,
-          0.10279
-        ],
-        "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
-      },
-      "checks": [
-        {
-          "status": "PASS",
-          "code": "DIMENSIONS",
-          "detail": "1080x1920 matches story target"
-        },
-        {
-          "status": "PASS",
-          "code": "COLORSPACE",
-          "detail": "sRGB"
-        },
-        {
-          "status": "PASS",
-          "code": "CHROMA_SUBSAMPLING",
-          "detail": "4:4:4"
-        },
-        {
-          "status": "PASS",
-          "code": "VISUAL_INTEGRITY",
-          "detail": "std=0.1420 mean=0.1087 colors=23186"
-        },
-        {
-          "status": "PASS",
-          "code": "MANIFEST_HASH",
-          "detail": "matches the recorded manifest hash"
-        }
-      ]
-    },
-    {
-      "path": "stories/2026-10-03/01-guided-vision-story.jpg",
-      "kind": "story",
-      "role": "canonical",
-      "status": "PASS",
-      "sha256": "45013b2d7aeb08dd3119424db4124aecdfe637289dfaf9aafdbacecb0ac16cc7",
-      "size_bytes": 267516,
-      "dimensions": "1080x1920",
-      "colorspace": "sRGB",
-      "source_svg": "stories/2026-10-03/01-guided-vision-story.svg",
-      "source_sha256": "a5d9054de7daa5f57c609df9c91aa9401ef3f670a7a0a908e799b21620e0828b",
-      "renderer": "resvg-py",
-      "renderer_version": "resvg 0.48.1 (python binding)",
-      "metrics": {
-        "gray_std": 0.13719,
-        "gray_mean": 0.10581,
-        "unique_colors": 21242,
-        "channel_means": [
-          0.05561,
-          0.12128,
-          0.10039
-        ],
-        "jpeg_sampling": "1x1,1x1,1x1",
-        "jpeg_depth": 8
-      },
-      "checks": [
-        {
-          "status": "PASS",
-          "code": "DIMENSIONS",
-          "detail": "1080x1920 matches story target"
-        },
-        {
-          "status": "PASS",
-          "code": "COLORSPACE",
-          "detail": "sRGB"
-        },
-        {
-          "status": "PASS",
-          "code": "CHROMA_SUBSAMPLING",
-          "detail": "4:4:4"
-        },
-        {
-          "status": "PASS",
-          "code": "VISUAL_INTEGRITY",
-          "detail": "std=0.1372 mean=0.1058 colors=21242"
+          "detail": "std=0.1412 mean=0.0926 colors=20459"
         },
         {
           "status": "PASS",
@@ -301,42 +302,5 @@
       ]
     }
   ],
-  "sources": [
-    {
-      "path": "posts/2026-10-03-ai-news-bulletin.svg",
-      "status": "PASS",
-      "dimensions": "1080x1350",
-      "findings": []
-    },
-    {
-      "path": "stories/2026-09-14/story01-ai-photo-editing.svg",
-      "status": "PASS",
-      "dimensions": "1080x1920",
-      "findings": [
-        {
-          "level": "warn",
-          "code": "FONT_GLYPH_FALLBACK",
-          "message": "3 character(s) rely on font fallback ('←☀✓'); install the primary font to keep rendering stable"
-        }
-      ]
-    },
-    {
-      "path": "stories/2026-09-18/01-ai-photo-editing-prompts.svg",
-      "status": "PASS",
-      "dimensions": "1080x1920",
-      "findings": []
-    },
-    {
-      "path": "stories/2026-10-02/01-ai-agent-prompt.svg",
-      "status": "PASS",
-      "dimensions": "1080x1920",
-      "findings": []
-    },
-    {
-      "path": "stories/2026-10-03/01-guided-vision-story.svg",
-      "status": "PASS",
-      "dimensions": "1080x1920",
-      "findings": []
-    }
-  ]
+  "sources": []
 }

@@ -111,3 +111,33 @@
 | `stories/2026-10-02/01-ai-agent-prompt.jpg` | story | 1080x1920 | 294 KB | sRGB | `stories/2026-10-02/01-ai-agent-prompt.svg` | `f81d3a0d7135deac…` | PASS |
 | `stories/2026-10-03/01-guided-vision-story.jpg` | story | 1080x1920 | 261 KB | sRGB | `stories/2026-10-03/01-guided-vision-story.svg` | `45013b2d7aeb08dd…` | PASS |
 | `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |
+
+## Validation run 2026-10-03T22:21:58Z
+
+- run: `37158086038` commit: `6a0be954256d2587ce2e5f126e065d1794c8c9ae`
+- renderer: `rsvg-convert` imagemagick: `Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org`
+- **FINAL STATUS: PASS**
+
+| asset | kind | dimensions | size | colorspace | source | sha256 | result |
+|---|---|---|---|---|---|---|---|
+| `stories/2026-09-14/story01-ai-photo-editing.jpg` | story | 1080x1920 | 336 KB | sRGB | `stories/2026-09-14/story01-ai-photo-editing.svg` | `c1ea0a3766133c4f…` | PASS |
+| `stories/2026-09-18/01-ai-photo-editing-prompts.jpg` | story | 1080x1920 | 266 KB | sRGB | `stories/2026-09-18/01-ai-photo-editing-prompts.svg` | `bea3bda179bffb71…` | PASS |
+| `stories/2026-10-02/01-ai-agent-prompt.jpg` | story | 1080x1920 | 291 KB | sRGB | `stories/2026-10-02/01-ai-agent-prompt.svg` | `0c7811fb09fa1949…` | PASS |
+| `stories/2026-10-03/01-guided-vision-story.jpg` | story | 1080x1920 | 259 KB | sRGB | `stories/2026-10-03/01-guided-vision-story.svg` | `c3791346987bac38…` | PASS |
+| `posts/2026-10-03-ai-news-bulletin.jpg` | post | 1080x1350 | 186 KB | sRGB | `posts/2026-10-03-ai-news-bulletin.svg` | `3f6d196eb0887b5c…` | PASS |
+| `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |
+
+## Validation run 2026-10-03T22:22:03Z
+
+- run: `37158086038` commit: `6a0be954256d2587ce2e5f126e065d1794c8c9ae`
+- renderer: `rsvg-convert` imagemagick: `Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org`
+- **FINAL STATUS: PASS**
+
+| asset | kind | dimensions | size | colorspace | source | sha256 | result |
+|---|---|---|---|---|---|---|---|
+| `stories/2026-09-14/story01-ai-photo-editing.jpg` | story | 1080x1920 | 336 KB | sRGB | `stories/2026-09-14/story01-ai-photo-editing.svg` | `c1ea0a3766133c4f…` | PASS |
+| `stories/2026-09-18/01-ai-photo-editing-prompts.jpg` | story | 1080x1920 | 266 KB | sRGB | `stories/2026-09-18/01-ai-photo-editing-prompts.svg` | `bea3bda179bffb71…` | PASS |
+| `stories/2026-10-02/01-ai-agent-prompt.jpg` | story | 1080x1920 | 291 KB | sRGB | `stories/2026-10-02/01-ai-agent-prompt.svg` | `0c7811fb09fa1949…` | PASS |
+| `stories/2026-10-03/01-guided-vision-story.jpg` | story | 1080x1920 | 259 KB | sRGB | `stories/2026-10-03/01-guided-vision-story.svg` | `c3791346987bac38…` | PASS |
+| `posts/2026-10-03-ai-news-bulletin.jpg` | post | 1080x1350 | 186 KB | sRGB | `posts/2026-10-03-ai-news-bulletin.svg` | `3f6d196eb0887b5c…` | PASS |
+| `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |
