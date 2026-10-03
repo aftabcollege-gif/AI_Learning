@@ -1,0 +1,14 @@
+{
+  "_comment": "Example shape of the receipts the publishing integration must supply as reports/publish-receipts.json. A successful upload call is not accepted as proof: the sha256 must match the validated asset, and media_id must be present.",
+  "receipts": [
+    {
+      "asset": "stories/2026-10-03/01-guided-vision-story.jpg",
+      "sha256": "45013b2d7aeb08dd3119424db4124aecdfe637289dfaf9aafdbacecb0ac16cc7",
+      "publisher": "metricool",
+      "media_id": "17900000000000000",
+      "status": "published",
+      "published_at": "2026-10-03T08:00:00Z",
+      "permalink": "https://www.instagram.com/stories/example/17900000000000000/"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050807"/><stop offset=".45" stop-color="#0a1f1a"/><stop offset="1" stop-color="#020303"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7d47a"/><stop offset="1" stop-color="#b98424"/></linearGradient>
+  <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#00d6a3"/><stop offset="1" stop-color="#075c4b"/></linearGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<circle cx="900" cy="300" r="220" fill="#063a32" opacity=".45"/>
+<circle cx="160" cy="1500" r="190" fill="#260f2c" opacity=".32"/>
+<g font-family="Vazirmatn, 'Noto Naskh Arabic', 'Noto Sans Arabic', Tahoma, DejaVu Sans, sans-serif">
+<text x="540" y="152" text-anchor="middle" fill="#66e6bf" font-size="34" font-weight="700" letter-spacing="2">AI AGENT PROMPT</text>
+<text x="540" y="248" text-anchor="middle" fill="#ffffff" font-size="54" font-weight="700">چهار بخش پرامپت عامل هوشمند</text>
+<text x="540" y="308" text-anchor="middle" fill="#d8e6e1" font-size="26">اگر این چهار بخش را بنویسی، خروجی دقیقاً همان می‌شود که می‌خواهی</text>
+<rect x="70" y="352" width="940" height="86" rx="20" fill="#061611" stroke="#35d0a0" stroke-width="2"/>
+<text x="540" y="407" text-anchor="middle" fill="#f6d06b" font-size="26" font-weight="700" direction="ltr" xml:space="preserve">Goal: [task] | Context: [data] | Constraints: [rules] | Output: [format]</text>
+<rect x="70" y="480" width="940" height="180" rx="30" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+<circle cx="152" cy="570" r="46" fill="url(#emerald)"/>
+<text x="152" y="584" text-anchor="middle" fill="#04231c" font-size="40" font-weight="700">۱</text>
+<text x="232" y="558" text-anchor="start" fill="#f6d87d" font-size="40" font-weight="700">Goal · هدف</text>
+<text x="232" y="606" text-anchor="start" fill="#cfe6e0" font-size="23">چه کاری باید انجام شود؟ نتیجه نهایی را دقیق بنویس.</text>
+<rect x="70" y="680" width="940" height="180" rx="30" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+<circle cx="152" cy="770" r="46" fill="url(#emerald)"/>
+<text x="152" y="784" text-anchor="middle" fill="#04231c" font-size="40" font-weight="700">۲</text>
+<text x="232" y="758" text-anchor="start" fill="#f6d87d" font-size="40" font-weight="700">Context · زمینه</text>
+<text x="232" y="806" text-anchor="start" fill="#cfe6e0" font-size="23">چه داده، فایل و اطلاعاتی در اختیار عامل است؟</text>
+<rect x="70" y="880" width="940" height="180" rx="30" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+<circle cx="152" cy="970" r="46" fill="url(#emerald)"/>
+<text x="152" y="984" text-anchor="middle" fill="#04231c" font-size="40" font-weight="700">۳</text>
+<text x="232" y="958" text-anchor="start" fill="#f6d87d" font-size="40" font-weight="700">Constraints · محدودیت‌ها</text>
+<text x="232" y="1006" text-anchor="start" fill="#cfe6e0" font-size="23">قواعد، مرزها و مجوزهای کار را مشخص کن.</text>
+<rect x="70" y="1080" width="940" height="180" rx="30" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+<circle cx="152" cy="1170" r="46" fill="url(#emerald)"/>
+<text x="152" y="1184" text-anchor="middle" fill="#04231c" font-size="40" font-weight="700">۴</text>
+<text x="232" y="1158" text-anchor="start" fill="#f6d87d" font-size="40" font-weight="700">Output · خروجی</text>
+<text x="232" y="1206" text-anchor="start" fill="#cfe6e0" font-size="23">قالب دقیق و معیار پذیرش نتیجه را تعیین کن.</text>
+<rect x="70" y="1310" width="940" height="270" rx="34" fill="#102d20" stroke="url(#gold)" stroke-width="3"/>
+<text x="540" y="1374" text-anchor="middle" fill="#f6d06b" font-size="30" font-weight="700">نکته حرفه‌ای</text>
+<text x="540" y="1436" text-anchor="middle" fill="#ffffff" font-size="27">قبل از نهایی‌سازی، خروجی را با محدودیت‌ها بسنج</text>
+<text x="540" y="1478" text-anchor="middle" fill="#ffffff" font-size="27">و هر بخش نامطمئن را فهرست کن.</text>
+<text x="540" y="1528" text-anchor="middle" fill="#9fd8c8" font-size="20">همین یک جمله، کیفیت خروجی را چند برابر می‌کند</text>
+<text x="540" y="1750" text-anchor="middle" fill="#f6d06b" font-size="30" font-weight="700">AI_Learning</text>
+<text x="540" y="1794" text-anchor="middle" fill="#91a8a1" font-size="19">آموزش کاربردی هوش مصنوعی</text>
+</g>
+</svg>

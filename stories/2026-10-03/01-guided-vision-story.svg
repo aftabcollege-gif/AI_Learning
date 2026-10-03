@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050807"/><stop offset=".45" stop-color="#081c18"/><stop offset="1" stop-color="#020303"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7d47a"/><stop offset="1" stop-color="#b98424"/></linearGradient>
+  <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#00d6a3"/><stop offset="1" stop-color="#075c4b"/></linearGradient>
+  <linearGradient id="ruby" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b3244c"/><stop offset="1" stop-color="#5c0f28"/></linearGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<circle cx="180" cy="260" r="200" fill="#063a32" opacity=".5"/>
+<circle cx="900" cy="780" r="170" fill="#260f2c" opacity=".3"/>
+<g font-family="Vazirmatn, 'Noto Naskh Arabic', 'Noto Sans Arabic', Tahoma, DejaVu Sans, sans-serif">
+<text x="540" y="150" text-anchor="middle" fill="#66e6bf" font-size="34" font-weight="700" letter-spacing="2">GUIDED VISION</text>
+<text x="540" y="244" text-anchor="middle" fill="#ffffff" font-size="58" font-weight="700">دوربین را بگیر، بپرس، بشنو</text>
+<text x="540" y="304" text-anchor="middle" fill="#d8e6e1" font-size="28">توضیح زنده متن و اشیا با دوربین موبایل در Gemini</text>
+<rect x="90" y="344" width="900" height="3" fill="url(#gold)"/>
+<rect x="70" y="410" width="940" height="150" rx="30" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+<circle cx="150" cy="485" r="44" fill="url(#emerald)"/>
+<text x="150" y="500" text-anchor="middle" fill="#ffffff" font-size="40" font-weight="700">۱</text>
+<text x="230" y="478" text-anchor="start" fill="#f6d87d" font-size="42" font-weight="700">Gemini</text>
+<text x="230" y="522" text-anchor="start" fill="#cfe6e0" font-size="24">اپلیکیشن Gemini را باز کن</text>
+<rect x="70" y="580" width="940" height="150" rx="30" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+<circle cx="150" cy="655" r="44" fill="url(#ruby)"/>
+<text x="150" y="670" text-anchor="middle" fill="#ffffff" font-size="40" font-weight="700">۲</text>
+<text x="230" y="648" text-anchor="start" fill="#f6d87d" font-size="42" font-weight="700">Live</text>
+<text x="230" y="692" text-anchor="start" fill="#cfe6e0" font-size="24">حالت زنده را روشن کن</text>
+<rect x="70" y="750" width="940" height="150" rx="30" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+<circle cx="150" cy="825" r="44" fill="url(#emerald)"/>
+<text x="150" y="840" text-anchor="middle" fill="#ffffff" font-size="40" font-weight="700">۳</text>
+<text x="230" y="818" text-anchor="start" fill="#f6d87d" font-size="42" font-weight="700">Guided Vision</text>
+<text x="230" y="862" text-anchor="start" fill="#cfe6e0" font-size="24">دوربین را روی متن یا شیء بگیر</text>
+<rect x="70" y="920" width="940" height="150" rx="30" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+<circle cx="150" cy="995" r="44" fill="url(#ruby)"/>
+<text x="150" y="1010" text-anchor="middle" fill="#ffffff" font-size="40" font-weight="700">۴</text>
+<text x="230" y="988" text-anchor="start" fill="#f6d87d" font-size="42" font-weight="700">سؤال تکمیلی</text>
+<text x="230" y="1032" text-anchor="start" fill="#cfe6e0" font-size="24">پاسخ کوتاه و دقیق بگیر</text>
+<rect x="70" y="1100" width="940" height="300" rx="36" fill="#102d20" stroke="url(#gold)" stroke-width="4"/>
+<text x="540" y="1162" text-anchor="middle" fill="#f6d06b" font-size="30" font-weight="700">پرامپت پیشنهادی</text>
+<text x="540" y="1222" text-anchor="middle" fill="#ffffff" font-size="27">«این چیزی که می‌بینید را در ۳ نکته کوتاه توضیح بده و اگر</text>
+<text x="540" y="1264" text-anchor="middle" fill="#ffffff" font-size="27">متنی دارد آن را بخوان.»</text>
+<text x="540" y="1362" text-anchor="middle" fill="#9fd8c8" font-size="20">همین پرامپت را می‌توانی کپی کنی</text>
+<rect x="70" y="1450" width="940" height="150" rx="30" fill="#061611" stroke="#35d0a0" stroke-width="2"/>
+<text x="540" y="1512" text-anchor="middle" fill="#ffffff" font-size="31" font-weight="700">استوری بعدی: مقایسه سه ابزار ویرایش عکس</text>
+<text x="540" y="1560" text-anchor="middle" fill="#66e6bf" font-size="23">مثال عملی، با همان پرامپت‌ها</text>
+<text x="540" y="1750" text-anchor="middle" fill="#f6d06b" font-size="30" font-weight="700">AI_Learning</text>
+<text x="540" y="1794" text-anchor="middle" fill="#91a8a1" font-size="19">آموزش کاربردی هوش مصنوعی</text>
+</g>
+</svg>

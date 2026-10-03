@@ -1,0 +1,336 @@
+{
+  "generated_at": "2026-10-03T22:13:10Z",
+  "run_id": "",
+  "commit_sha": "",
+  "status": "PASS",
+  "renderer": "convert",
+  "renderers": {
+    "convert": "Version: ImageMagick 6.9.11-60 Q16 x86_64 2021-01-25 https://imagemagick.org"
+  },
+  "imagemagick": "Version: ImageMagick 6.9.11-60 Q16 x86_64 2021-01-25 https://imagemagick.org",
+  "assets": [
+    {
+      "path": "posts/2026-10-03-ai-news-bulletin.jpg",
+      "kind": "post",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "5a86ebf8f1bdb402c68d6f68d78dac0b5cffc4fe2fb6cbc20efbc0a217da2ed2",
+      "size_bytes": 324067,
+      "dimensions": "1080x1350",
+      "colorspace": "sRGB",
+      "source_svg": "posts/2026-10-03-ai-news-bulletin.svg",
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "metrics": {
+        "gray_std": 0.17106,
+        "gray_mean": 0.10799,
+        "unique_colors": 24173,
+        "channel_means": [
+          0.06023,
+          0.12222,
+          0.10771
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1350 matches post target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1711 mean=0.1080 colors=24173"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "stories/2026-09-14/story01-ai-photo-editing.jpg",
+      "kind": "story",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "4ba31035515a65c0acdb1946bed0b9c1d7adea72841dc2c20c6fc77f196dff95",
+      "size_bytes": 346172,
+      "dimensions": "1080x1920",
+      "colorspace": "sRGB",
+      "source_svg": "stories/2026-09-14/story01-ai-photo-editing.svg",
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "metrics": {
+        "gray_std": 0.14277,
+        "gray_mean": 0.14802,
+        "unique_colors": 27503,
+        "channel_means": [
+          0.06416,
+          0.17319,
+          0.14582
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1920 matches story target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1428 mean=0.1480 colors=27503"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "stories/2026-09-18/01-ai-photo-editing-prompts.jpg",
+      "kind": "story",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "f081f55014da983b09b82bb5a5c233b16b50f0e36ae9e327512b78f5a8370f94",
+      "size_bytes": 274186,
+      "dimensions": "1080x1920",
+      "colorspace": "sRGB",
+      "source_svg": "stories/2026-09-18/01-ai-photo-editing-prompts.svg",
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "metrics": {
+        "gray_std": 0.11996,
+        "gray_mean": 0.13187,
+        "unique_colors": 18300,
+        "channel_means": [
+          0.05097,
+          0.15615,
+          0.12975
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1920 matches story target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1200 mean=0.1319 colors=18300"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "stories/2026-10-02/01-ai-agent-prompt.jpg",
+      "kind": "story",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "f81d3a0d7135deacd39d61ce370e9049a5f6b03cf07e602c3a4e58afd14717c1",
+      "size_bytes": 300835,
+      "dimensions": "1080x1920",
+      "colorspace": "sRGB",
+      "source_svg": "stories/2026-10-02/01-ai-agent-prompt.svg",
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "metrics": {
+        "gray_std": 0.14202,
+        "gray_mean": 0.10868,
+        "unique_colors": 23186,
+        "channel_means": [
+          0.056,
+          0.12493,
+          0.10279
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1920 matches story target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1420 mean=0.1087 colors=23186"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "stories/2026-10-03/01-guided-vision-story.jpg",
+      "kind": "story",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "45013b2d7aeb08dd3119424db4124aecdfe637289dfaf9aafdbacecb0ac16cc7",
+      "size_bytes": 267516,
+      "dimensions": "1080x1920",
+      "colorspace": "sRGB",
+      "source_svg": "stories/2026-10-03/01-guided-vision-story.svg",
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "metrics": {
+        "gray_std": 0.13719,
+        "gray_mean": 0.10581,
+        "unique_colors": 21242,
+        "channel_means": [
+          0.05561,
+          0.12128,
+          0.10039
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1920 matches story target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1372 mean=0.1058 colors=21242"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "stories/2026-09-14/story01-ai-photo-editing.png",
+      "kind": "story",
+      "role": "legacy",
+      "status": "PASS",
+      "sha256": "bb6ce5520ca13faf50a0979faeeb62028d5996c45c87bf6e9d86611fb9150a59",
+      "size_bytes": 285325,
+      "dimensions": "1080x1920",
+      "colorspace": "sRGB",
+      "source_svg": null,
+      "renderer": null,
+      "renderer_version": "",
+      "metrics": {
+        "gray_std": 0.15364,
+        "gray_mean": 0.1522,
+        "unique_colors": 9125
+      },
+      "checks": [
+        {
+          "status": "INFO",
+          "code": "LEGACY_ASSET",
+          "detail": "valid PNG retained for backwards compatibility; publishing uses the canonical JPEG"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "posts/2026-10-03-ai-news-bulletin.svg",
+      "status": "PASS",
+      "dimensions": "1080x1350",
+      "findings": []
+    },
+    {
+      "path": "stories/2026-09-14/story01-ai-photo-editing.svg",
+      "status": "PASS",
+      "dimensions": "1080x1920",
+      "findings": [
+        {
+          "level": "warn",
+          "code": "FONT_GLYPH_FALLBACK",
+          "message": "3 character(s) rely on font fallback ('←☀✓'); install the primary font to keep rendering stable"
+        }
+      ]
+    },
+    {
+      "path": "stories/2026-09-18/01-ai-photo-editing-prompts.svg",
+      "status": "PASS",
+      "dimensions": "1080x1920",
+      "findings": []
+    },
+    {
+      "path": "stories/2026-10-02/01-ai-agent-prompt.svg",
+      "status": "PASS",
+      "dimensions": "1080x1920",
+      "findings": []
+    },
+    {
+      "path": "stories/2026-10-03/01-guided-vision-story.svg",
+      "status": "PASS",
+      "dimensions": "1080x1920",
+      "findings": []
+    }
+  ]
+}

@@ -1,4 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536">
-  <title>AI Photo Editing Prompts — Instagram Story</title>
-  <image href="https://static.metricool.com/planner/202609/6943078-file-9724431711933430352.jpeg" x="0" y="0" width="1024" height="1536" preserveAspectRatio="xMidYMid slice"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#061a16"/><stop offset=".5" stop-color="#0a2b23"/><stop offset="1" stop-color="#020806"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f6d06b"/><stop offset="1" stop-color="#b98424"/></linearGradient>
+  <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#00d6a3"/><stop offset="1" stop-color="#0a5f4d"/></linearGradient>
+</defs>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<circle cx="880" cy="230" r="210" fill="#063a32" opacity=".45"/>
+<circle cx="150" cy="1330" r="180" fill="#260f2c" opacity=".35"/>
+<g font-family="Vazirmatn, 'Noto Naskh Arabic', 'Noto Sans Arabic', Tahoma, DejaVu Sans, sans-serif">
+<text x="540" y="168" text-anchor="middle" fill="#66e6bf" font-size="34" font-weight="700" letter-spacing="2">AI PHOTO EDITING</text>
+<text x="540" y="256" text-anchor="middle" fill="#ffffff" font-size="46" font-weight="700">۹ پرامپت ویرایش عکس با هوش مصنوعی</text>
+<text x="540" y="316" text-anchor="middle" fill="#d8e6e1" font-size="30">فقط کافی است هویت چهره را حفظ کنی</text>
+<rect x="90" y="352" width="900" height="3" fill="url(#gold)"/>
+<rect x="50" y="400" width="310" height="300" rx="26" fill="#071f1a" stroke="#1c7a63" stroke-width="2"/>
+<circle cx="96" cy="450" r="26" fill="url(#emerald)"/>
+<text x="96" y="460" text-anchor="middle" fill="#04231c" font-size="26" font-weight="700">۱</text>
+<text x="74" y="518" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">اصلاح</text>
+<text x="74" y="552" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">نور و رنگ</text>
+<text x="74" y="596" text-anchor="start" fill="#9fd8c8" font-size="20">روشن‌تر و گرم‌تر، بدون</text>
+<text x="74" y="624" text-anchor="start" fill="#9fd8c8" font-size="20">تغییر چهره</text>
+<rect x="74" y="674" width="60" height="3" fill="url(#gold)"/>
+<rect x="380" y="400" width="310" height="300" rx="26" fill="#071f1a" stroke="#1c7a63" stroke-width="2"/>
+<circle cx="426" cy="450" r="26" fill="url(#emerald)"/>
+<text x="426" y="460" text-anchor="middle" fill="#04231c" font-size="26" font-weight="700">۲</text>
+<text x="404" y="518" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">تغییر زاویه</text>
+<text x="404" y="552" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">دوربین</text>
+<text x="404" y="596" text-anchor="start" fill="#9fd8c8" font-size="20">نمای نیم‌رخ یا کنار، حفظ</text>
+<text x="404" y="624" text-anchor="start" fill="#9fd8c8" font-size="20">هویت</text>
+<rect x="404" y="674" width="60" height="3" fill="url(#gold)"/>
+<rect x="710" y="400" width="310" height="300" rx="26" fill="#071f1a" stroke="#1c7a63" stroke-width="2"/>
+<circle cx="756" cy="450" r="26" fill="url(#emerald)"/>
+<text x="756" y="460" text-anchor="middle" fill="#04231c" font-size="26" font-weight="700">۳</text>
+<text x="734" y="518" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">تغییر</text>
+<text x="734" y="552" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">لباس</text>
+<text x="734" y="596" text-anchor="start" fill="#9fd8c8" font-size="20">لباس جدید، همان چهره و مو</text>
+<rect x="734" y="674" width="60" height="3" fill="url(#gold)"/>
+<rect x="50" y="720" width="310" height="300" rx="26" fill="#071f1a" stroke="#1c7a63" stroke-width="2"/>
+<circle cx="96" cy="770" r="26" fill="url(#emerald)"/>
+<text x="96" y="780" text-anchor="middle" fill="#04231c" font-size="26" font-weight="700">۴</text>
+<text x="74" y="838" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">جزئیات</text>
+<text x="74" y="872" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">صورت</text>
+<text x="74" y="916" text-anchor="start" fill="#9fd8c8" font-size="20">عینک یا ریش، طبیعی و</text>
+<text x="74" y="944" text-anchor="start" fill="#9fd8c8" font-size="20">واقعی</text>
+<rect x="74" y="994" width="60" height="3" fill="url(#gold)"/>
+<rect x="380" y="720" width="310" height="300" rx="26" fill="#071f1a" stroke="#1c7a63" stroke-width="2"/>
+<circle cx="426" cy="770" r="26" fill="url(#emerald)"/>
+<text x="426" y="780" text-anchor="middle" fill="#04231c" font-size="26" font-weight="700">۵</text>
+<text x="404" y="838" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">کارتونی</text>
+<text x="404" y="872" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">کردن</text>
+<text x="404" y="916" text-anchor="start" fill="#9fd8c8" font-size="20">تبدیل به تصویرسازی</text>
+<text x="404" y="944" text-anchor="start" fill="#9fd8c8" font-size="20">حرفه‌ای</text>
+<rect x="404" y="994" width="60" height="3" fill="url(#gold)"/>
+<rect x="710" y="720" width="310" height="300" rx="26" fill="#071f1a" stroke="#1c7a63" stroke-width="2"/>
+<circle cx="756" cy="770" r="26" fill="url(#emerald)"/>
+<text x="756" y="780" text-anchor="middle" fill="#04231c" font-size="26" font-weight="700">۶</text>
+<text x="734" y="838" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">تغییر</text>
+<text x="734" y="872" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">پس‌زمینه</text>
+<text x="734" y="916" text-anchor="start" fill="#9fd8c8" font-size="20">کوه یا فضای جدید، نور</text>
+<text x="734" y="944" text-anchor="start" fill="#9fd8c8" font-size="20">طبیعی</text>
+<rect x="734" y="994" width="60" height="3" fill="url(#gold)"/>
+<rect x="50" y="1040" width="310" height="300" rx="26" fill="#071f1a" stroke="#1c7a63" stroke-width="2"/>
+<circle cx="96" cy="1090" r="26" fill="url(#emerald)"/>
+<text x="96" y="1100" text-anchor="middle" fill="#04231c" font-size="26" font-weight="700">۷</text>
+<text x="74" y="1158" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">سیاه و</text>
+<text x="74" y="1192" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">سفید هنری</text>
+<text x="74" y="1236" text-anchor="start" fill="#9fd8c8" font-size="20">کنتراست بالا، حس</text>
+<text x="74" y="1264" text-anchor="start" fill="#9fd8c8" font-size="20">سینمایی</text>
+<rect x="74" y="1314" width="60" height="3" fill="url(#gold)"/>
+<rect x="380" y="1040" width="310" height="300" rx="26" fill="#071f1a" stroke="#1c7a63" stroke-width="2"/>
+<circle cx="426" cy="1090" r="26" fill="url(#emerald)"/>
+<text x="426" y="1100" text-anchor="middle" fill="#04231c" font-size="26" font-weight="700">۸</text>
+<text x="404" y="1158" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">افزودن</text>
+<text x="404" y="1192" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">جزئیات</text>
+<text x="404" y="1236" text-anchor="start" fill="#9fd8c8" font-size="20">میز، لپ‌تاپ یا دفتر در کادر</text>
+<rect x="404" y="1314" width="60" height="3" fill="url(#gold)"/>
+<rect x="710" y="1040" width="310" height="300" rx="26" fill="#071f1a" stroke="#1c7a63" stroke-width="2"/>
+<circle cx="756" cy="1090" r="26" fill="url(#emerald)"/>
+<text x="756" y="1100" text-anchor="middle" fill="#04231c" font-size="26" font-weight="700">۹</text>
+<text x="734" y="1158" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">تغییر</text>
+<text x="734" y="1192" text-anchor="start" fill="#ffffff" font-size="26" font-weight="700">استایل کلی</text>
+<text x="734" y="1236" text-anchor="start" fill="#9fd8c8" font-size="20">سینمایی، دراماتیک، شهری</text>
+<rect x="734" y="1314" width="60" height="3" fill="url(#gold)"/>
+<rect x="70" y="1410" width="940" height="180" rx="34" fill="#102d20" stroke="url(#gold)" stroke-width="3"/>
+<text x="540" y="1472" text-anchor="middle" fill="#f6d06b" font-size="30" font-weight="700">قانون طلایی: در همه پرامپت‌ها بنویس</text>
+<text x="540" y="1526" text-anchor="middle" fill="#ffffff" font-size="26">«چهره و هویت را حفظ کن، فقط مورد درخواستی را تغییر بده»</text>
+<text x="540" y="1564" text-anchor="middle" fill="#9fd8c8" font-size="20">این یک قانون، همه ۹ پرامپت را حرفه‌ای می‌کند</text>
+<text x="540" y="1760" text-anchor="middle" fill="#f6d06b" font-size="30" font-weight="700">AI_Learning</text>
+<text x="540" y="1804" text-anchor="middle" fill="#91a8a1" font-size="19">آموزش کاربردی هوش مصنوعی</text>
+</g>
 </svg>

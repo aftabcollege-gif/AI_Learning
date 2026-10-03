@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-10-03T22:12:44Z",
+  "run_id": "",
+  "commit_sha": "",
+  "quality": 95,
+  "assets": {
+    "/home/user/AI_Learning/posts/2026-10-03-ai-news-bulletin.jpg": {
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "attempt": "retry 1: resvg-py (primary options)",
+      "quality": 95,
+      "output_sha256": "5a86ebf8f1bdb402c68d6f68d78dac0b5cffc4fe2fb6cbc20efbc0a217da2ed2",
+      "rendered_at": "2026-10-03T22:12:44Z"
+    },
+    "/home/user/AI_Learning/stories/2026-09-14/story01-ai-photo-editing.jpg": {
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "attempt": "retry 1: resvg-py (primary options)",
+      "quality": 95,
+      "output_sha256": "4ba31035515a65c0acdb1946bed0b9c1d7adea72841dc2c20c6fc77f196dff95",
+      "rendered_at": "2026-10-03T22:12:40Z"
+    },
+    "/home/user/AI_Learning/stories/2026-09-18/01-ai-photo-editing-prompts.jpg": {
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "attempt": "retry 1: resvg-py (primary options)",
+      "quality": 95,
+      "output_sha256": "f081f55014da983b09b82bb5a5c233b16b50f0e36ae9e327512b78f5a8370f94",
+      "rendered_at": "2026-10-03T22:12:41Z"
+    },
+    "/home/user/AI_Learning/stories/2026-10-02/01-ai-agent-prompt.jpg": {
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "attempt": "retry 1: resvg-py (primary options)",
+      "quality": 95,
+      "output_sha256": "f81d3a0d7135deacd39d61ce370e9049a5f6b03cf07e602c3a4e58afd14717c1",
+      "rendered_at": "2026-10-03T22:12:42Z"
+    },
+    "/home/user/AI_Learning/stories/2026-10-03/01-guided-vision-story.jpg": {
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "attempt": "retry 1: resvg-py (primary options)",
+      "quality": 95,
+      "output_sha256": "45013b2d7aeb08dd3119424db4124aecdfe637289dfaf9aafdbacecb0ac16cc7",
+      "rendered_at": "2026-10-03T22:12:43Z"
+    }
+  }
+}

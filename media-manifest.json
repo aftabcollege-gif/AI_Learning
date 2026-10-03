@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "generated_at": "2026-10-03T22:13:10Z",
+  "run_id": "",
+  "commit_sha": "",
+  "renderer": "resvg-py",
+  "preferred_renderer": "convert",
+  "image_magick": "Version: ImageMagick 6.9.11-60 Q16 x86_64 2021-01-25 https://imagemagick.org",
+  "gate_status": "PASS",
+  "policy": {
+    "story": "1080x1920",
+    "post": "1080x1350",
+    "format": "JPEG",
+    "colorspace": "sRGB",
+    "chroma": "4:4:4",
+    "max_bytes": 8388608
+  },
+  "assets": {
+    "posts/2026-10-03-ai-news-bulletin.jpg": {
+      "kind": "post",
+      "role": "final",
+      "dimensions": "1080x1350",
+      "size_bytes": 324067,
+      "sha256": "5a86ebf8f1bdb402c68d6f68d78dac0b5cffc4fe2fb6cbc20efbc0a217da2ed2",
+      "colorspace": "sRGB",
+      "sampling_factor": "1x1,1x1,1x1",
+      "source_svg": "posts/2026-10-03-ai-news-bulletin.svg",
+      "metrics": {
+        "gray_std": 0.17106,
+        "gray_mean": 0.10799,
+        "unique_colors": 24173,
+        "channel_means": [
+          0.06023,
+          0.12222,
+          0.10771
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "validated_at": "2026-10-03T22:13:10Z",
+      "run_id": "",
+      "commit_sha": "",
+      "validated_status": "PASS"
+    },
+    "stories/2026-09-14/story01-ai-photo-editing.jpg": {
+      "kind": "story",
+      "role": "final",
+      "dimensions": "1080x1920",
+      "size_bytes": 346172,
+      "sha256": "4ba31035515a65c0acdb1946bed0b9c1d7adea72841dc2c20c6fc77f196dff95",
+      "colorspace": "sRGB",
+      "sampling_factor": "1x1,1x1,1x1",
+      "source_svg": "stories/2026-09-14/story01-ai-photo-editing.svg",
+      "metrics": {
+        "gray_std": 0.14277,
+        "gray_mean": 0.14802,
+        "unique_colors": 27503,
+        "channel_means": [
+          0.06416,
+          0.17319,
+          0.14582
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "validated_at": "2026-10-03T22:13:10Z",
+      "run_id": "",
+      "commit_sha": "",
+      "validated_status": "PASS"
+    },
+    "stories/2026-09-18/01-ai-photo-editing-prompts.jpg": {
+      "kind": "story",
+      "role": "final",
+      "dimensions": "1080x1920",
+      "size_bytes": 274186,
+      "sha256": "f081f55014da983b09b82bb5a5c233b16b50f0e36ae9e327512b78f5a8370f94",
+      "colorspace": "sRGB",
+      "sampling_factor": "1x1,1x1,1x1",
+      "source_svg": "stories/2026-09-18/01-ai-photo-editing-prompts.svg",
+      "metrics": {
+        "gray_std": 0.11996,
+        "gray_mean": 0.13187,
+        "unique_colors": 18300,
+        "channel_means": [
+          0.05097,
+          0.15615,
+          0.12975
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "validated_at": "2026-10-03T22:13:10Z",
+      "run_id": "",
+      "commit_sha": "",
+      "validated_status": "PASS"
+    },
+    "stories/2026-10-02/01-ai-agent-prompt.jpg": {
+      "kind": "story",
+      "role": "final",
+      "dimensions": "1080x1920",
+      "size_bytes": 300835,
+      "sha256": "f81d3a0d7135deacd39d61ce370e9049a5f6b03cf07e602c3a4e58afd14717c1",
+      "colorspace": "sRGB",
+      "sampling_factor": "1x1,1x1,1x1",
+      "source_svg": "stories/2026-10-02/01-ai-agent-prompt.svg",
+      "metrics": {
+        "gray_std": 0.14202,
+        "gray_mean": 0.10868,
+        "unique_colors": 23186,
+        "channel_means": [
+          0.056,
+          0.12493,
+          0.10279
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "validated_at": "2026-10-03T22:13:10Z",
+      "run_id": "",
+      "commit_sha": "",
+      "validated_status": "PASS"
+    },
+    "stories/2026-10-03/01-guided-vision-story.jpg": {
+      "kind": "story",
+      "role": "final",
+      "dimensions": "1080x1920",
+      "size_bytes": 267516,
+      "sha256": "45013b2d7aeb08dd3119424db4124aecdfe637289dfaf9aafdbacecb0ac16cc7",
+      "colorspace": "sRGB",
+      "sampling_factor": "1x1,1x1,1x1",
+      "source_svg": "stories/2026-10-03/01-guided-vision-story.svg",
+      "metrics": {
+        "gray_std": 0.13719,
+        "gray_mean": 0.10581,
+        "unique_colors": 21242,
+        "channel_means": [
+          0.05561,
+          0.12128,
+          0.10039
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8
+      },
+      "renderer": "resvg-py",
+      "renderer_version": "resvg 0.48.1 (python binding)",
+      "validated_at": "2026-10-03T22:13:10Z",
+      "run_id": "",
+      "commit_sha": "",
+      "validated_status": "PASS"
+    }
+  }
+}
