@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050807"/><stop offset=".55" stop-color="#071614"/><stop offset="1" stop-color="#020303"/></linearGradient>
+  <linearGradient id="green" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#00d6a3"/><stop offset=".5" stop-color="#087b68"/><stop offset="1" stop-color="#052e29"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7d47a"/><stop offset=".5" stop-color="#c69b3c"/><stop offset="1" stop-color="#7c5a1d"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<circle cx="150" cy="115" r="115" fill="#063a32" opacity=".55" filter="url(#glow)"/>
+<circle cx="920" cy="210" r="170" fill="#260f2c" opacity=".28" filter="url(#glow)"/>
+<text x="540" y="105" text-anchor="middle" fill="#fff" font-family="Tahoma,Arial,sans-serif" font-size="58" font-weight="700" direction="rtl">بولتن روزانه هوش مصنوعی</text>
+<text x="540" y="160" text-anchor="middle" fill="#e9c765" font-family="Tahoma,Arial,sans-serif" font-size="28" font-weight="700" direction="rtl">۳ اکتبر ۲۰۲۶  |  منتخب ۲۴ ساعت اخیر</text>
+<rect x="70" y="190" width="940" height="3" fill="url(#gold)"/>
+<g font-family="Tahoma,Arial,sans-serif" direction="rtl">
+  <rect x="55" y="225" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+  <rect x="80" y="250" width="180" height="48" rx="24" fill="url(#green)"/>
+  <text x="170" y="284" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">خودرو</text>
+  <text x="980" y="315" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">هیوندای؛ AI و رباتیک در مسیر خودرو</text>
+  <text x="980" y="360" text-anchor="end" fill="#d8e5e1" font-size="23">گزارش امروز WSJ از تمرکز هیوندای بر رانندگی خودکار، Waymo و Boston Dynamics خبر می‌دهد.</text>
+  <text x="980" y="395" text-anchor="end" fill="#8edbc9" font-size="18">تمرکز: خودران • داده • ربات‌های انسان‌نما</text>
+
+  <rect x="55" y="435" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+  <rect x="80" y="460" width="180" height="48" rx="24" fill="url(#green)"/>
+  <text x="170" y="494" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">هوافضا</text>
+  <text x="980" y="525" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">پردازش هوش مصنوعی در فضا</text>
+  <text x="980" y="570" text-anchor="end" fill="#d8e5e1" font-size="23">پروژه‌های محاسبات مداری نشان می‌دهند پردازش AI می‌تواند به ماهواره‌ها و مدار ماه منتقل شود.</text>
+  <text x="980" y="605" text-anchor="end" fill="#8edbc9" font-size="18">نمونه تازه: محموله محاسباتی Starcloud در مدار ماه</text>
+
+  <rect x="55" y="645" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+  <rect x="80" y="670" width="180" height="48" rx="24" fill="url(#green)"/>
+  <text x="170" y="704" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">پزشکی</text>
+  <text x="980" y="735" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">AI برای تشخیص زودهنگام خطر</text>
+  <text x="980" y="780" text-anchor="end" fill="#d8e5e1" font-size="23">پژوهش‌های تازه از استفاده مدل‌های AI برای شناسایی ریسک بیماری و ظرفیت بیشتر خدمات تخصصی خبر می‌دهند.</text>
+  <text x="980" y="815" text-anchor="end" fill="#8edbc9" font-size="18">نمونه: پیش‌بینی ریسک سرطان پانکراس از داده‌های سلامت</text>
+
+  <rect x="55" y="855" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+  <rect x="80" y="880" width="180" height="48" rx="24" fill="url(#green)"/>
+  <text x="170" y="914" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">برق</text>
+  <text x="980" y="945" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">ارزان‌تر شدن AI؛ مصرف برق بیشتر؟</text>
+  <text x="980" y="990" text-anchor="end" fill="#d8e5e1" font-size="23">گزارش‌های McKinsey و BCG می‌گویند کاهش هزینه AI می‌تواند استفاده گسترده‌تر و فشار بیشتر بر شبکه را به‌دنبال داشته باشد.</text>
+  <text x="980" y="1025" text-anchor="end" fill="#8edbc9" font-size="18">داده‌مرکزها: یکی از سریع‌ترین بخش‌های رو به رشد تقاضای برق</text>
+
+  <rect x="55" y="1065" width="970" height="190" rx="28" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
+  <rect x="80" y="1090" width="280" height="48" rx="24" fill="url(#green)"/>
+  <text x="220" y="1124" text-anchor="middle" fill="#fff" font-size="25" font-weight="700">عامل‌های AI / کاربردی</text>
+  <text x="980" y="1155" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700">AI از پاسخ‌گویی به اجرای مداوم کارها</text>
+  <text x="980" y="1200" text-anchor="end" fill="#d8e5e1" font-size="23">روند تازه عامل‌های همیشه‌فعال و چندمرحله‌ای، مرز میان «دستیار» و «اجراکننده» را جابه‌جا می‌کند.</text>
+  <text x="980" y="1235" text-anchor="end" fill="#8edbc9" font-size="18">محور ترند: عامل‌های خودمختار • ابزارها • اجرای چندمرحله‌ای</text>
+</g>
+<rect x="70" y="1290" width="940" height="2" fill="url(#gold)"/>
+<text x="540" y="1325" text-anchor="middle" fill="#9fb5ae" font-family="Tahoma,Arial,sans-serif" font-size="18" direction="rtl">منابع معتبر و تازه • بدون شایعه و خبر تکراری • AI_Learning</text>
+</svg>
