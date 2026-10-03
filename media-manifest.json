@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at": "2026-10-03T22:13:10Z",
+  "generated_at": "2026-10-03T22:20:09Z",
   "run_id": "",
   "commit_sha": "",
   "renderer": "resvg-py",
@@ -25,6 +25,7 @@
       "colorspace": "sRGB",
       "sampling_factor": "1x1,1x1,1x1",
       "source_svg": "posts/2026-10-03-ai-news-bulletin.svg",
+      "source_sha256": "23ced8b2b81d63588951a6913ec2c85b01d83738bc1fe561289613b3720209dc",
       "metrics": {
         "gray_std": 0.17106,
         "gray_mean": 0.10799,
@@ -39,7 +40,7 @@
       },
       "renderer": "resvg-py",
       "renderer_version": "resvg 0.48.1 (python binding)",
-      "validated_at": "2026-10-03T22:13:10Z",
+      "validated_at": "2026-10-03T22:20:09Z",
       "run_id": "",
       "commit_sha": "",
       "validated_status": "PASS"
@@ -53,6 +54,7 @@
       "colorspace": "sRGB",
       "sampling_factor": "1x1,1x1,1x1",
       "source_svg": "stories/2026-09-14/story01-ai-photo-editing.svg",
+      "source_sha256": "7d8560052ff3da46866541a068707e29a56010a1c7c9d3e00fabfb224511d55c",
       "metrics": {
         "gray_std": 0.14277,
         "gray_mean": 0.14802,
@@ -67,7 +69,7 @@
       },
       "renderer": "resvg-py",
       "renderer_version": "resvg 0.48.1 (python binding)",
-      "validated_at": "2026-10-03T22:13:10Z",
+      "validated_at": "2026-10-03T22:20:09Z",
       "run_id": "",
       "commit_sha": "",
       "validated_status": "PASS"
@@ -81,6 +83,7 @@
       "colorspace": "sRGB",
       "sampling_factor": "1x1,1x1,1x1",
       "source_svg": "stories/2026-09-18/01-ai-photo-editing-prompts.svg",
+      "source_sha256": "774ba4e90e6e241f332e80a6e38183a8ce32a9eb676e512b200bcade986374cd",
       "metrics": {
         "gray_std": 0.11996,
         "gray_mean": 0.13187,
@@ -95,7 +98,7 @@
       },
       "renderer": "resvg-py",
       "renderer_version": "resvg 0.48.1 (python binding)",
-      "validated_at": "2026-10-03T22:13:10Z",
+      "validated_at": "2026-10-03T22:20:09Z",
       "run_id": "",
       "commit_sha": "",
       "validated_status": "PASS"
@@ -109,6 +112,7 @@
       "colorspace": "sRGB",
       "sampling_factor": "1x1,1x1,1x1",
       "source_svg": "stories/2026-10-02/01-ai-agent-prompt.svg",
+      "source_sha256": "f7f973c348701abf7970806f0be9ce95ff0a2b4213e5c89f98228b6b04c67251",
       "metrics": {
         "gray_std": 0.14202,
         "gray_mean": 0.10868,
@@ -123,7 +127,7 @@
       },
       "renderer": "resvg-py",
       "renderer_version": "resvg 0.48.1 (python binding)",
-      "validated_at": "2026-10-03T22:13:10Z",
+      "validated_at": "2026-10-03T22:20:09Z",
       "run_id": "",
       "commit_sha": "",
       "validated_status": "PASS"
@@ -137,6 +141,7 @@
       "colorspace": "sRGB",
       "sampling_factor": "1x1,1x1,1x1",
       "source_svg": "stories/2026-10-03/01-guided-vision-story.svg",
+      "source_sha256": "a5d9054de7daa5f57c609df9c91aa9401ef3f670a7a0a908e799b21620e0828b",
       "metrics": {
         "gray_std": 0.13719,
         "gray_mean": 0.10581,
@@ -151,7 +156,7 @@
       },
       "renderer": "resvg-py",
       "renderer_version": "resvg 0.48.1 (python binding)",
-      "validated_at": "2026-10-03T22:13:10Z",
+      "validated_at": "2026-10-03T22:20:09Z",
       "run_id": "",
       "commit_sha": "",
       "validated_status": "PASS"

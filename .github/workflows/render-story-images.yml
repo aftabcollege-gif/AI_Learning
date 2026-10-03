@@ -134,14 +134,44 @@ jobs:
           python-version: '3.11'
 
       - name: Install and verify toolchain (renderers, fonts, ImageMagick)
-        run: bash scripts/instagram/ensure_toolchain.sh
+        run: |
+          set +e
+          bash scripts/instagram/ensure_toolchain.sh 2>&1 | tee /tmp/toolchain.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            grep -E '\[FAIL\]' /tmp/toolchain.log | head -20 | while IFS= read -r line; do
+              echo "::error::toolchain ${line}"
+            done
+          fi
+          exit "$status"
 
       - name: Render sources to publish-grade JPEG
-        run: python3 scripts/instagram/render.py --root . --quality "${JPEG_QUALITY}"
+        run: |
+          set +e
+          python3 scripts/instagram/render.py --root . --quality "${JPEG_QUALITY}" 2>&1 | tee /tmp/render.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            grep -E 'result : FAIL|rejected:' /tmp/render.log | head -25 | while IFS= read -r line; do
+              echo "::error::render ${line}"
+            done
+          fi
+          exit "$status"
 
       # The gate inspects the files on disk, not the renderer's exit code.
+      # Failure reasons are echoed as error annotations so a red run explains
+      # itself even when the raw log endpoint is unavailable.
       - name: FINAL PUBLISH GATE
-        run: python3 scripts/instagram/validate.py --root . --write-manifest
+        run: |
+          set +e
+          python3 scripts/instagram/validate.py --root . --write-manifest 2>&1 | tee /tmp/gate.log
+          status=${PIPESTATUS[0]}
+          { echo "### FINAL PUBLISH GATE"; echo '```'; tail -30 /tmp/gate.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$status" -ne 0 ]; then
+            grep -E '^REASON:|^\[FAIL\]' /tmp/gate.log | head -25 | while IFS= read -r line; do
+              echo "::error::${line}"
+            done
+          fi
+          exit "$status"
 
       - name: Re-validate independently of the renderer
         run: |

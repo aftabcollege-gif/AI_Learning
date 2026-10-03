@@ -96,3 +96,18 @@
 | `stories/2026-10-02/01-ai-agent-prompt.jpg` | story | 1080x1920 | 294 KB | sRGB | `stories/2026-10-02/01-ai-agent-prompt.svg` | `f81d3a0d7135deac…` | PASS |
 | `stories/2026-10-03/01-guided-vision-story.jpg` | story | 1080x1920 | 261 KB | sRGB | `stories/2026-10-03/01-guided-vision-story.svg` | `45013b2d7aeb08dd…` | PASS |
 | `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |
+
+## Validation run 2026-10-03T22:20:09Z
+
+- run: `local` commit: `local`
+- renderer: `convert` imagemagick: `Version: ImageMagick 6.9.11-60 Q16 x86_64 2021-01-25 https://imagemagick.org`
+- **FINAL STATUS: PASS**
+
+| asset | kind | dimensions | size | colorspace | source | sha256 | result |
+|---|---|---|---|---|---|---|---|
+| `posts/2026-10-03-ai-news-bulletin.jpg` | post | 1080x1350 | 316 KB | sRGB | `posts/2026-10-03-ai-news-bulletin.svg` | `5a86ebf8f1bdb402…` | PASS |
+| `stories/2026-09-14/story01-ai-photo-editing.jpg` | story | 1080x1920 | 338 KB | sRGB | `stories/2026-09-14/story01-ai-photo-editing.svg` | `4ba31035515a65c0…` | PASS |
+| `stories/2026-09-18/01-ai-photo-editing-prompts.jpg` | story | 1080x1920 | 268 KB | sRGB | `stories/2026-09-18/01-ai-photo-editing-prompts.svg` | `f081f55014da983b…` | PASS |
+| `stories/2026-10-02/01-ai-agent-prompt.jpg` | story | 1080x1920 | 294 KB | sRGB | `stories/2026-10-02/01-ai-agent-prompt.svg` | `f81d3a0d7135deac…` | PASS |
+| `stories/2026-10-03/01-guided-vision-story.jpg` | story | 1080x1920 | 261 KB | sRGB | `stories/2026-10-03/01-guided-vision-story.svg` | `45013b2d7aeb08dd…` | PASS |
+| `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |

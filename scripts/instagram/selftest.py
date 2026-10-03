@@ -17,6 +17,7 @@ default                full suite (sources, metadata, gate rules, manifests)
 from __future__ import annotations
 
 import argparse
+import hashlib
 import os
 import shutil
 import subprocess
@@ -190,6 +191,29 @@ def run_gate_rules(suite: Suite, tc: Toolchain, workdir: str) -> None:
         suite.record(f"corrupt/empty file ('{name}') is rejected",
                      bool(codes & {"JPEG_MAGIC_INVALID", "FILE_EMPTY", "FILE_UNDECODABLE"}),
                      f"got {sorted(codes)}")
+
+    # benign refresh: the source changed after validation, so a different
+    # output hash is expected and must NOT be reported as a stale asset
+    src = os.path.join(workdir, fixtures["good-story"].replace(".jpg", ".svg"))
+    src_sha = hashlib.sha256(open(src, "rb").read()).hexdigest()
+    refreshed = {fixtures["good-story"]: {
+        "sha256": "1" * 64, "dimensions": "1080x1920",
+        "source_sha256": "2" * 64, "renderer": "test"}}
+    result = gate.check_asset(tc, workdir, fixtures["good-story"], "story", "canonical",
+                             "test", refreshed, fonts)
+    codes = {c for _s, c, _d in result.failures}
+    suite.record("edited source is a refresh, not a stale asset",
+                 "STALE_ASSET" not in codes, f"unexpected failures {sorted(codes)}")
+
+    # benign renderer change: same source, different renderer -> refresh
+    other_renderer = {fixtures["good-story"]: {
+        "sha256": "1" * 64, "dimensions": "1080x1920",
+        "source_sha256": src_sha, "renderer": "some-other-renderer"}}
+    result = gate.check_asset(tc, workdir, fixtures["good-story"], "story", "canonical",
+                             "resvg-py", other_renderer, fonts)
+    codes = {c for _s, c, _d in result.failures}
+    suite.record("renderer change is a refresh, not a stale asset",
+                 "STALE_ASSET" not in codes, f"unexpected failures {sorted(codes)}")
 
     # stale manifest hash (asset changed after validation)
     good_path = os.path.join(workdir, fixtures["good-story"])

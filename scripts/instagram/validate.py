@@ -65,6 +65,7 @@ class AssetResult:
     colorspace: str = ""
     renderer: Optional[str] = None
     source_svg: Optional[str] = None
+    source_sha256: str = ""
     metrics: Dict[str, object] = field(default_factory=dict)
 
     def add(self, status: str, code: str, detail: str = "") -> None:
@@ -159,7 +160,9 @@ def check_asset(tc: Toolchain, root: str, rel: str, kind: str, role: str,
                 expected_renderer: Optional[str],
                 manifest_entries: Dict[str, dict],
                 fonts: svg_lint.FontResolver,
-                store: Optional[dict] = None) -> AssetResult:
+                store: Optional[dict] = None,
+                render_log: Optional[Dict[str, dict]] = None,
+                renderer_versions: Optional[Dict[str, str]] = None) -> AssetResult:
     path = os.path.join(root, rel)
     res = AssetResult(path=rel, kind=kind, role=role)
 
@@ -279,6 +282,7 @@ def check_asset(tc: Toolchain, root: str, rel: str, kind: str, role: str,
                     f"no source SVG beside {rel}; cannot prove which artwork this is")
         else:
             res.source_svg = os.path.relpath(svg, root).replace(os.sep, "/")
+            res.source_sha256 = sha256_file(svg)
             lint = svg_lint.lint_svg(svg, want_w, want_h, fonts=fonts)
             if lint.width and lint.height:
                 svg_aspect = lint.width / lint.height
@@ -290,12 +294,59 @@ def check_asset(tc: Toolchain, root: str, rel: str, kind: str, role: str,
                 if finding.level == "fail":
                     res.add("FAIL", f"SOURCE_{finding.code}", finding.message)
 
+    if expected_renderer:
+        res.renderer = expected_renderer
+
+    # Provenance: which renderer actually produced this file?
+    info = (render_log or {}).get(rel)
+    if info:
+        recorded_output = info.get("output_sha256")
+        if recorded_output and recorded_output != res.sha256:
+            res.add("FAIL", "PROVENANCE_STALE",
+                    "the render log describes a different revision of this file; "
+                    "re-render before publishing")
+        elif info.get("renderer"):
+            res.renderer = str(info["renderer"])
+            if renderer_versions is not None:
+                renderer_versions[rel] = str(info.get("renderer_version", ""))
+    elif role == "canonical":
+        res.add("WARN", "PROVENANCE_UNKNOWN",
+                "no render-log entry for this asset; the producing renderer is not recorded")
+
     entry = manifest_entries.get(rel)
     if entry:
         if entry.get("sha256") and entry["sha256"] != res.sha256:
-            res.add("FAIL", "STALE_ASSET",
-                    f"content hash changed since the last validated manifest "
-                    f"({entry['sha256'][:12]}… -> {res.sha256[:12]}…); re-render before publishing")
+            # A different hash is only proof of tampering when nothing that
+            # legitimately changes the bytes has changed. Re-rendering from an
+            # edited source, or rendering with a different renderer, is an
+            # expected refresh rather than a stale asset. The publish gate
+            # (publish.py) is strict here: it refuses any file whose hash does
+            # not match the manifest it is publishing from.
+            recorded_source = entry.get("source_sha256")
+            current_source = res.source_sha256
+            recorded_renderer = entry.get("renderer")
+            source_same = bool(recorded_source) and recorded_source == current_source
+            renderer_same = (not recorded_renderer) or (not res.renderer) \
+                or recorded_renderer == res.renderer
+            if recorded_source and not source_same:
+                # The source was edited after validation: re-rendering is the
+                # expected, legitimate way for the bytes to change.
+                res.add("INFO", "OUTPUT_REFRESHED",
+                        "output hash differs from the last manifest because the source SVG "
+                        "changed; the manifest is refreshed by this run")
+            elif source_same and not renderer_same:
+                res.add("INFO", "OUTPUT_REFRESHED",
+                        f"output hash differs from the last manifest because the renderer "
+                        f"changed ({recorded_renderer} -> {res.renderer}); the manifest is "
+                        "refreshed by this run")
+            else:
+                # Either the source is unchanged and so is the renderer (someone
+                # modified the file after validation), or the manifest predates
+                # source-hash tracking and nothing can be proven. Both are stale.
+                res.add("FAIL", "STALE_ASSET",
+                        f"content hash changed since the last validated manifest while the "
+                        f"source and renderer are unchanged ({entry['sha256'][:12]}… -> "
+                        f"{res.sha256[:12]}…); the file was modified after validation")
         else:
             res.add("PASS", "MANIFEST_HASH", "matches the recorded manifest hash")
         if entry.get("dimensions") and entry["dimensions"] != res.dimensions:
@@ -304,9 +355,6 @@ def check_asset(tc: Toolchain, root: str, rel: str, kind: str, role: str,
     elif role == "canonical":
         res.add("INFO", "MANIFEST_ENTRY_MISSING",
                 "not yet recorded in media-manifest.json (first validated run)")
-
-    if expected_renderer:
-        res.renderer = expected_renderer
 
     if store is not None and role == "canonical":
         store[rel] = res
@@ -481,23 +529,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     emit("── GATE 2: asset validation " + "─" * 50)
     for rel, kind in canonicals:
         res = check_asset(tc, root, rel, kind, "canonical", preferred_renderer,
-                           manifest_entries, fonts, store=asset_store)
-        # Provenance: which renderer actually produced this file?
-        info = render_log.get(rel)
-        if info:
-            recorded = info.get("output_sha256")
-            if recorded and recorded != res.sha256:
-                provenance_mismatch.append(
-                    f"{rel}: render log hash {str(recorded)[:12]}… != file hash {res.sha256[:12]}…")
-                res.add("FAIL", "PROVENANCE_STALE",
-                        "the render log describes a different revision of this file; "
-                        "re-render before publishing")
-            elif info.get("renderer"):
-                res.renderer = str(info["renderer"])
-                renderer_versions[rel] = str(info.get("renderer_version", ""))
-        elif res.renderer and res.renderer == preferred_renderer:
-            res.add("WARN", "PROVENANCE_UNKNOWN",
-                    "no render-log entry for this asset; the producing renderer is not recorded")
+                           manifest_entries, fonts, store=asset_store,
+                           render_log=render_log, renderer_versions=renderer_versions)
         results.append(res)
         emit(f"  {rel}")
         emit(f"    sha256 {res.sha256[:16]}…  {res.dimensions}  "
@@ -608,6 +641,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 "dimensions": r.dimensions,
                 "colorspace": r.colorspace,
                 "source_svg": r.source_svg,
+                "source_sha256": r.source_sha256,
                 "renderer": r.renderer,
                 "renderer_version": renderer_versions.get(r.path, ""),
                 "metrics": r.metrics,
@@ -666,6 +700,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     "colorspace": f.colorspace,
                     "sampling_factor": (f.metrics or {}).get("jpeg_sampling", ""),
                     "source_svg": f.source_svg,
+                    "source_sha256": f.source_sha256,
                     "metrics": f.metrics,
                     "renderer": f.renderer,
                     "renderer_version": renderer_versions.get(f.path, ""),
