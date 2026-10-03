@@ -1,16 +1,48 @@
 {
-  "generated_at": "2026-10-03T22:23:30Z",
-  "run_id": "",
-  "commit_sha": "",
+  "generated_at": "2026-10-03T22:26:26Z",
+  "run_id": "37158338453",
+  "commit_sha": "4c09e8ac118c51973aad5d2c414fce71bb1bb45c",
   "quality": 95,
   "assets": {
-    "/home/user/AI_Learning/posts/2026-10-03-ai-news-bulletin.jpg": {
-      "renderer": "resvg-py",
-      "renderer_version": "resvg 0.48.1 (python binding)",
-      "attempt": "retry 1: resvg-py (primary options)",
+    "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-03-ai-news-bulletin.jpg": {
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
-      "output_sha256": "ceee6e57798cb357ee75997354ba76d38ebe479641bfc249008ba04f8c3128e2",
-      "rendered_at": "2026-10-03T22:23:30Z"
+      "output_sha256": "fe4cd04c62f9b3eef496f70afbdeea24d6f146ba6dca9e23576827c76193ddf8",
+      "rendered_at": "2026-10-03T22:26:26Z"
+    },
+    "/home/runner/work/AI_Learning/AI_Learning/stories/2026-09-14/story01-ai-photo-editing.jpg": {
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "attempt": "retry 1: rsvg-convert (primary options)",
+      "quality": 95,
+      "output_sha256": "c1ea0a3766133c4fd71321a30744ed86d54250c788578e0d1da3e2a8d63f056f",
+      "rendered_at": "2026-10-03T22:26:23Z"
+    },
+    "/home/runner/work/AI_Learning/AI_Learning/stories/2026-09-18/01-ai-photo-editing-prompts.jpg": {
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "attempt": "retry 1: rsvg-convert (primary options)",
+      "quality": 95,
+      "output_sha256": "bea3bda179bffb71dd171c71deb115f0660d1c7045cb15d3c66f1d32b952f5ed",
+      "rendered_at": "2026-10-03T22:26:24Z"
+    },
+    "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-02/01-ai-agent-prompt.jpg": {
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "attempt": "retry 1: rsvg-convert (primary options)",
+      "quality": 95,
+      "output_sha256": "0c7811fb09fa194913dae9d6e95e8daff83433a47f4d18336557a7a337af7db4",
+      "rendered_at": "2026-10-03T22:26:24Z"
+    },
+    "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-03/01-guided-vision-story.jpg": {
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "attempt": "retry 1: rsvg-convert (primary options)",
+      "quality": 95,
+      "output_sha256": "c3791346987bac3864bdc20e3b757320dcbf218ab5b461735ae997aafeedee6c",
+      "rendered_at": "2026-10-03T22:26:25Z"
     }
   }
 }
