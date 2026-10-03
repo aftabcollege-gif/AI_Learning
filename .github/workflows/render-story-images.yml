@@ -293,8 +293,15 @@ jobs:
           python3 scripts/instagram/selftest.py --root . --renderer-recovery 2>&1 | tee /tmp/crossrender.log
           status=${PIPESTATUS[0]}
           if [ "$status" -ne 0 ]; then
-            grep -E 'FAILED CHECK' /tmp/crossrender.log | head -25 | while IFS= read -r line; do
+            grep -E 'FAILED CHECK' /tmp/crossrender.log | head -20 | while IFS= read -r line; do
               echo "::error::${line}"
+            done
+            grep -E 'Traceback|Error:|error:|\[FAIL\]' /tmp/crossrender.log | head -10 | while IFS= read -r line; do
+              echo "::error::cross-renderer ${line}"
+            done
+            # always surface the tail so the cause is visible from the checks API
+            tail -12 /tmp/crossrender.log | while IFS= read -r line; do
+              echo "::warning::tail ${line}"
             done
           fi
           exit "$status"

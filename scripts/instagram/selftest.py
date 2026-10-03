@@ -402,7 +402,7 @@ def run_repo_checks(suite: Suite, tc: Toolchain, root: str) -> None:
 # 4. renderer recovery chain
 # --------------------------------------------------------------------------
 
-def run_renderer_recovery(suite: Suite, tc: Toolchain, workdir: str) -> None:
+def run_renderer_recovery(suite: Suite, tc: Toolchain, workdir: str, root: str) -> None:
     print("── renderer recovery chain " + "─" * 49)
     renderers = render_mod.discover_renderers()
     suite.expect("at least one SVG renderer is available", bool(renderers),
@@ -451,6 +451,15 @@ def run_renderer_recovery(suite: Suite, tc: Toolchain, workdir: str) -> None:
     # Cross-renderer agreement. Renderers disagree about RTL text anchoring and
     # font fallback, and only one of them runs in production while the other may
     # become the fallback. Disagreement is a defect, not a curiosity.
+    try:
+        _cross_renderer_check(suite, tc, workdir, root)
+    except Exception as exc:  # noqa: BLE001 — surfaced as a test failure
+        suite.record("cross-renderer comparison could not run", False,
+                     f"{type(exc).__name__}: {exc}")
+
+
+def _cross_renderer_check(suite: Suite, tc: Toolchain, workdir: str, root: str) -> None:
+    renderers = render_mod.discover_renderers()
     independent = [r for r in renderers if r.kind in ("rsvg", "resvg", "inkscape", "pyresvg")]
     if len(independent) >= 2:
         a, b = independent[0], independent[1]
@@ -534,7 +543,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     workdir = tempfile.mkdtemp(prefix="mediaselftest-")
     try:
         if args.renderer_recovery:
-            run_renderer_recovery(suite, tc, workdir)
+            run_renderer_recovery(suite, tc, workdir, root)
         elif args.gate_rules:
             run_gate_rules(suite, tc, workdir)
         elif args.sources:
@@ -543,7 +552,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             run_gate_rules(suite, tc, workdir)
             run_lint_rules(suite, tc, workdir)
             run_repo_checks(suite, tc, root)
-            run_renderer_recovery(suite, tc, workdir)
+            run_renderer_recovery(suite, tc, workdir, root)
     finally:
         shutil.rmtree(workdir, ignore_errors=True)
 
