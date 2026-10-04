@@ -301,3 +301,43 @@
 | `posts/2026-10-04-ai-learning-carousel/04-guided-vision.jpg` | post | 1080x1350 | 181 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/04-guided-vision.svg` | `008d158b7864e942…` | PASS |
 | `posts/2026-10-04-ai-learning-carousel/05-ai-trends.jpg` | post | 1080x1350 | 220 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/05-ai-trends.svg` | `53fd505981d8153c…` | PASS |
 | `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |
+
+## Validation run 2026-10-04T08:41:00Z
+
+- run: `37189582948` commit: `2e89a2f991ad8134f9f447f3fe72c75f30ff91b3`
+- renderer: `rsvg-convert` imagemagick: `Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org`
+- **FINAL STATUS: PASS**
+
+| asset | kind | dimensions | size | colorspace | source | sha256 | result |
+|---|---|---|---|---|---|---|---|
+| `stories/2026-09-14/story01-ai-photo-editing.jpg` | story | 1080x1920 | 336 KB | sRGB | `stories/2026-09-14/story01-ai-photo-editing.svg` | `c1ea0a3766133c4f…` | PASS |
+| `stories/2026-09-18/01-ai-photo-editing-prompts.jpg` | story | 1080x1920 | 266 KB | sRGB | `stories/2026-09-18/01-ai-photo-editing-prompts.svg` | `bea3bda179bffb71…` | PASS |
+| `stories/2026-10-02/01-ai-agent-prompt.jpg` | story | 1080x1920 | 291 KB | sRGB | `stories/2026-10-02/01-ai-agent-prompt.svg` | `0c7811fb09fa1949…` | PASS |
+| `stories/2026-10-03/01-guided-vision-story.jpg` | story | 1080x1920 | 259 KB | sRGB | `stories/2026-10-03/01-guided-vision-story.svg` | `c3791346987bac38…` | PASS |
+| `posts/2026-10-03-ai-news-bulletin.jpg` | post | 1080x1350 | 314 KB | sRGB | `posts/2026-10-03-ai-news-bulletin.svg` | `fe4cd04c62f9b3ee…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/01-photo-editing-tools.jpg` | post | 1080x1350 | 225 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/01-photo-editing-tools.svg` | `ff9edce1eb30e8ab…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/02-photo-editing-prompts.jpg` | post | 1080x1350 | 236 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/02-photo-editing-prompts.svg` | `eb183a6ee13c7ef6…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/03-ai-agent-prompt.jpg` | post | 1080x1350 | 227 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/03-ai-agent-prompt.svg` | `54914a7befa3607b…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/04-guided-vision.jpg` | post | 1080x1350 | 185 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/04-guided-vision.svg` | `41f40d68373cea7f…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/05-ai-trends.jpg` | post | 1080x1350 | 220 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/05-ai-trends.svg` | `53fd505981d8153c…` | PASS |
+| `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |
+
+## Validation run 2026-10-04T08:41:16Z
+
+- run: `37189582948` commit: `2e89a2f991ad8134f9f447f3fe72c75f30ff91b3`
+- renderer: `rsvg-convert` imagemagick: `Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org`
+- **FINAL STATUS: PASS**
+
+| asset | kind | dimensions | size | colorspace | source | sha256 | result |
+|---|---|---|---|---|---|---|---|
+| `stories/2026-09-14/story01-ai-photo-editing.jpg` | story | 1080x1920 | 336 KB | sRGB | `stories/2026-09-14/story01-ai-photo-editing.svg` | `c1ea0a3766133c4f…` | PASS |
+| `stories/2026-09-18/01-ai-photo-editing-prompts.jpg` | story | 1080x1920 | 266 KB | sRGB | `stories/2026-09-18/01-ai-photo-editing-prompts.svg` | `bea3bda179bffb71…` | PASS |
+| `stories/2026-10-02/01-ai-agent-prompt.jpg` | story | 1080x1920 | 291 KB | sRGB | `stories/2026-10-02/01-ai-agent-prompt.svg` | `0c7811fb09fa1949…` | PASS |
+| `stories/2026-10-03/01-guided-vision-story.jpg` | story | 1080x1920 | 259 KB | sRGB | `stories/2026-10-03/01-guided-vision-story.svg` | `c3791346987bac38…` | PASS |
+| `posts/2026-10-03-ai-news-bulletin.jpg` | post | 1080x1350 | 314 KB | sRGB | `posts/2026-10-03-ai-news-bulletin.svg` | `fe4cd04c62f9b3ee…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/01-photo-editing-tools.jpg` | post | 1080x1350 | 225 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/01-photo-editing-tools.svg` | `ff9edce1eb30e8ab…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/02-photo-editing-prompts.jpg` | post | 1080x1350 | 236 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/02-photo-editing-prompts.svg` | `eb183a6ee13c7ef6…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/03-ai-agent-prompt.jpg` | post | 1080x1350 | 227 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/03-ai-agent-prompt.svg` | `54914a7befa3607b…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/04-guided-vision.jpg` | post | 1080x1350 | 185 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/04-guided-vision.svg` | `41f40d68373cea7f…` | PASS |
+| `posts/2026-10-04-ai-learning-carousel/05-ai-trends.jpg` | post | 1080x1350 | 220 KB | sRGB | `posts/2026-10-04-ai-learning-carousel/05-ai-trends.svg` | `53fd505981d8153c…` | PASS |
+| `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |

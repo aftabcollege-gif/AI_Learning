@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-04T08:32:47Z",
-  "run_id": "37189123022",
-  "commit_sha": "1869acabd9674bcb0d8f5f6faa1b9a623389d546",
+  "generated_at": "2026-10-04T08:41:16Z",
+  "run_id": "37189582948",
+  "commit_sha": "2e89a2f991ad8134f9f447f3fe72c75f30ff91b3",
   "status": "PASS",
   "renderer": "rsvg-convert",
   "renderers": {
@@ -463,29 +463,29 @@
       "kind": "post",
       "role": "canonical",
       "status": "PASS",
-      "sha256": "4e9d77f4210f8038793921addb68b03463e1fe29f11c49e7a02721cb03ef3d18",
-      "size_bytes": 221445,
+      "sha256": "54914a7befa3607b251e5bedf9c5eeead17ae6619ec7ecddc5c6aa1ed339d496",
+      "size_bytes": 232319,
       "dimensions": "1080x1350",
       "colorspace": "sRGB",
       "source_svg": "posts/2026-10-04-ai-learning-carousel/03-ai-agent-prompt.svg",
-      "source_sha256": "7668ad10723f46526ed9b6f53064fb1933bb6329d4519423fc5e61cac800ec51",
+      "source_sha256": "47ebf32970f31dfdd994e73f33ba409922ccf762ba3d332a42a83edf855df33a",
       "renderer": "rsvg-convert",
       "renderer_version": "rsvg-convert version 2.58.0",
       "metrics": {
-        "gray_std": 0.14222,
-        "gray_mean": 0.10942,
-        "unique_colors": 22026,
+        "gray_std": 0.14474,
+        "gray_mean": 0.11089,
+        "unique_colors": 20589,
         "channel_means": [
-          0.05723,
-          0.12547,
-          0.10416
+          0.05842,
+          0.12702,
+          0.10561
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
         "jpeg_depth": 8,
         "border_ink": {
           "top": 0.0,
           "bottom": 0.0,
-          "left": 0.00963,
+          "left": 0.0,
           "right": 0.0
         }
       },
@@ -508,12 +508,12 @@
         {
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
-          "detail": "std=0.1422 mean=0.1094 colors=22026"
+          "detail": "std=0.1447 mean=0.1109 colors=20589"
         },
         {
-          "status": "WARN",
-          "code": "CONTENT_NEAR_EDGE",
-          "detail": "0.96% of the left border is bright ink (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.00963, 'right': 0.0})"
+          "status": "PASS",
+          "code": "EDGE_CLEAR",
+          "detail": "no bright ink on the canvas border (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.0, 'right': 0.0})"
         },
         {
           "status": "PASS",
@@ -527,29 +527,29 @@
       "kind": "post",
       "role": "canonical",
       "status": "PASS",
-      "sha256": "008d158b7864e942f0f7f0ec05ce5656a87a335672465fb235cd4748fdff446d",
-      "size_bytes": 185594,
+      "sha256": "41f40d68373cea7f73b4526d5f12af45b0e246be7e2ef114fce05c5ccd1475e9",
+      "size_bytes": 189198,
       "dimensions": "1080x1350",
       "colorspace": "sRGB",
       "source_svg": "posts/2026-10-04-ai-learning-carousel/04-guided-vision.svg",
-      "source_sha256": "ea4f74c02ee9527820823795469b9e40b275a109e9bba61f48c31a136f9c4c71",
+      "source_sha256": "1e461d8e4ac1a2a2eca74b853f80069e59508f3bc50bf77ac148a3a554af8770",
       "renderer": "rsvg-convert",
       "renderer_version": "rsvg-convert version 2.58.0",
       "metrics": {
-        "gray_std": 0.12365,
-        "gray_mean": 0.10762,
-        "unique_colors": 19704,
+        "gray_std": 0.12408,
+        "gray_mean": 0.10804,
+        "unique_colors": 17876,
         "channel_means": [
-          0.05844,
-          0.12278,
-          0.10241
+          0.05892,
+          0.12317,
+          0.10284
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
         "jpeg_depth": 8,
         "border_ink": {
           "top": 0.0,
           "bottom": 0.0,
-          "left": 0.006667,
+          "left": 0.0,
           "right": 0.0
         }
       },
@@ -572,12 +572,12 @@
         {
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
-          "detail": "std=0.1237 mean=0.1076 colors=19704"
+          "detail": "std=0.1241 mean=0.1080 colors=17876"
         },
         {
-          "status": "WARN",
-          "code": "CONTENT_NEAR_EDGE",
-          "detail": "0.67% of the left border is bright ink (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.006667, 'right': 0.0})"
+          "status": "PASS",
+          "code": "EDGE_CLEAR",
+          "detail": "no bright ink on the canvas border (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.0, 'right': 0.0})"
         },
         {
           "status": "PASS",
