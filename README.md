@@ -99,10 +99,12 @@ colour, near-black, colour count). Gate 2b audits legacy PNGs so a blank or
 unreadable leftover can never be picked up by a fallback publisher.
 
 Gate 3 maps sources to outputs: one canonical JPEG per SVG, matching aspect
-ratios, manifest hash freshness, recorded render provenance, and exactly one
-FINAL asset per package. It writes `reports/media-validation.json`,
-appends `reports/media-ledger.md`, and refreshes `media-manifest.json` — which
-is only written with `gate_status: PASS` when everything above holds.
+ratios, manifest hash freshness, and recorded render provenance. A single-image
+package has one FINAL JPEG; a carousel package may have several numbered slides,
+all validated independently at the Post geometry. It writes
+`reports/media-validation.json`, appends `reports/media-ledger.md`, and refreshes
+`media-manifest.json` — which is only written with `gate_status: PASS` when
+everything above holds.
 
 Exit code `0` means **PASS**; `1` means `PUBLISH = BLOCKED` with explicit
 reasons.
@@ -122,26 +124,49 @@ Refuses to run unless `media-manifest.json` reports `gate_status: PASS`, then
 builds a pinned public URL for every asset (`…/<full-40-char-SHA>/<path>`),
 fetches it back and compares **byte size and SHA-256** against the validated
 file. A CDN or raw host serving a stale revision is caught here rather than on
-Instagram. Publisher receipts (Metricool first, Windsor as fallback) must
-reference the same SHA-256 and carry a media id — a successful upload API call
-is explicitly *not* accepted as proof. Outputs: `reports/publish-plan.json`,
+Instagram. Windsor is the preferred publisher (Metricool is an optional
+fallback). The plan keeps per-file hashes and URLs in `items[]`, and groups
+numbered carousel slides into one post-level record in `posts[]`, with the
+caption and ordered media URLs together. Publisher receipts must reference the
+validated SHA-256 and carry a media id — a successful upload API call is
+explicitly *not* accepted as proof. Outputs: `reports/publish-plan.json`,
 `reports/publish-report.json`.
 
-`--plan-only` verifies the plan without asserting a publish (used on `push`);
+`--plan-only` verifies the handoff without asserting a publish (used on `push`);
 `--require-published` fails unless every auto-publish item has a verified
-receipt (used for real publishing runs).
+receipt. GitHub creates the verified plan; it does not call Windsor to publish.
+Schedule and publish the selected `posts[]` record in Windsor, then provide a
+receipt if you want the repository to verify the live result.
 
 ## Naming and identity rules
 
-- One package per date: `stories/<date>/…`, `posts/<date>-<slug>.…`.
-- The publishable file is always `<source-stem>.jpg` — one FINAL asset per
-  package, recorded in `media-manifest.json`. There is no "first JPG found"
-  fallback anywhere in the pipeline.
-- Story = `1080x1920`, Post = `1080x1350`, JPEG, sRGB, 4:4:4, ≤ 8 MB.
-- Metadata sidecars (`<source-stem>.md`) carry account, type, schedule and
-  auto-publish state. They never contain an asset URL: the pinned URL always
-  comes from the newest `reports/publish-plan.json`, so a hand-written URL can
-  never point at an old revision.
+- One package per date: `stories/<date>/…`; single posts use
+  `posts/<date>-<slug>.*`, while carousel packages use
+  `posts/<date>-<slug>/…`.
+- Each source SVG renders to exactly one `<source-stem>.jpg`. Single-image
+  packages have one final JPEG; carousels use numbered slide files (`01-…`,
+  `02-…`) in the same package. There is no "first JPG found" fallback.
+- Story = `1080x1920`, each Post/carousel slide = `1080x1350`, JPEG, sRGB,
+  4:4:4, ≤ 8 MB.
+- Metadata may live beside each slide or once per package as `carousel.md`.
+  Sidecars carry account, type, format, caption, schedule and auto-publish
+  state. They never contain media URLs: pinned URLs come from the newest
+  `reports/publish-plan.json`, so a hand-written URL cannot point at an old
+  revision.
+
+## Windsor carousel handoff
+
+The current five-slide Persian carousel is in
+`posts/2026-10-04-ai-learning-carousel/`. `carousel.md` is the source of truth
+for its caption, hashtags, account, and posting state. After the GitHub workflow
+passes, download the `publish-plan` workflow artifact and use the single
+`posts[]` entry whose `package` matches that folder. Its `assets[]` are already
+ordered and contain commit-pinned, byte-verified URLs for Windsor. The
+`items[]` records remain available for per-file integrity checks.
+
+The campaign is prepared but not scheduled or published: automatic publishing
+is disabled and the time is intentionally left for Windsor. GitHub Actions
+renders and verifies media; it does not log in to or call Windsor.
 
 ## Fonts
 
@@ -185,7 +210,7 @@ rebases onto any new remote commit instead of overwriting it.
 
 ## Publisher receipts
 
-`reports/publish-receipts.json` is the contract with Metricool/Windsor:
+`reports/publish-receipts.json` is the contract with Windsor (or Metricool when explicitly selected):
 
 ```json
 {

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050807"/><stop offset=".55" stop-color="#0b211b"/><stop offset="1" stop-color="#020504"/></linearGradient>
+  <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#00d6a3"/><stop offset="1" stop-color="#075c4b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7d47a"/><stop offset="1" stop-color="#9a7026"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<circle cx="115" cy="85" r="145" fill="#063a32" opacity=".42"/>
+<circle cx="970" cy="360" r="180" fill="#24102a" opacity=".22"/>
+<g font-family="Vazirmatn, 'Noto Naskh Arabic', 'Noto Sans Arabic', Tahoma, DejaVu Sans, sans-serif">
+  <text x="540" y="82" text-anchor="middle" fill="#66e6bf" font-size="22" font-weight="700" letter-spacing="2">AI_LEARNING  •  CAROUSEL  01 / 05</text>
+  <text x="540" y="164" text-anchor="middle" fill="#ffffff" font-size="54" font-weight="700" direction="rtl">برای ادیت عکس، کدام ابزار؟</text>
+  <text x="540" y="215" text-anchor="middle" fill="#c7d9d3" font-size="25" direction="rtl">یک هدف، چهار انتخاب؛ ابزار را با نوع کار هماهنگ کن.</text>
+  <rect x="65" y="250" width="950" height="3" fill="url(#gold)"/>
+
+  <rect x="58" y="290" width="465" height="250" rx="30" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="110" cy="342" r="12" fill="#23c99b"/>
+  <text x="290" y="356" text-anchor="middle" fill="#f6d87d" font-size="29" font-weight="700">Photoshop + Firefly</text>
+  <text x="290" y="414" text-anchor="middle" fill="#d7e6e1" font-size="23" direction="rtl">کنترل دقیق، لایه‌ها و ترکیب حرفه‌ای</text>
+  <text x="290" y="459" text-anchor="middle" fill="#8edbc9" font-size="21" direction="rtl">مناسب برای ادیت‌های جدی و جزئی</text>
+  <rect x="195" y="488" width="190" height="32" rx="16" fill="#103c30"/>
+  <text x="290" y="511" text-anchor="middle" fill="#8fe9ce" font-size="17" direction="rtl">دقت و کنترل</text>
+
+  <rect x="557" y="290" width="465" height="250" rx="30" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="609" cy="342" r="12" fill="#23c99b"/>
+  <text x="790" y="356" text-anchor="middle" fill="#f6d87d" font-size="29" font-weight="700">Gemini / Nano Banana</text>
+  <text x="790" y="414" text-anchor="middle" fill="#d7e6e1" font-size="23" direction="rtl">ادیت با دستور متنی و حفظ جزئیات</text>
+  <text x="790" y="459" text-anchor="middle" fill="#8edbc9" font-size="21" direction="rtl">مناسب برای تغییر سریع یک بخش</text>
+  <rect x="695" y="488" width="190" height="32" rx="16" fill="#103c30"/>
+  <text x="790" y="511" text-anchor="middle" fill="#8fe9ce" font-size="17" direction="rtl">ساده و سریع</text>
+
+  <rect x="58" y="565" width="465" height="250" rx="30" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="110" cy="617" r="12" fill="#23c99b"/>
+  <text x="290" y="631" text-anchor="middle" fill="#f6d87d" font-size="29" font-weight="700">ChatGPT Images</text>
+  <text x="290" y="689" text-anchor="middle" fill="#d7e6e1" font-size="23" direction="rtl">تغییرات مرحله‌به‌مرحله با گفت‌وگو</text>
+  <text x="290" y="734" text-anchor="middle" fill="#8edbc9" font-size="21" direction="rtl">مناسب برای اصلاح با زبان طبیعی</text>
+  <rect x="195" y="763" width="190" height="32" rx="16" fill="#103c30"/>
+  <text x="290" y="786" text-anchor="middle" fill="#8fe9ce" font-size="17" direction="rtl">گفت‌وگومحور</text>
+
+  <rect x="557" y="565" width="465" height="250" rx="30" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="609" cy="617" r="12" fill="#23c99b"/>
+  <text x="790" y="631" text-anchor="middle" fill="#f6d87d" font-size="29" font-weight="700">Canva AI</text>
+  <text x="790" y="689" text-anchor="middle" fill="#d7e6e1" font-size="23" direction="rtl">ساخت سریع محتوای شبکه‌های اجتماعی</text>
+  <text x="790" y="734" text-anchor="middle" fill="#8edbc9" font-size="21" direction="rtl">مناسب برای قالب، متن و طراحی</text>
+  <rect x="695" y="763" width="190" height="32" rx="16" fill="#103c30"/>
+  <text x="790" y="786" text-anchor="middle" fill="#8fe9ce" font-size="17" direction="rtl">تولید محتوا</text>
+
+  <rect x="58" y="855" width="964" height="270" rx="34" fill="#10281d" stroke="url(#gold)" stroke-width="3"/>
+  <text x="540" y="924" text-anchor="middle" fill="#f6d06b" font-size="29" font-weight="700" direction="rtl">جمع‌بندی سریع</text>
+  <text x="540" y="985" text-anchor="middle" fill="#ffffff" font-size="39" font-weight="700">Photoshop + Firefly</text>
+  <text x="540" y="1038" text-anchor="middle" fill="#d6e4df" font-size="23" direction="rtl">برای کنترل حرفه‌ای؛ Gemini و ChatGPT برای ادیت سریع و گفت‌وگویی.</text>
+  <text x="540" y="1081" text-anchor="middle" fill="#8edbc9" font-size="19" direction="rtl">بهترین ابزار همان ابزاری است که با هدفت جور درمی‌آید.</text>
+  <text x="540" y="1278" text-anchor="middle" fill="#9aafa8" font-size="18" direction="rtl">اسلاید بعدی: ۹ ایده برای پرامپت ویرایش عکس</text>
+</g>
+</svg>

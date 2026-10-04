@@ -31,7 +31,7 @@ on:
   workflow_dispatch:
     inputs:
       publish:
-        description: 'Run the publish gate (requires publisher receipts)'
+        description: 'Verify the Windsor publish gate (requires publisher receipts)'
         type: boolean
         default: false
       require_published:
@@ -313,7 +313,7 @@ jobs:
   publish-gate:
     name: Publish gate
     needs: [render-and-validate, renderer-fallback-check]
-    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -321,7 +321,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          ref: ${{ github.event_name == 'push' && github.sha || github.ref }}
+          # Render job may push freshly generated JPEGs back to this branch.
+          # Resolve the branch tip here so the plan includes those exact files.
+          ref: ${{ github.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -350,8 +352,9 @@ jobs:
           SKIP_URL: ${{ (github.event_name == 'workflow_dispatch' && inputs.skip_url_verification) && '1' || '0' }}
         run: |
           set -euo pipefail
+          commit="$(git rev-parse HEAD)"
           args=(--root . --owner "${GITHUB_REPOSITORY_OWNER}" --repo "${GITHUB_REPOSITORY#*/}"
-                --commit "${GITHUB_SHA}" --publisher auto)
+                --commit "${commit}" --commit-sha "${commit}" --publisher windsor)
           [ "${PLAN_ONLY}" = "1" ] && args+=(--plan-only)
           [ "${REQUIRE_PUBLISHED}" = "1" ] && args+=(--require-published)
           [ "${SKIP_URL}" = "1" ] && args+=(--skip-url-verification)

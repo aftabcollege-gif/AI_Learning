@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050807"/><stop offset=".55" stop-color="#0b211b"/><stop offset="1" stop-color="#020504"/></linearGradient>
+  <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#00d6a3"/><stop offset="1" stop-color="#075c4b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7d47a"/><stop offset="1" stop-color="#9a7026"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<circle cx="165" cy="205" r="175" fill="#063a32" opacity=".38"/>
+<circle cx="930" cy="930" r="190" fill="#24102a" opacity=".22"/>
+<g font-family="Vazirmatn, 'Noto Naskh Arabic', 'Noto Sans Arabic', Tahoma, DejaVu Sans, sans-serif">
+  <text x="540" y="80" text-anchor="middle" fill="#66e6bf" font-size="22" font-weight="700" letter-spacing="2">AI_LEARNING  •  CAROUSEL  04 / 05</text>
+  <text x="540" y="159" text-anchor="middle" fill="#ffffff" font-size="50" font-weight="700" direction="rtl">با دوربین بگیر، بپرس، بشنو</text>
+  <text x="540" y="211" text-anchor="middle" fill="#c7d9d3" font-size="25" direction="rtl">راهنمای کوتاه Guided Vision در Gemini</text>
+  <rect x="65" y="248" width="950" height="3" fill="url(#gold)"/>
+
+  <rect x="62" y="286" width="956" height="132" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="145" cy="352" r="38" fill="url(#emerald)"/>
+  <text x="145" y="362" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۱</text>
+  <text x="245" y="340" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Gemini</text>
+  <text x="245" y="382" text-anchor="start" fill="#cfe6e0" font-size="22" direction="rtl">اپلیکیشن Gemini را باز کن.</text>
+
+  <rect x="62" y="438" width="956" height="132" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="145" cy="504" r="38" fill="#831d42"/>
+  <text x="145" y="514" text-anchor="middle" fill="#ffffff" font-size="29" font-weight="700">۲</text>
+  <text x="245" y="492" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Live</text>
+  <text x="245" y="534" text-anchor="start" fill="#cfe6e0" font-size="22" direction="rtl">حالت زنده را روشن کن.</text>
+
+  <rect x="62" y="590" width="956" height="132" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="145" cy="656" r="38" fill="url(#emerald)"/>
+  <text x="145" y="666" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۳</text>
+  <text x="245" y="644" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Guided Vision</text>
+  <text x="245" y="686" text-anchor="start" fill="#cfe6e0" font-size="22" direction="rtl">دوربین را روی متن یا شیء بگیر.</text>
+
+  <rect x="62" y="742" width="956" height="132" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="145" cy="808" r="38" fill="#831d42"/>
+  <text x="145" y="818" text-anchor="middle" fill="#ffffff" font-size="29" font-weight="700">۴</text>
+  <text x="245" y="796" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700" direction="rtl">سؤال تکمیلی</text>
+  <text x="245" y="838" text-anchor="start" fill="#cfe6e0" font-size="22" direction="rtl">برای جزئیات بیشتر، سؤال بعدی را بپرس.</text>
+
+  <rect x="62" y="908" width="956" height="270" rx="34" fill="#10281d" stroke="url(#gold)" stroke-width="3"/>
+  <text x="540" y="968" text-anchor="middle" fill="#f6d06b" font-size="27" font-weight="700" direction="rtl">پرامپت پیشنهادی</text>
+  <text x="540" y="1032" text-anchor="middle" fill="#ffffff" font-size="26" direction="rtl">«این چیزی که می‌بینی را در ۳ نکته کوتاه توضیح بده</text>
+  <text x="540" y="1074" text-anchor="middle" fill="#ffffff" font-size="26" direction="rtl">و اگر متنی دارد، آن را بخوان.»</text>
+  <text x="540" y="1134" text-anchor="middle" fill="#9fd8c8" font-size="19" direction="rtl">دوربین را روی سوژه ثابت نگه دار تا پاسخ دقیق‌تر باشد.</text>
+  <text x="540" y="1270" text-anchor="middle" fill="#9aafa8" font-size="18" direction="rtl">اسلاید آخر: چند حوزه‌ی پررنگ در AI</text>
+</g>
+</svg>

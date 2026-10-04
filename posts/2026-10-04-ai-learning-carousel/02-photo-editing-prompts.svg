@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050807"/><stop offset=".55" stop-color="#0b211b"/><stop offset="1" stop-color="#020504"/></linearGradient>
+  <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#00d6a3"/><stop offset="1" stop-color="#075c4b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7d47a"/><stop offset="1" stop-color="#9a7026"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<circle cx="965" cy="135" r="170" fill="#063a32" opacity=".35"/>
+<circle cx="90" cy="930" r="145" fill="#24102a" opacity=".22"/>
+<g font-family="Vazirmatn, 'Noto Naskh Arabic', 'Noto Sans Arabic', Tahoma, DejaVu Sans, sans-serif">
+  <text x="540" y="80" text-anchor="middle" fill="#66e6bf" font-size="22" font-weight="700" letter-spacing="2">AI_LEARNING  •  CAROUSEL  02 / 05</text>
+  <text x="540" y="160" text-anchor="middle" fill="#ffffff" font-size="52" font-weight="700" direction="rtl">۹ ایده برای ادیت عکس با AI</text>
+  <text x="540" y="212" text-anchor="middle" fill="#c7d9d3" font-size="24" direction="rtl">سوژه و تغییر را دقیق بگو؛ بقیه تصویر را ثابت نگه دار.</text>
+  <rect x="65" y="248" width="950" height="3" fill="url(#gold)"/>
+
+  <rect x="55" y="282" width="300" height="195" rx="24" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="95" cy="322" r="24" fill="url(#emerald)"/><text x="95" y="331" text-anchor="middle" fill="#04231c" font-size="23" font-weight="700">۱</text>
+  <text x="205" y="363" text-anchor="middle" fill="#f6d87d" font-size="27" font-weight="700" direction="rtl">نور و رنگ</text>
+  <text x="205" y="411" text-anchor="middle" fill="#cfe6e0" font-size="20" direction="rtl">روشن‌تر، گرم‌تر یا پررنگ‌تر</text>
+  <text x="205" y="445" text-anchor="middle" fill="#8edbc9" font-size="17" direction="rtl">بدون تغییر چهره</text>
+
+  <rect x="390" y="282" width="300" height="195" rx="24" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="430" cy="322" r="24" fill="url(#emerald)"/><text x="430" y="331" text-anchor="middle" fill="#04231c" font-size="23" font-weight="700">۲</text>
+  <text x="540" y="363" text-anchor="middle" fill="#f6d87d" font-size="27" font-weight="700" direction="rtl">زاویه دوربین</text>
+  <text x="540" y="411" text-anchor="middle" fill="#cfe6e0" font-size="20" direction="rtl">نمای نیم‌رخ یا سه‌ربع</text>
+  <text x="540" y="445" text-anchor="middle" fill="#8edbc9" font-size="17" direction="rtl">هویت را حفظ کن</text>
+
+  <rect x="725" y="282" width="300" height="195" rx="24" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="765" cy="322" r="24" fill="url(#emerald)"/><text x="765" y="331" text-anchor="middle" fill="#04231c" font-size="23" font-weight="700">۳</text>
+  <text x="875" y="363" text-anchor="middle" fill="#f6d87d" font-size="27" font-weight="700" direction="rtl">تغییر لباس</text>
+  <text x="875" y="411" text-anchor="middle" fill="#cfe6e0" font-size="20" direction="rtl">رنگ یا مدل لباس تازه</text>
+  <text x="875" y="445" text-anchor="middle" fill="#8edbc9" font-size="17" direction="rtl">چهره و مو ثابت</text>
+
+  <rect x="55" y="500" width="300" height="195" rx="24" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="95" cy="540" r="24" fill="url(#emerald)"/><text x="95" y="549" text-anchor="middle" fill="#04231c" font-size="23" font-weight="700">۴</text>
+  <text x="205" y="581" text-anchor="middle" fill="#f6d87d" font-size="27" font-weight="700" direction="rtl">جزئیات چهره</text>
+  <text x="205" y="629" text-anchor="middle" fill="#cfe6e0" font-size="20" direction="rtl">مثلاً افزودن عینک</text>
+  <text x="205" y="663" text-anchor="middle" fill="#8edbc9" font-size="17" direction="rtl">طبیعی و واقع‌گرایانه</text>
+
+  <rect x="390" y="500" width="300" height="195" rx="24" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="430" cy="540" r="24" fill="url(#emerald)"/><text x="430" y="549" text-anchor="middle" fill="#04231c" font-size="23" font-weight="700">۵</text>
+  <text x="540" y="581" text-anchor="middle" fill="#f6d87d" font-size="27" font-weight="700" direction="rtl">کارتونی‌کردن</text>
+  <text x="540" y="629" text-anchor="middle" fill="#cfe6e0" font-size="20" direction="rtl">تبدیل به تصویرسازی</text>
+  <text x="540" y="663" text-anchor="middle" fill="#8edbc9" font-size="17" direction="rtl">با سبک دلخواه</text>
+
+  <rect x="725" y="500" width="300" height="195" rx="24" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="765" cy="540" r="24" fill="url(#emerald)"/><text x="765" y="549" text-anchor="middle" fill="#04231c" font-size="23" font-weight="700">۶</text>
+  <text x="875" y="581" text-anchor="middle" fill="#f6d87d" font-size="27" font-weight="700" direction="rtl">پس‌زمینه</text>
+  <text x="875" y="629" text-anchor="middle" fill="#cfe6e0" font-size="20" direction="rtl">فضای تازه، نور طبیعی</text>
+  <text x="875" y="663" text-anchor="middle" fill="#8edbc9" font-size="17" direction="rtl">سوژه را نگه دار</text>
+
+  <rect x="55" y="718" width="300" height="195" rx="24" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="95" cy="758" r="24" fill="url(#emerald)"/><text x="95" y="767" text-anchor="middle" fill="#04231c" font-size="23" font-weight="700">۷</text>
+  <text x="205" y="799" text-anchor="middle" fill="#f6d87d" font-size="27" font-weight="700" direction="rtl">سیاه‌وسفید</text>
+  <text x="205" y="847" text-anchor="middle" fill="#cfe6e0" font-size="20" direction="rtl">کنتراست بالا</text>
+  <text x="205" y="881" text-anchor="middle" fill="#8edbc9" font-size="17" direction="rtl">حس سینمایی</text>
+
+  <rect x="390" y="718" width="300" height="195" rx="24" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="430" cy="758" r="24" fill="url(#emerald)"/><text x="430" y="767" text-anchor="middle" fill="#04231c" font-size="23" font-weight="700">۸</text>
+  <text x="540" y="799" text-anchor="middle" fill="#f6d87d" font-size="27" font-weight="700" direction="rtl">افزودن جزئیات</text>
+  <text x="540" y="847" text-anchor="middle" fill="#cfe6e0" font-size="20" direction="rtl">یک شیء به صحنه اضافه کن</text>
+  <text x="540" y="881" text-anchor="middle" fill="#8edbc9" font-size="17" direction="rtl">جای دقیق را مشخص کن</text>
+
+  <rect x="725" y="718" width="300" height="195" rx="24" fill="#071611" stroke="#258f77" stroke-width="2"/>
+  <circle cx="765" cy="758" r="24" fill="url(#emerald)"/><text x="765" y="767" text-anchor="middle" fill="#04231c" font-size="23" font-weight="700">۹</text>
+  <text x="875" y="799" text-anchor="middle" fill="#f6d87d" font-size="27" font-weight="700" direction="rtl">استایل کلی</text>
+  <text x="875" y="847" text-anchor="middle" fill="#cfe6e0" font-size="20" direction="rtl">سینمایی، شهری، دراماتیک</text>
+  <text x="875" y="881" text-anchor="middle" fill="#8edbc9" font-size="17" direction="rtl">حس و حال دلخواه</text>
+
+  <rect x="58" y="956" width="964" height="234" rx="34" fill="#10281d" stroke="url(#gold)" stroke-width="3"/>
+  <text x="540" y="1026" text-anchor="middle" fill="#f6d06b" font-size="29" font-weight="700" direction="rtl">قاعده طلایی</text>
+  <text x="540" y="1085" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="700" direction="rtl">«هویت را حفظ کن؛ فقط مورد درخواستی را تغییر بده.»</text>
+  <text x="540" y="1135" text-anchor="middle" fill="#9fd8c8" font-size="20" direction="rtl">سوژه + تغییر + چیزهایی که نباید تغییر کنند</text>
+  <text x="540" y="1278" text-anchor="middle" fill="#9aafa8" font-size="18" direction="rtl">اسلاید بعدی: ساختار پرامپت برای AI Agent</text>
+</g>
+</svg>

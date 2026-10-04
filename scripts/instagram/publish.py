@@ -5,7 +5,7 @@ This script never *assumes* a publish worked.  It:
 
 1. refuses to run unless ``media-manifest.json`` says the FINAL PUBLISH GATE
    passed (so an unvalidated or stale asset can never reach Instagram);
-2. builds one publish item per media package with an explicit FINAL asset;
+2. validates every FINAL asset and groups numbered carousel slides into one post;
 3. resolves a *pinned* public URL for each asset (full 40-char commit SHA, so
    the URL can never serve a different revision) and fetches it back, comparing
    size and SHA-256 against the local file — a CDN or raw-host cache that hands
@@ -17,9 +17,11 @@ This script never *assumes* a publish worked.  It:
    unless every item is either fully verified or explicitly reported as
    awaiting a publisher receipt.
 
-Publisher fallback: Metricool first, Windsor second — but both may only receive
-assets that passed the gate.  Sending a source SVG or an unvalidated file to
-Instagram as a "workaround" is never allowed.
+Publisher preference: Windsor first, Metricool as the optional fallback —
+both may only receive assets that passed the gate. Carousel slides are grouped
+into one post-level handoff while retaining per-file hashes and URL checks.
+Sending a source SVG or an unvalidated file to Instagram as a "workaround" is
+never allowed.
 """
 
 from __future__ import annotations
@@ -38,7 +40,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 
 PAGE_SIZE_LIMIT = 8 * 1024 * 1024
 DEFAULT_URL_BASE = "https://raw.githubusercontent.com"
-PUBLISHERS = ("metricool", "windsor")
+PUBLISHERS = ("windsor", "metricool")
 RECEIPT_STATUSES_OK = ("published", "processed", "scheduled")
 
 
@@ -53,9 +55,12 @@ class PublishItem:
     package: str
     account: str = ""
     content_type: str = ""
+    post_format: str = "single_image"
+    carousel_order: int = 1
     scheduled: str = ""
     auto_publish: bool = False
     caption: str = ""
+    metadata_path: str = ""
     source_sha256: str = ""
     public_url: str = ""
     url_verified: bool = False
@@ -108,34 +113,53 @@ def load_json(path: str) -> dict:
 # --------------------------------------------------------------------------
 
 def parse_metadata(path: str) -> Dict[str, object]:
-    """Best-effort extraction of publication metadata from a sidecar markdown file."""
+    """Extract publication metadata from a slide or package Markdown sidecar."""
     text = read_text(path)
     info: Dict[str, object] = {}
     if not text:
         return info
 
-    m = re.search(r"Instagram\s*:\s*`?@?([A-Za-z0-9._]+)`?", text)
+    m = re.search(r"Instagram\s*:\s*`?@?([A-Za-z0-9._]+)`?", text, re.IGNORECASE)
     if m:
         info["account"] = m.group(1)
     m = re.search(r"(?:^|\n)\s*[-*]?\s*(?:نوع|type)\s*:\s*\**\s*`?(Story|Post|Reel)`?",
                   text, re.IGNORECASE)
     if m:
         info["content_type"] = m.group(1).capitalize()
-    m = re.search(r"زمان\s*:\s*`?([0-9]{4}-[0-9]{2}-[0-9]{2}[ T][0-9:]{4,8})`?", text)
+    m = re.search(r"(?:^|\n)\s*[-*]?\s*(?:قالب|format)\s*:\s*`?(Carousel|کاروسل|Single(?: image)?|تک\s*تصویر)`?",
+                  text, re.IGNORECASE)
+    if m:
+        value = m.group(1).strip().lower()
+        info["post_format"] = "carousel" if value in ("carousel", "کاروسل") else "single_image"
+    m = re.search(r"(?:^|\n)\s*[-*]?\s*(?:زمان|scheduled?)\s*:\s*`?([0-9]{4}-[0-9]{2}-[0-9]{2}[ T][0-9:]{4,8})`?",
+                  text, re.IGNORECASE)
     if m:
         info["scheduled"] = m.group(1).strip()
     m = re.search(r"انتشار خودکار\s*:\s*\**\s*`?(فعال|غیرفعال|active|inactive|true|false)`?",
                   text, re.IGNORECASE)
     if m:
         info["auto_publish"] = m.group(1).lower() in ("فعال", "active", "true")
+    m = re.search(r"(?:^|\n)\s*[-*]?\s*(?:ناشر|publisher)\s*:\s*`?(metricool|windsor)`?",
+                  text, re.IGNORECASE)
+    if m:
+        info["publisher"] = m.group(1).lower()
     m = re.search(r"^#\s+(.+)$", text, re.MULTILINE)
     if m:
         info["title"] = m.group(1).strip()
-    sec = re.search(r"^##\s*(?:Selected news|محتوا|caption)\s*\n(.*?)(?=\n##|\Z)",
-                    text, re.MULTILINE | re.DOTALL)
+    sec = re.search(r"^##\s*(?:Selected news|محتوا|caption|کپشن)\s*\n(.*?)(?=\n##|\Z)",
+                    text, re.MULTILINE | re.DOTALL | re.IGNORECASE)
     if sec:
-        info["caption"] = " ".join(sec.group(1).split())[:800]
+        # Preserve paragraph breaks and hashtag separation for Instagram. Normalize
+        # only trailing whitespace; do not flatten the caption into one line.
+        info["caption"] = "\n".join(line.rstrip() for line in sec.group(1).strip().splitlines())[:2200]
     return info
+
+
+def carousel_order(asset_rel: str) -> int:
+    """Read a leading slide number (01-...) or fall back to a stable final order."""
+    name = os.path.basename(asset_rel)
+    match = re.match(r"(?:slide[-_ ]*)?(\d{1,3})(?:[-_. ]|$)", name, re.IGNORECASE)
+    return int(match.group(1)) if match else 1
 
 
 def find_sidecar(root: str, asset_rel: str) -> str:
@@ -148,7 +172,7 @@ def find_sidecar(root: str, asset_rel: str) -> str:
     if os.path.isdir(directory):
         candidates += [os.path.join(directory, n) for n in sorted(os.listdir(directory))
                        if n.lower().endswith(".md")]
-    # Posts keep metadata next to the file as <date>-<slug>.md
+    # Carousels may use one package-level sidecar shared by every numbered slide.
     for candidate in candidates:
         if os.path.exists(candidate):
             return candidate
@@ -270,6 +294,54 @@ def verify_receipts(items: Sequence[PublishItem], receipts_doc: dict, log=print)
 
 
 # --------------------------------------------------------------------------
+# post-level handoff
+# --------------------------------------------------------------------------
+def build_post_records(items: Sequence[PublishItem]) -> List[dict]:
+    """Group carousel slides into one Windsor post while keeping file checks per asset."""
+    groups: Dict[str, List[PublishItem]] = {}
+    for item in items:
+        # A package sidecar is the stable grouping key for a carousel. Legacy
+        # single-image/story assets remain one post record per asset.
+        key = item.metadata_path if item.post_format == "carousel" and item.metadata_path else item.asset
+        groups.setdefault(key, []).append(item)
+
+    posts: List[dict] = []
+    for key, children in sorted(groups.items()):
+        if children[0].post_format == "carousel":
+            children = sorted(children, key=lambda child: (child.carousel_order, child.asset))
+        lead = children[0]
+        ready = all(child.ready and child.publish_status != "FAILED" for child in children)
+        media = [
+            {
+                "order": child.carousel_order if lead.post_format == "carousel" else 1,
+                "asset": child.asset,
+                "public_url": child.public_url,
+                "sha256": child.sha256,
+                "dimensions": child.dimensions,
+                "size_bytes": child.size_bytes,
+                "url_verified": child.url_verified,
+            }
+            for child in children
+        ]
+        posts.append({
+            "post_id": key,
+            "package": lead.package,
+            "account": lead.account,
+            "content_type": lead.content_type,
+            "format": lead.post_format,
+            "caption": lead.caption,
+            "scheduled": lead.scheduled,
+            "auto_publish": lead.auto_publish,
+            "publisher": lead.publisher,
+            "status": "READY" if ready else "BLOCKED",
+            "asset_count": len(media),
+            "assets": media,
+            "notes": sorted({note for child in children for note in child.notes}),
+        })
+    return posts
+
+
+# --------------------------------------------------------------------------
 # summary
 # --------------------------------------------------------------------------
 
@@ -282,6 +354,8 @@ def print_summary(items: Sequence[PublishItem], manifest: dict, args, blocked: b
     for item in items:
         emit(f"ASSET            : {item.asset}")
         emit(f"SOURCE FILE      : {item.source_svg or '-'}")
+        emit(f"POST FORMAT      : {item.post_format}"
+             + (f" (slide {item.carousel_order})" if item.post_format == "carousel" else ""))
         emit(f"SOURCE SHA256    : {item.source_sha256[:32] or '-'}")
         emit(f"OUTPUT SHA256    : {item.sha256}")
         emit(f"DIMENSIONS       : {item.dimensions}")
@@ -317,8 +391,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     help="base URL for raw assets (override to test against a local server)")
     ap.add_argument("--run-id", default=os.environ.get("GITHUB_RUN_ID", ""))
     ap.add_argument("--commit-sha", default=os.environ.get("GITHUB_SHA", ""))
-    ap.add_argument("--publisher", default="metricool", choices=PUBLISHERS + ("auto",),
-                    help="preferred publisher; 'auto' tries metricool then windsor")
+    ap.add_argument("--publisher", default="windsor", choices=PUBLISHERS + ("auto",),
+                    help="publisher for the handoff; 'auto' tries Windsor then Metricool")
     ap.add_argument("--skip-url-verification", action="store_true")
     ap.add_argument("--plan-only", action="store_true",
                     help="build and verify the publishing plan without enforcing publisher "
@@ -424,11 +498,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         info = parse_metadata(sidecar) if sidecar else {}
         item.account = str(info.get("account", ""))
         item.content_type = str(info.get("content_type", "")) or item.kind.capitalize()
+        item.post_format = str(info.get("post_format", "single_image"))
+        item.carousel_order = carousel_order(asset_rel)
         item.scheduled = str(info.get("scheduled", ""))
         item.auto_publish = bool(info.get("auto_publish", False))
         item.caption = str(info.get("caption", info.get("title", "")))
+        item.metadata_path = os.path.relpath(sidecar, root).replace(os.sep, "/") if sidecar else ""
         if sidecar:
-            item.notes.append(f"metadata source: {os.path.relpath(sidecar, root)}")
+            item.notes.append(f"metadata source: {item.metadata_path}")
         else:
             item.notes.append("no metadata sidecar found; scheduling details unknown")
 
@@ -480,7 +557,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         else:
             item.publisher = args.publisher
         if args.publisher == "auto":
-            item.notes.append("publisher chain: metricool -> windsor on failure")
+            item.notes.append("publisher chain: windsor -> metricool on failure")
 
     # ---- verdict -------------------------------------------------------
     blocked_items = [i for i in items if i.blocking_notes or not i.ready]
@@ -520,6 +597,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "gate_status": gate,
         "publisher_preference": args.publisher,
         "status": "BLOCKED" if blocked else "PASS",
+        "posts": build_post_records(items),
         "items": [
             {
                 "asset": i.asset,
@@ -532,6 +610,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 "source_sha256": i.source_sha256,
                 "account": i.account,
                 "content_type": i.content_type,
+                "format": i.post_format,
+                "carousel_order": i.carousel_order,
                 "caption": i.caption,
                 "scheduled": i.scheduled,
                 "auto_publish": i.auto_publish,

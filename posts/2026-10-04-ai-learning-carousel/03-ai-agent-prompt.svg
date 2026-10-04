@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050807"/><stop offset=".55" stop-color="#0b211b"/><stop offset="1" stop-color="#020504"/></linearGradient>
+  <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#00d6a3"/><stop offset="1" stop-color="#075c4b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7d47a"/><stop offset="1" stop-color="#9a7026"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<circle cx="900" cy="250" r="205" fill="#063a32" opacity=".38"/>
+<circle cx="145" cy="1120" r="170" fill="#24102a" opacity=".2"/>
+<g font-family="Vazirmatn, 'Noto Naskh Arabic', 'Noto Sans Arabic', Tahoma, DejaVu Sans, sans-serif">
+  <text x="540" y="80" text-anchor="middle" fill="#66e6bf" font-size="22" font-weight="700" letter-spacing="2">AI_LEARNING  •  CAROUSEL  03 / 05</text>
+  <text x="540" y="160" text-anchor="middle" fill="#ffffff" font-size="51" font-weight="700" direction="rtl">پرامپت AI Agent در ۴ بخش</text>
+  <text x="540" y="211" text-anchor="middle" fill="#c7d9d3" font-size="24" direction="rtl">برای خروجی قابل‌اعتمادتر، خواسته را ساختارمند بنویس.</text>
+
+  <rect x="62" y="258" width="956" height="158" rx="28" fill="#071611" stroke="#35d0a0" stroke-width="2"/>
+  <text x="540" y="307" text-anchor="middle" fill="#f6d06b" font-size="21" font-weight="700" direction="rtl">قالب آماده</text>
+  <text x="540" y="352" text-anchor="middle" fill="#ffffff" font-size="25" font-weight="700" direction="ltr">Goal: [task]  •  Context: [data]</text>
+  <text x="540" y="390" text-anchor="middle" fill="#ffffff" font-size="25" font-weight="700" direction="ltr">Constraints: [rules]  •  Output: [format]</text>
+
+  <rect x="62" y="446" width="956" height="135" rx="26" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="145" cy="513" r="38" fill="url(#emerald)"/>
+  <text x="145" y="523" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۱</text>
+  <text x="250" y="500" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Goal · هدف</text>
+  <text x="250" y="543" text-anchor="start" fill="#cfe6e0" font-size="22" direction="rtl">چه کاری باید انجام شود؟ نتیجه نهایی را دقیق بنویس.</text>
+
+  <rect x="62" y="600" width="956" height="135" rx="26" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="145" cy="667" r="38" fill="url(#emerald)"/>
+  <text x="145" y="677" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۲</text>
+  <text x="250" y="654" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Context · زمینه</text>
+  <text x="250" y="697" text-anchor="start" fill="#cfe6e0" font-size="22" direction="rtl">داده، فایل و اطلاعات در دسترس عامل را مشخص کن.</text>
+
+  <rect x="62" y="754" width="956" height="135" rx="26" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="145" cy="821" r="38" fill="url(#emerald)"/>
+  <text x="145" y="831" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۳</text>
+  <text x="250" y="808" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Constraints · محدودیت‌ها</text>
+  <text x="250" y="851" text-anchor="start" fill="#cfe6e0" font-size="22" direction="rtl">قواعد، مرزها و مجوزهای کار را بنویس.</text>
+
+  <rect x="62" y="908" width="956" height="135" rx="26" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="145" cy="975" r="38" fill="url(#emerald)"/>
+  <text x="145" y="985" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۴</text>
+  <text x="250" y="962" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Output · خروجی</text>
+  <text x="250" y="1005" text-anchor="start" fill="#cfe6e0" font-size="22" direction="rtl">قالب پاسخ و معیار پذیرش نتیجه را تعیین کن.</text>
+
+  <rect x="62" y="1070" width="956" height="170" rx="30" fill="#10281d" stroke="url(#gold)" stroke-width="3"/>
+  <text x="540" y="1125" text-anchor="middle" fill="#f6d06b" font-size="26" font-weight="700" direction="rtl">یک مرحله بازبینی اضافه کن</text>
+  <text x="540" y="1174" text-anchor="middle" fill="#ffffff" font-size="22" direction="rtl">«پیش از نهایی‌کردن، نتیجه را با محدودیت‌ها بسنج</text>
+  <text x="540" y="1210" text-anchor="middle" fill="#ffffff" font-size="22" direction="rtl">و موارد نامطمئن را فهرست کن.»</text>
+  <text x="540" y="1290" text-anchor="middle" fill="#9aafa8" font-size="18" direction="rtl">اسلاید بعدی: استفاده از Guided Vision در Gemini</text>
+</g>
+</svg>

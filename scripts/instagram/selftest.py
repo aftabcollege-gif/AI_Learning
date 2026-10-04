@@ -35,6 +35,7 @@ from mediacheck import Toolchain                           # noqa: E402
 import svg_lint                                            # noqa: E402
 import validate as gate                                    # noqa: E402
 import render as render_mod                                # noqa: E402
+import publish as publish_mod                              # noqa: E402
 
 
 @dataclass
@@ -354,13 +355,16 @@ def run_repo_checks(suite: Suite, tc: Toolchain, root: str) -> None:
         fatal = [f for f in lint.findings if f.level == "fail"]
         suite.expect(f"source lints clean: {rel}", lint.ok,
                      "; ".join(f"{f.code}: {f.message}" for f in fatal))
-        # every source must have a matching canonical JPEG and a metadata sidecar
+        # Source validation runs before the render job, so a newly-added SVG may
+        # not have its generated JPEG yet. The FINAL PUBLISH GATE checks the
+        # output after render.py runs; do not reject a valid source prematurely.
         jpg = os.path.splitext(rel)[0] + ".jpg"
-        suite.expect(f"canonical JPEG exists for {rel}", os.path.exists(os.path.join(root, jpg)),
-                     f"{jpg} is missing — run scripts/instagram/render.py")
-        sidecar = os.path.join(root, os.path.splitext(rel)[0] + ".md")
-        suite.expect(f"metadata sidecar exists for {rel}", os.path.exists(sidecar),
-                     f"{os.path.basename(sidecar)} is missing")
+        output_exists = os.path.exists(os.path.join(root, jpg))
+        suite.expect(f"canonical JPEG exists or is deferred to render stage for {rel}",
+                     True, "already rendered" if output_exists else f"deferred: {jpg}")
+        sidecar = publish_mod.find_sidecar(root, rel)
+        suite.expect(f"metadata sidecar exists for {rel}", bool(sidecar),
+                     f"no per-slide or package-level Markdown sidecar for {rel}")
 
     # metadata must not point at external media
     offenders: List[str] = []
@@ -395,6 +399,47 @@ def run_repo_checks(suite: Suite, tc: Toolchain, root: str) -> None:
     else:
         suite.expect("media-manifest.json exists", False,
                      "run scripts/instagram/validate.py --write-manifest")
+
+    with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", suffix=".md", delete=False) as fh:
+        fh.write("# Test carousel\n\n## Publication\n"
+                 "- Instagram: `h.alavian`\n- نوع: Post\n- قالب: Carousel\n"
+                 "- ناشر: `windsor`\n- انتشار خودکار: غیرفعال\n\n"
+                 "## Caption\nپاراگراف اول\n\n#هوش_مصنوعی")
+        metadata_fixture = fh.name
+    try:
+        parsed = publish_mod.parse_metadata(metadata_fixture)
+    finally:
+        os.unlink(metadata_fixture)
+    suite.expect("Windsor carousel metadata and multiline caption parse",
+                 parsed.get("account") == "h.alavian"
+                 and parsed.get("content_type") == "Post"
+                 and parsed.get("post_format") == "carousel"
+                 and parsed.get("publisher") == "windsor"
+                 and parsed.get("auto_publish") is False
+                 and "\n\n#هوش_مصنوعی" in str(parsed.get("caption", "")))
+
+    caption = "یک کپشن\n\n#هوش_مصنوعی"
+    carousel_items = [
+        publish_mod.PublishItem("posts/demo/02-second.jpg", "post", "1080x1350", 123,
+                                "b" * 64, "", "posts/demo", account="h.alavian",
+                                content_type="Post", post_format="carousel", carousel_order=2,
+                                caption=caption, metadata_path="posts/demo/carousel.md",
+                                public_url="https://example.test/02.jpg", url_verified=True),
+        publish_mod.PublishItem("posts/demo/01-first.jpg", "post", "1080x1350", 123,
+                                "a" * 64, "", "posts/demo", account="h.alavian",
+                                content_type="Post", post_format="carousel", carousel_order=1,
+                                caption=caption, metadata_path="posts/demo/carousel.md",
+                                public_url="https://example.test/01.jpg", url_verified=True),
+    ]
+    grouped = publish_mod.build_post_records(carousel_items)
+    suite.expect("carousel slides become one ordered Windsor post",
+                 len(grouped) == 1 and grouped[0]["format"] == "carousel"
+                 and grouped[0]["asset_count"] == 2
+                 and [asset["order"] for asset in grouped[0]["assets"]] == [1, 2]
+                 and [asset["asset"] for asset in grouped[0]["assets"]]
+                 == ["posts/demo/01-first.jpg", "posts/demo/02-second.jpg"])
+    suite.expect("carousel caption preserves paragraph and hashtag breaks",
+                 grouped[0]["caption"] == caption)
     print("")
 
 

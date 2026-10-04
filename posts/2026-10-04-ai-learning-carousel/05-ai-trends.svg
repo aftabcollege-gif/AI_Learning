@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050807"/><stop offset=".55" stop-color="#0b211b"/><stop offset="1" stop-color="#020504"/></linearGradient>
+  <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#00d6a3"/><stop offset="1" stop-color="#075c4b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7d47a"/><stop offset="1" stop-color="#9a7026"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<circle cx="900" cy="170" r="185" fill="#063a32" opacity=".36"/>
+<circle cx="125" cy="1000" r="170" fill="#24102a" opacity=".2"/>
+<g font-family="Vazirmatn, 'Noto Naskh Arabic', 'Noto Sans Arabic', Tahoma, DejaVu Sans, sans-serif">
+  <text x="540" y="80" text-anchor="middle" fill="#66e6bf" font-size="22" font-weight="700" letter-spacing="2">AI_LEARNING  •  CAROUSEL  05 / 05</text>
+  <text x="540" y="160" text-anchor="middle" fill="#ffffff" font-size="49" font-weight="700" direction="rtl">۵ حوزه‌ی پررنگ در دنیای AI</text>
+  <text x="540" y="211" text-anchor="middle" fill="#c7d9d3" font-size="24" direction="rtl">چند موضوع برای دنبال‌کردن و یادگیری بیشتر</text>
+  <rect x="65" y="248" width="950" height="3" fill="url(#gold)"/>
+
+  <rect x="62" y="282" width="956" height="138" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="130" cy="351" r="36" fill="url(#emerald)"/><text x="130" y="361" text-anchor="middle" fill="#04231c" font-size="28" font-weight="700">۱</text>
+  <text x="580" y="340" text-anchor="middle" fill="#f6d87d" font-size="29" font-weight="700" direction="rtl">خودرو و رباتیک</text>
+  <text x="580" y="383" text-anchor="middle" fill="#cfe6e0" font-size="21" direction="rtl">از رانندگی خودکار تا ربات‌های کاربردی</text>
+
+  <rect x="62" y="438" width="956" height="138" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="130" cy="507" r="36" fill="#831d42"/><text x="130" y="517" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="700">۲</text>
+  <text x="580" y="496" text-anchor="middle" fill="#f6d87d" font-size="29" font-weight="700" direction="rtl">محاسبات فضایی</text>
+  <text x="580" y="539" text-anchor="middle" fill="#cfe6e0" font-size="21" direction="rtl">پردازش نزدیک‌تر به ماهواره‌ها و فضا</text>
+
+  <rect x="62" y="594" width="956" height="138" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="130" cy="663" r="36" fill="url(#emerald)"/><text x="130" y="673" text-anchor="middle" fill="#04231c" font-size="28" font-weight="700">۳</text>
+  <text x="580" y="652" text-anchor="middle" fill="#f6d87d" font-size="29" font-weight="700" direction="rtl">سلامت و پزشکی</text>
+  <text x="580" y="695" text-anchor="middle" fill="#cfe6e0" font-size="21" direction="rtl">کمک پژوهشی برای تحلیل داده و ارزیابی ریسک</text>
+
+  <rect x="62" y="750" width="956" height="138" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="130" cy="819" r="36" fill="#831d42"/><text x="130" y="829" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="700">۴</text>
+  <text x="580" y="808" text-anchor="middle" fill="#f6d87d" font-size="29" font-weight="700" direction="rtl">انرژی و داده‌مرکزها</text>
+  <text x="580" y="851" text-anchor="middle" fill="#cfe6e0" font-size="21" direction="rtl">رشد AI، پرسش‌های تازه‌ای درباره‌ی برق می‌سازد</text>
+
+  <rect x="62" y="906" width="956" height="138" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
+  <circle cx="130" cy="975" r="36" fill="url(#emerald)"/><text x="130" y="985" text-anchor="middle" fill="#04231c" font-size="28" font-weight="700">۵</text>
+  <text x="580" y="964" text-anchor="middle" fill="#f6d87d" font-size="29" font-weight="700" direction="rtl">عامل‌های هوشمند</text>
+  <text x="580" y="1007" text-anchor="middle" fill="#cfe6e0" font-size="21" direction="rtl">از پاسخ‌گویی تا اجرای کارهای چندمرحله‌ای</text>
+
+  <rect x="62" y="1080" width="956" height="130" rx="30" fill="#10281d" stroke="url(#gold)" stroke-width="3"/>
+  <text x="540" y="1135" text-anchor="middle" fill="#f6d06b" font-size="23" font-weight="700" direction="rtl">برای جزئیات هر خبر، منبع اصلی را بررسی کن.</text>
+  <text x="540" y="1176" text-anchor="middle" fill="#9fd8c8" font-size="19" direction="rtl">هوش مصنوعی با سرعت تغییر می‌کند؛ یادگیری را ادامه بده.</text>
+  <text x="540" y="1290" text-anchor="middle" fill="#f6d06b" font-size="24" font-weight="700">AI_Learning  •  آموزش کاربردی هوش مصنوعی</text>
+</g>
+</svg>
