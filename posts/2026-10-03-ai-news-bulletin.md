@@ -1,12 +1,12 @@
-# AI News Bulletin — 2026-10-02 (archived record)
+# AI News Bulletin — 2026-10-03
 
-## Status: NO PUBLISHABLE ASSET IN THIS REVISION
-The 2026-10-02 bulletin was never rendered into a validated image. This file is
-kept as a content record only.
+## Visual
+Validated asset (rendered from the SVG source beside it):
+`posts/2026-10-03-ai-news-bulletin.jpg` — 1080x1350 JPEG, sRGB, 4:4:4
 
-**Do not publish from this file.** There is no FINAL asset, no public URL and no
-manifest entry for 2026-10-02, and the publish gate will refuse any item that is
-not recorded in `media-manifest.json` with a PASSing gate.
+The public URL must come from the last `reports/publish-plan.json`:
+it is pinned to a full commit SHA and verified byte-for-byte against the
+asset hash. Never hand-write or reuse an older pinned URL.
 
 ## Selected news
 - Google unveiled Gemini 4 "Argon" on Sep 30, initially to selected partners; Reuters reported it as Google's flagship model.
@@ -21,5 +21,13 @@ not recorded in `media-manifest.json` with a PASSing gate.
 - AI model release tracker: https://siliconainews.com/tracker/ai-model-releases
 
 ## Publication
+- Instagram: `h.alavian`
+- نوع: Post
+- زمان: `2026-10-03 00:00` (Asia/Tehran)
 - انتشار خودکار: غیرفعال
-- No FINAL asset. Not published by this pipeline.
+- محتوای تولید/ویرایش‌شده با AI: بله
+- FINAL asset: `2026-10-03-ai-news-bulletin.jpg`
+
+## FINAL selection
+Exactly one publishable asset for this package: `2026-10-03-ai-news-bulletin.jpg`
+(source: `2026-10-03-ai-news-bulletin.svg`). No alternative renders exist.

@@ -1,62 +1,392 @@
 name: Render Instagram Images
 
+# LOOP PREVENTION
+# The render job commits JPEGs back into the repository. If this workflow also
+# triggered on `stories/**.jpg` / `posts/**.jpg` it would re-trigger itself
+# forever. The trigger list below therefore contains ONLY render inputs:
+# SVG sources, the pipeline scripts, the assets they depend on, and the
+# workflow file itself. Committed JPEGs and reports can never start a run.
+#
+# STALE WORKFLOW PROTECTION
+# GitHub always executes the workflow file from the commit being built, so a
+# run started by an older commit uses that commit's revision of these scripts.
 on:
   push:
     paths:
       - 'stories/**/*.svg'
       - 'posts/**/*.svg'
+      - 'scripts/instagram/**'
+      - 'media-manifest.json'
+      - 'assets/fonts/**'
       - '.github/workflows/render-story-images.yml'
+  pull_request:
+    paths:
+      - 'stories/**/*.svg'
+      - 'posts/**/*.svg'
+      - 'scripts/instagram/**'
+      - 'assets/fonts/**'
+      - '.github/workflows/render-story-images.yml'
+      - 'stories/**/*.md'
+      - 'posts/**/*.md'
   workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Run the publish gate (requires publisher receipts)'
+        type: boolean
+        default: false
+      require_published:
+        description: 'Fail unless every auto-publish item has a verified receipt'
+        type: boolean
+        default: false
+      skip_url_verification:
+        description: 'Skip public URL verification (diagnostics only)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
+# Two renders must never race for the same branch.
+concurrency:
+  group: render-instagram-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: '1'
+  JPEG_QUALITY: '95'
+
 jobs:
-  render:
+  # ---------------------------------------------------------------------
+  # 1. Static validation: source lints + publish metadata sanity.
+  # ---------------------------------------------------------------------
+  source-validation:
+    name: Source validation
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
-      - name: Install SVG renderer
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y librsvg2-bin imagemagick
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-      - name: Render Story SVGs to Instagram JPEG
+      - name: Install and verify toolchain
+        run: bash scripts/instagram/ensure_toolchain.sh
+
+      # Failures are echoed as GitHub error annotations so the reason is visible
+      # even when the raw log download endpoint is unavailable.
+      - name: Lint SVG sources and publication metadata
         run: |
-          find stories -type f -name '*.svg' -print0 | while IFS= read -r -d '' f; do
-            out="${f%.svg}.jpg"
-            rsvg-convert -w 1080 -h 1920 -f png "$f" -o /tmp/story.png
-            convert /tmp/story.png -colorspace sRGB -quality 100 -sampling-factor 4:4:4 "$out"
+          set +e
+          python3 scripts/instagram/selftest.py --root . 2>&1 | tee /tmp/selftest.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            {
+              echo "### Self-test failures"
+              echo '```'
+              grep -E 'FAILED CHECK' /tmp/selftest.log | head -25
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            grep -E 'FAILED CHECK' /tmp/selftest.log | head -25 | while IFS= read -r line; do
+              echo "::error::${line}"
+            done
+          fi
+          exit "$status"
+
+      - name: Upload toolchain log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-validation-log
+          path: scripts/instagram/**/*.log
+          if-no-files-found: ignore
+
+  # ---------------------------------------------------------------------
+  # 2. Render every source and validate the produced artefacts, in one job,
+  #    so nothing is committed until the gate has passed.
+  # ---------------------------------------------------------------------
+  render-and-validate:
+    name: Render + FINAL PUBLISH GATE
+    needs: source-validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Guard against a stale workflow revision
+        run: |
+          echo "building commit: ${GITHUB_SHA}"
+          echo "workflow file version: $(git log -1 --format=%h -- .github/workflows/render-story-images.yml)"
+          for f in scripts/instagram/render.py scripts/instagram/validate.py scripts/instagram/mediacheck.py scripts/instagram/svg_lint.py; do
+            test -f "$f" || { echo "::error::$f is missing from this revision"; exit 1; }
           done
 
-      - name: Render Post SVGs to Instagram JPEG
-        run: |
-          find posts -type f -name '*.svg' -print0 | while IFS= read -r -d '' f; do
-            out="${f%.svg}.jpg"
-            rsvg-convert -w 1080 -h 1350 -f png "$f" -o /tmp/post.png
-            convert /tmp/post.png -colorspace sRGB -quality 100 -sampling-factor 4:4:4 "$out"
-          done
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-      - name: Validate Instagram media
+      - name: Install and verify toolchain (renderers, fonts, ImageMagick)
         run: |
-          find stories posts -type f \( -name '*.jpg' -o -name '*.jpeg' \) -print0 | while IFS= read -r -d '' f; do
-            identify "$f"
-            format=$(identify -format '%m' "$f")
-            dimensions=$(identify -format '%wx%h' "$f")
-            test "$format" = "JPEG"
-            case "$f" in
-              stories/*) test "$dimensions" = "1080x1920" ;;
-              posts/*) test "$dimensions" = "1080x1350" ;;
-            esac
-          done
+          set +e
+          bash scripts/instagram/ensure_toolchain.sh 2>&1 | tee /tmp/toolchain.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            grep -E '\[FAIL\]' /tmp/toolchain.log | head -20 | while IFS= read -r line; do
+              echo "::error::toolchain ${line}"
+            done
+          fi
+          exit "$status"
+
+      - name: Render sources to publish-grade JPEG
+        run: |
+          set +e
+          python3 scripts/instagram/render.py --root . --quality "${JPEG_QUALITY}" 2>&1 | tee /tmp/render.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            grep -E 'result : FAIL|rejected:' /tmp/render.log | head -25 | while IFS= read -r line; do
+              echo "::error::render ${line}"
+            done
+          fi
+          exit "$status"
+
+      # The gate inspects the files on disk, not the renderer's exit code.
+      # Failure reasons are echoed as error annotations so a red run explains
+      # itself even when the raw log endpoint is unavailable.
+      - name: FINAL PUBLISH GATE
+        run: |
+          set +e
+          python3 scripts/instagram/validate.py --root . --write-manifest 2>&1 | tee /tmp/gate.log
+          status=${PIPESTATUS[0]}
+          { echo "### FINAL PUBLISH GATE"; echo '```'; tail -30 /tmp/gate.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$status" -ne 0 ]; then
+            grep -E '^REASON:|^\[FAIL\]' /tmp/gate.log | head -25 | while IFS= read -r line; do
+              echo "::error::${line}"
+            done
+          fi
+          exit "$status"
+
+      - name: Re-validate independently of the renderer
+        run: |
+          python3 scripts/instagram/validate.py --root . --skip-sources --quiet
+          echo "independent re-validation passed"
+
+      - name: Show final assets
+        if: always()
+        run: |
+          echo "### Final assets" >> "$GITHUB_STEP_SUMMARY"
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, os
+          p = "reports/media-validation.json"
+          if not os.path.exists(p):
+              print("no validation report produced"); raise SystemExit
+          d = json.load(open(p, encoding="utf-8"))
+          print(f"**FINAL STATUS: {d['status']}** (renderer: `{d.get('renderer')}`)")
+          print()
+          print("| asset | kind | dimensions | size | sha256 | status |")
+          print("|---|---|---|---|---|---|")
+          for a in d["assets"]:
+              print(f"| `{a['path']}` | {a['kind']} | {a['dimensions']} | "
+                    f"{a['size_bytes']//1024} KB | `{a['sha256'][:16]}…` | {a['status']} |")
+          PY
 
       - name: Commit rendered files
+        id: commit
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stories posts
-          git diff --cached --quiet && exit 0
-          git commit -m "Format Instagram media as publish-ready JPEG"
-          git push
+          git add -A stories posts media-manifest.json reports
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Render Instagram media: validated Story/Post JPEGs [skip ci]"
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+          git show --stat HEAD | head -30
+          echo "rendered files:" >> "$GITHUB_STEP_SUMMARY"
+          git show --stat --format='' HEAD >> "$GITHUB_STEP_SUMMARY"
+
+      # Rebase before pushing so a concurrent commit is never overwritten.
+      - name: Push (rebase on top of any new remote commit)
+        if: steps.commit.outputs.committed == 'true' && github.event_name == 'push'
+        run: |
+          set -euo pipefail
+          branch="${GITHUB_REF_NAME}"
+          for attempt in 1 2 3; do
+            git fetch origin "${branch}"
+            if git rebase "origin/${branch}"; then
+              if git push origin "HEAD:${branch}"; then
+                echo "pushed on attempt ${attempt}"
+                exit 0
+              fi
+            else
+              echo "::warning::rebase conflict on attempt ${attempt}; aborting rebase"
+              git rebase --abort || true
+            fi
+            echo "attempt ${attempt} failed; re-checking remote state"
+            sleep $((attempt * 5))
+          done
+          echo "::error::could not push after 3 attempts"
+          git status
+          exit 1
+
+      # A stale-checkout guard: the pushed commit must contain the exact files
+      # the gate just validated.
+      - name: Verify the pushed revision matches what was validated
+        if: steps.commit.outputs.committed == 'true' && github.event_name == 'push'
+        run: python3 scripts/instagram/validate.py --root . --quiet
+
+      - name: Upload validation artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: media-validation
+          path: |
+            reports/media-validation.json
+            reports/media-ledger.md
+            media-manifest.json
+          if-no-files-found: warn
+
+  # ---------------------------------------------------------------------
+  # 3. Render smoke test with the *fallback* renderer, proving the pipeline
+  #    works even if the primary renderer disappears from the runner image.
+  # ---------------------------------------------------------------------
+  renderer-fallback-check:
+    name: Fallback renderer check
+    needs: source-validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install and verify toolchain
+        run: bash scripts/instagram/ensure_toolchain.sh
+      - name: Install a second independent renderer for cross-checking
+        run: |
+          python3 -m pip install --quiet --disable-pip-version-check resvg-py \
+            && echo "resvg-py installed (independent Rust renderer)" \
+            || echo "::warning::resvg-py unavailable; cross-renderer comparison will be skipped"
+
+      - name: Enumerate renderers
+        run: python3 scripts/instagram/render.py --root . --list-renderers
+
+      # Renders every source with two independent renderers and fails if they
+      # disagree or if either one runs content off the canvas edge. This is the
+      # check that catches renderer-specific RTL text anchoring, which produces
+      # a technically valid JPEG whose text is clipped.
+      - name: Exercise the recovery chain and cross-renderer agreement
+        run: |
+          set +e
+          python3 scripts/instagram/selftest.py --root . --renderer-recovery 2>&1 | tee /tmp/crossrender.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            grep -E 'FAILED CHECK' /tmp/crossrender.log | head -20 | while IFS= read -r line; do
+              echo "::error::${line}"
+            done
+            grep -E 'Traceback|Error:|error:|\[FAIL\]' /tmp/crossrender.log | head -10 | while IFS= read -r line; do
+              echo "::error::cross-renderer ${line}"
+            done
+            # always surface the tail so the cause is visible from the checks API
+            tail -12 /tmp/crossrender.log | while IFS= read -r line; do
+              echo "::warning::tail ${line}"
+            done
+          fi
+          exit "$status"
+
+  # ---------------------------------------------------------------------
+  # 4. Publishing gate. On push this only produces and verifies the plan;
+  #    with publish=true it also demands publisher receipts.
+  # ---------------------------------------------------------------------
+  publish-gate:
+    name: Publish gate
+    needs: [render-and-validate, renderer-fallback-check]
+    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          ref: ${{ github.event_name == 'push' && github.sha || github.ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify the manifest is present and PASSing
+        run: |
+          test -f media-manifest.json || { echo "::error::media-manifest.json is missing; publishing refused"; exit 1; }
+          python3 - <<'PY'
+          import json, sys
+          d = json.load(open("media-manifest.json", encoding="utf-8"))
+          print("gate:", d.get("gate_status"), "assets:", len(d.get("assets", {})))
+          if d.get("gate_status") != "PASS":
+              print("::error::the media manifest reports a failed gate; publishing is refused")
+              sys.exit(1)
+          PY
+
+      - name: Install and verify toolchain
+        run: bash scripts/instagram/ensure_toolchain.sh
+
+      - name: Build and verify the publish plan
+        env:
+          PLAN_ONLY: ${{ (github.event_name != 'workflow_dispatch' || !inputs.publish) && '1' || '0' }}
+          REQUIRE_PUBLISHED: ${{ (github.event_name == 'workflow_dispatch' && inputs.require_published) && '1' || '0' }}
+          SKIP_URL: ${{ (github.event_name == 'workflow_dispatch' && inputs.skip_url_verification) && '1' || '0' }}
+        run: |
+          set -euo pipefail
+          args=(--root . --owner "${GITHUB_REPOSITORY_OWNER}" --repo "${GITHUB_REPOSITORY#*/}"
+                --commit "${GITHUB_SHA}" --publisher auto)
+          [ "${PLAN_ONLY}" = "1" ] && args+=(--plan-only)
+          [ "${REQUIRE_PUBLISHED}" = "1" ] && args+=(--require-published)
+          [ "${SKIP_URL}" = "1" ] && args+=(--skip-url-verification)
+          echo "running: python3 scripts/instagram/publish.py ${args[*]}"
+          python3 scripts/instagram/publish.py "${args[@]}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo "### Publish gate"
+            if [ -f reports/publish-report.json ]; then
+              python3 - <<'PY'
+          import json
+          d = json.load(open("reports/publish-report.json", encoding="utf-8"))["summary"]
+          print(f"**FINAL STATUS: {d['final_status']}** — {d['ready']}/{d['items']} ready, "
+                f"{d['blocked']} blocked, {d['pending_receipt']} awaiting receipt")
+          print()
+          print(f"run: `{d['run_id']}` commit: `{d['commit_sha']}`")
+          PY
+            else
+              echo "no publish report produced"
+            fi
+            echo
+            echo "Assets are only published after the FINAL PUBLISH GATE reports PASS,"
+            echo "the public URL returns the exact validated bytes, and the publisher"
+            echo "returns a receipt whose sha256 matches the validated asset."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload publish artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-plan
+          path: |
+            reports/publish-plan.json
+            reports/publish-report.json
+          if-no-files-found: warn

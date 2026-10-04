@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local render scratch space (never a publish source)
+/tmp-render/
+*.tmp
+
+# Publish artefacts are regenerated on every run and contain commit-pinned URLs.
+# They are uploaded as workflow artefacts instead of being committed, so a stale
+# URL can never be mistaken for a current one.
+reports/publish-plan.json
+reports/publish-report.json
+
+# OS noise
+.DS_Store
+Thumbs.db

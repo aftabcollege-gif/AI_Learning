@@ -1,6 +1,11 @@
 # Story 01 — انواع پرامپت‌های ویرایش تصویر با هوش مصنوعی
 
-![AI Editing Prompts](https://static.metricool.com/planner/202609/6943078-file-9724431711933430352.jpeg)
+Validated asset (rendered from the SVG source in this package):
+`stories/2026-09-18/01-ai-photo-editing-prompts.jpg` — 1080x1920 JPEG, sRGB, 4:4:4
+
+The public URL must come from the last `reports/publish-plan.json`:
+it is pinned to a full commit SHA and verified byte-for-byte against the
+asset hash. Never hand-write or reuse an older pinned URL.
 
 **موضوع:** اصلاح نور و رنگ، تغییر زاویه دوربین، تغییر لباس، تغییر جزئیات صورت، کارتونی‌کردن، تغییر پس‌زمینه، سیاه‌وسفید، افزودن جزئیات و تغییر استایل کلی.
 
@@ -8,8 +13,9 @@
 - Instagram: `h.alavian`
 - نوع: Story
 - زمان: `2026-09-18 00:00` به وقت ایران (Asia/Tehran)
-- انتشار خودکار: فعال
+- انتشار خودکار: غیرفعال
 - محتوای تولید/ویرایش‌شده با AI: بله
+- FINAL asset: `01-ai-photo-editing-prompts.jpg`
 
 ## پرامپت‌های استفاده‌شده در استوری
 1. **اصلاح نور و رنگ:** `Adjust lighting and color, make it brighter, warmer, more vibrant, keep the same face and identity.`
