@@ -6,13 +6,13 @@
   "source_ref": "main",
   "source_commit": "e58e8cb426f51792d3fa4ae3b601255bf8fa42d1",
   "copy_method": "Git blob bytes copied without decoding or re-encoding",
-  "image_edits": "none",
+  "image_edits": "Original PNGs are unchanged; separate JPEG derivatives were added at quality 100 and 4:4:4. JPEG encoding is lossy, so derived pixels are not identical.",
   "publisher": "Windsor",
   "scheduled_at": null,
   "published": false,
   "publish_status": "BLOCKED",
   "blockers": [
-    "Windsor carousel action requires JPEG files and 4:5 to 1.91:1 aspect ratios; the originals are PNG, and nine are 1024x1536 (2:3), outside that range.",
+    "Nine JPEG derivatives retain their 2:3 aspect ratio (1024x1536), outside Windsor’s 4:5 minimum; meeting it would require cropping or resizing.",
     "No Windsor publishing/scheduling action is connected in this agent session or repository workflow."
   ],
   "assets": [
@@ -29,7 +29,20 @@
       "size_bytes": 2116011,
       "sha256": "2caa562ac19207a9d677140a67530448ed9c845918d4e33c7b0ae9f47d3796f6",
       "source_sha256": "2caa562ac19207a9d677140a67530448ed9c845918d4e33c7b0ae9f47d3796f6",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/01-nvqlink-quantum-computing.jpg",
+        "sha256": "02fbf8aad538c2c37164e42f512dd8b039a1881d8ea78573d07e16f6d62622ce",
+        "size_bytes": 1705942,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1024x1536",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.00268136,
+        "psnr_db": 51.4329,
+        "normalized_cross_correlation": 0.999901
+      }
     },
     {
       "order": 2,
@@ -44,7 +57,20 @@
       "size_bytes": 2040796,
       "sha256": "9437b67ff87d8387f318df1850b5058b49f2327a66388e2f9f9d9cbe7dd4fa5f",
       "source_sha256": "9437b67ff87d8387f318df1850b5058b49f2327a66388e2f9f9d9cbe7dd4fa5f",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/02-tesla-fsd-v14.jpg",
+        "sha256": "12b669afc109e07d09b85d0cd8fafe886478ee4ad55c744772f281facaae638e",
+        "size_bytes": 1692581,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1024x1536",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.00278889,
+        "psnr_db": 51.0914,
+        "normalized_cross_correlation": 0.999895
+      }
     },
     {
       "order": 3,
@@ -59,7 +85,20 @@
       "size_bytes": 1815422,
       "sha256": "facaebf9b19e4a911c9d5ff135022d344718e3280d7ecdbd89b5f91c3e3ec7c9",
       "source_sha256": "facaebf9b19e4a911c9d5ff135022d344718e3280d7ecdbd89b5f91c3e3ec7c9",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/03-canscan-cancer-screening.jpg",
+        "sha256": "6de98eb59c128a8e9fbbfad49c41bd5735126c7f25e64b56bf8d678775a85183",
+        "size_bytes": 1514263,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1024x1536",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.00246654,
+        "psnr_db": 52.1582,
+        "normalized_cross_correlation": 0.999914
+      }
     },
     {
       "order": 4,
@@ -74,7 +113,20 @@
       "size_bytes": 2100551,
       "sha256": "85e4f106e1fd84659ca4b6b68ae1240d2458bfe15de8369d99ace4cf55ca2110",
       "source_sha256": "85e4f106e1fd84659ca4b6b68ae1240d2458bfe15de8369d99ace4cf55ca2110",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/04-super-turing-ai.jpg",
+        "sha256": "321468f0ca167203b4f452aa7fe1c3e9d59ab54fcb07bdac7a247e416e73486c",
+        "size_bytes": 1839738,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1024x1536",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.00265367,
+        "psnr_db": 51.5231,
+        "normalized_cross_correlation": 0.999917
+      }
     },
     {
       "order": 5,
@@ -89,7 +141,20 @@
       "size_bytes": 2060099,
       "sha256": "5577748cd8c03e0e617071f6fdad68ce483e4bc829c9e936ea0887f385a18320",
       "source_sha256": "5577748cd8c03e0e617071f6fdad68ce483e4bc829c9e936ea0887f385a18320",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/05-gm-eyes-off-driving.jpg",
+        "sha256": "571f04679369f5c123cec585e702a15fda555106a4664222c912578421f65334",
+        "size_bytes": 1698254,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1024x1536",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.00247778,
+        "psnr_db": 52.1187,
+        "normalized_cross_correlation": 0.999904
+      }
     },
     {
       "order": 6,
@@ -104,7 +169,20 @@
       "size_bytes": 2034916,
       "sha256": "a83fa936681f68e47ad7b618aacd0821d1807306f8da7a7d447be153f41eddf0",
       "source_sha256": "a83fa936681f68e47ad7b618aacd0821d1807306f8da7a7d447be153f41eddf0",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/06-deepmind-cancer-discovery.jpg",
+        "sha256": "aa8731a5267fd880ef504a4895b36fca09e9a992a4dc2d76b15ba71563bf850d",
+        "size_bytes": 1718650,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1122x1402",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.0026204,
+        "psnr_db": 51.6326,
+        "normalized_cross_correlation": 0.999892
+      }
     },
     {
       "order": 7,
@@ -119,7 +197,20 @@
       "size_bytes": 1933757,
       "sha256": "bc7d6c03533f2f9b9212b917b4a4f79e29e5950c41fa1d48e1b807310f9db2a3",
       "source_sha256": "bc7d6c03533f2f9b9212b917b4a4f79e29e5950c41fa1d48e1b807310f9db2a3",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/07-cambridge-memristor.jpg",
+        "sha256": "0cc41a5c14ac691579bf616f6900a761e816424aae9f12702c381878632985b0",
+        "size_bytes": 1653202,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1024x1536",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.00253277,
+        "psnr_db": 51.9281,
+        "normalized_cross_correlation": 0.999891
+      }
     },
     {
       "order": 8,
@@ -134,7 +225,20 @@
       "size_bytes": 1994880,
       "sha256": "e81e62e314aa0d611e600f0c84e26758d17907163ab7e60dca1e1e13845ef510",
       "source_sha256": "e81e62e314aa0d611e600f0c84e26758d17907163ab7e60dca1e1e13845ef510",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/08-nvidia-blackwell-mlperf.jpg",
+        "sha256": "61f52824ab5ccad441e2bee4e575b7d4a5926bf47414d1c9a6d75332ec61219f",
+        "size_bytes": 1750044,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1024x1536",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.00250126,
+        "psnr_db": 52.0368,
+        "normalized_cross_correlation": 0.999904
+      }
     },
     {
       "order": 9,
@@ -149,7 +253,20 @@
       "size_bytes": 2234976,
       "sha256": "718dc0394ede35a635900ee26970951a34fc44f714b97c739605bd4f9ad3e5de",
       "source_sha256": "718dc0394ede35a635900ee26970951a34fc44f714b97c739605bd4f9ad3e5de",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/09-ai-evtol.jpg",
+        "sha256": "16cc26d8bba83db21d5c39b150202cd4c2528b43b9edafae59545c66c924fb87",
+        "size_bytes": 1793394,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1024x1536",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.00274379,
+        "psnr_db": 51.233,
+        "normalized_cross_correlation": 0.999892
+      }
     },
     {
       "order": 10,
@@ -164,7 +281,23 @@
       "size_bytes": 2084808,
       "sha256": "2e075c0eb7b16fcccd3b4387b3c1b664169d1e43e0074dad816dfbefb8b81c72",
       "source_sha256": "2e075c0eb7b16fcccd3b4387b3c1b664169d1e43e0074dad816dfbefb8b81c72",
-      "bytes_identical_to_source": true
+      "bytes_identical_to_source": true,
+      "jpeg_derivative": {
+        "asset": "posts/2026-10-04-ai-tech-frontiers-carousel/10-ai-self-healing-grid.jpg",
+        "sha256": "0be80b692544bd44afa47304b50ede352f2164fc09acddab018154710f2f4e13",
+        "size_bytes": 1765747,
+        "format": "JPEG",
+        "quality": 100,
+        "sampling_factor": "1x1,1x1,1x1",
+        "dimensions": "1024x1536",
+        "resized_or_cropped": false,
+        "normalized_rmse": 0.00262109,
+        "psnr_db": 51.6303,
+        "normalized_cross_correlation": 0.99989
+      }
     }
-  ]
+  ],
+  "original_pngs_unchanged": true,
+  "jpeg_derivatives_added": true,
+  "jpeg_conversion_report": "posts/2026-10-04-ai-tech-frontiers-carousel/jpeg-conversion-check.json"
 }
