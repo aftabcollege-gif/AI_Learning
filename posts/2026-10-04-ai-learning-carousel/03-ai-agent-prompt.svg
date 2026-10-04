@@ -22,25 +22,25 @@
   <circle cx="145" cy="513" r="38" fill="url(#emerald)"/>
   <text x="145" y="523" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۱</text>
   <text x="250" y="500" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Goal · هدف</text>
-  <text x="950" y="543" text-anchor="end" fill="#cfe6e0" font-size="22" direction="rtl">چه کاری باید انجام شود؟ نتیجه نهایی را دقیق بنویس.</text>
+  <text x="620" y="543" text-anchor="middle" fill="#cfe6e0" font-size="22" direction="rtl">چه کاری باید انجام شود؟ نتیجه نهایی را دقیق بنویس.</text>
 
   <rect x="62" y="600" width="956" height="135" rx="26" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
   <circle cx="145" cy="667" r="38" fill="url(#emerald)"/>
   <text x="145" y="677" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۲</text>
   <text x="250" y="654" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Context · زمینه</text>
-  <text x="950" y="697" text-anchor="end" fill="#cfe6e0" font-size="22" direction="rtl">داده، فایل و اطلاعات در دسترس عامل را مشخص کن.</text>
+  <text x="620" y="697" text-anchor="middle" fill="#cfe6e0" font-size="22" direction="rtl">داده، فایل و اطلاعات در دسترس عامل را مشخص کن.</text>
 
   <rect x="62" y="754" width="956" height="135" rx="26" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
   <circle cx="145" cy="821" r="38" fill="url(#emerald)"/>
   <text x="145" y="831" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۳</text>
   <text x="250" y="808" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Constraints · محدودیت‌ها</text>
-  <text x="950" y="851" text-anchor="end" fill="#cfe6e0" font-size="22" direction="rtl">قواعد، مرزها و مجوزهای کار را بنویس.</text>
+  <text x="620" y="851" text-anchor="middle" fill="#cfe6e0" font-size="22" direction="rtl">قواعد، مرزها و مجوزهای کار را بنویس.</text>
 
   <rect x="62" y="908" width="956" height="135" rx="26" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
   <circle cx="145" cy="975" r="38" fill="url(#emerald)"/>
   <text x="145" y="985" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۴</text>
   <text x="250" y="962" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Output · خروجی</text>
-  <text x="950" y="1005" text-anchor="end" fill="#cfe6e0" font-size="22" direction="rtl">قالب پاسخ و معیار پذیرش نتیجه را تعیین کن.</text>
+  <text x="620" y="1005" text-anchor="middle" fill="#cfe6e0" font-size="22" direction="rtl">قالب پاسخ و معیار پذیرش نتیجه را تعیین کن.</text>
 
   <rect x="62" y="1070" width="956" height="170" rx="30" fill="#10281d" stroke="url(#gold)" stroke-width="3"/>
   <text x="540" y="1125" text-anchor="middle" fill="#f6d06b" font-size="26" font-weight="700" direction="rtl">یک مرحله بازبینی اضافه کن</text>

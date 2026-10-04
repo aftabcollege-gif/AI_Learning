@@ -18,25 +18,25 @@
   <circle cx="145" cy="352" r="38" fill="url(#emerald)"/>
   <text x="145" y="362" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۱</text>
   <text x="245" y="340" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Gemini</text>
-  <text x="950" y="382" text-anchor="end" fill="#cfe6e0" font-size="22" direction="rtl">اپلیکیشن Gemini را باز کن.</text>
+  <text x="620" y="382" text-anchor="middle" fill="#cfe6e0" font-size="22" direction="rtl">اپلیکیشن Gemini را باز کن.</text>
 
   <rect x="62" y="438" width="956" height="132" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
   <circle cx="145" cy="504" r="38" fill="#831d42"/>
   <text x="145" y="514" text-anchor="middle" fill="#ffffff" font-size="29" font-weight="700">۲</text>
   <text x="245" y="492" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Live</text>
-  <text x="950" y="534" text-anchor="end" fill="#cfe6e0" font-size="22" direction="rtl">حالت زنده را روشن کن.</text>
+  <text x="620" y="534" text-anchor="middle" fill="#cfe6e0" font-size="22" direction="rtl">حالت زنده را روشن کن.</text>
 
   <rect x="62" y="590" width="956" height="132" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
   <circle cx="145" cy="656" r="38" fill="url(#emerald)"/>
   <text x="145" y="666" text-anchor="middle" fill="#04231c" font-size="29" font-weight="700">۳</text>
   <text x="245" y="644" text-anchor="start" fill="#f6d87d" font-size="31" font-weight="700">Guided Vision</text>
-  <text x="950" y="686" text-anchor="end" fill="#cfe6e0" font-size="22" direction="rtl">دوربین را روی متن یا شیء بگیر.</text>
+  <text x="620" y="686" text-anchor="middle" fill="#cfe6e0" font-size="22" direction="rtl">دوربین را روی متن یا شیء بگیر.</text>
 
   <rect x="62" y="742" width="956" height="132" rx="27" fill="#07110f" stroke="#0c9d7c" stroke-width="2"/>
   <circle cx="145" cy="808" r="38" fill="#831d42"/>
   <text x="145" y="818" text-anchor="middle" fill="#ffffff" font-size="29" font-weight="700">۴</text>
-  <text x="950" y="796" text-anchor="end" fill="#f6d87d" font-size="31" font-weight="700" direction="rtl">سؤال تکمیلی</text>
-  <text x="950" y="838" text-anchor="end" fill="#cfe6e0" font-size="22" direction="rtl">برای جزئیات بیشتر، سؤال بعدی را بپرس.</text>
+  <text x="620" y="796" text-anchor="middle" fill="#f6d87d" font-size="31" font-weight="700" direction="rtl">سؤال تکمیلی</text>
+  <text x="620" y="838" text-anchor="middle" fill="#cfe6e0" font-size="22" direction="rtl">برای جزئیات بیشتر، سؤال بعدی را بپرس.</text>
 
   <rect x="62" y="908" width="956" height="270" rx="34" fill="#10281d" stroke="url(#gold)" stroke-width="3"/>
   <text x="540" y="968" text-anchor="middle" fill="#f6d06b" font-size="27" font-weight="700" direction="rtl">پرامپت پیشنهادی</text>
