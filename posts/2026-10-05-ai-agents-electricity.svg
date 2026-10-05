@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030505"/><stop offset=".55" stop-color="#10251e"/><stop offset="1" stop-color="#14070f"/></linearGradient>
+<linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#00d6a3"/><stop offset="1" stop-color="#f2c85b"/></linearGradient>
+</defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<circle cx="120" cy="120" r="180" fill="#063d32" opacity=".38"/><circle cx="970" cy="420" r="240" fill="#351022" opacity=".25"/>
+<g font-family="Vazirmatn, 'Noto Sans Arabic', Tahoma, sans-serif">
+<text x="540" y="80" text-anchor="middle" fill="#6de8c5" font-size="21" font-weight="700">AI_LEARNING • DAILY AI BRIEF</text>
+<text x="540" y="180" text-anchor="middle" fill="#fff" font-size="55" font-weight="700" direction="rtl">AI دیگر فقط پاسخ نمی‌دهد؛</text>
+<text x="540" y="248" text-anchor="middle" fill="#f5d36e" font-size="58" font-weight="700" direction="rtl">اقدام می‌کند.</text>
+<rect x="70" y="290" width="940" height="4" fill="url(#line)"/>
+<text x="540" y="355" text-anchor="middle" fill="#d5e3de" font-size="27" direction="rtl">ترند مهم امروز: حرکت از Chatbot به AI Agent</text>
+
+<rect x="70" y="410" width="940" height="330" rx="38" fill="#07130f" stroke="#247e6a" stroke-width="2"/>
+<text x="540" y="465" text-anchor="middle" fill="#f5d36e" font-size="27" font-weight="700" direction="rtl">Agent چه کاری متفاوت انجام می‌دهد؟</text>
+<g>
+<circle cx="205" cy="580" r="68" fill="#103d31"/><text x="205" y="570" text-anchor="middle" fill="#fff" font-size="23" font-weight="700" direction="rtl">برنامه‌ریزی</text><text x="205" y="605" text-anchor="middle" fill="#7fe1c6" font-size="18" direction="rtl">Plan</text>
+<circle cx="430" cy="580" r="68" fill="#35152a"/><text x="430" y="570" text-anchor="middle" fill="#fff" font-size="23" font-weight="700" direction="rtl">ابزار</text><text x="430" y="605" text-anchor="middle" fill="#f0c96b" font-size="18">Tools</text>
+<circle cx="655" cy="580" r="68" fill="#103d31"/><text x="655" y="570" text-anchor="middle" fill="#fff" font-size="23" font-weight="700" direction="rtl">اقدام</text><text x="655" y="605" text-anchor="middle" fill="#7fe1c6" font-size="18" direction="rtl">Action</text>
+<circle cx="880" cy="580" r="68" fill="#35152a"/><text x="880" y="570" text-anchor="middle" fill="#fff" font-size="23" font-weight="700" direction="rtl">نتیجه</text><text x="880" y="605" text-anchor="middle" fill="#f0c96b" font-size="18" direction="rtl">Result</text>
+<path d="M275 580 H360 M500 580 H585 M725 580 H810" stroke="#5ce0bd" stroke-width="5" marker-end="url(#arrow)"/>
+</g>
+<text x="540" y="690" text-anchor="middle" fill="#a9c5bc" font-size="22" direction="rtl">یعنی AI می‌تواند یک کار چندمرحله‌ای را تا رسیدن به خروجی دنبال کند.</text>
+
+<rect x="70" y="790" width="940" height="300" rx="38" fill="#0d1d18" stroke="#9d7628" stroke-width="2"/>
+<text x="540" y="850" text-anchor="middle" fill="#f5d36e" font-size="28" font-weight="700" direction="rtl">کاربرد جذاب در صنعت برق</text>
+<text x="540" y="915" text-anchor="middle" fill="#fff" font-size="31" direction="rtl">داده دارایی + آب‌وهوا + GIS + بار شبکه</text>
+<text x="540" y="970" text-anchor="middle" fill="#7fe1c6" font-size="27" font-weight="700" direction="rtl">↓</text>
+<text x="540" y="1020" text-anchor="middle" fill="#fff" font-size="31" direction="rtl">Agent → تحلیل → پیشنهاد اقدام → پایش نتیجه</text>
+<text x="540" y="1065" text-anchor="middle" fill="#a9c5bc" font-size="20" direction="rtl">هدف: نگهداری پیش‌بینانه و تصمیم‌گیری سریع‌تر</text>
+
+<text x="540" y="1170" text-anchor="middle" fill="#fff" font-size="28" font-weight="700" direction="rtl">اما استقلال بیشتر، کنترل و امنیت بیشتری هم می‌خواهد.</text>
+<text x="540" y="1225" text-anchor="middle" fill="#c6d6d0" font-size="21" direction="rtl">Agentها در حال تبدیل شدن به لایه جدید اجرای کار در سازمان‌ها هستند.</text>
+<text x="540" y="1290" text-anchor="middle" fill="#6de8c5" font-size="18" direction="rtl">برای آموزش‌های کاربردی AI دنبال کنید • @h.alavian</text>
+</g>
+</svg>
