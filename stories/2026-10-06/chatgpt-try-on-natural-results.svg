@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020504"/><stop offset=".55" stop-color="#061412"/><stop offset="1" stop-color="#010202"/></linearGradient>
+ <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#16e0bf"/><stop offset="1" stop-color="#087c72"/></linearGradient>
+ <linearGradient id="gold"><stop stop-color="#fff0a8"/><stop offset=".5" stop-color="#d8a83b"/><stop offset="1" stop-color="#fff0a8"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<path d="M0 180 Q180 20 390 0 L0 0Z" fill="#063c36"/><path d="M0 180 Q180 20 390 0" fill="none" stroke="#d8a83b" stroke-width="5"/>
+<path d="M1080 1740 Q900 1900 690 1920 L1080 1920Z" fill="#063c36"/><path d="M1080 1740 Q900 1900 690 1920" fill="none" stroke="#d8a83b" stroke-width="5"/>
+<text x="540" y="155" text-anchor="middle" fill="url(#gold)" font-size="58" font-family="Arial,sans-serif" font-weight="700">ادامه آموزش</text>
+<text x="540" y="245" text-anchor="middle" fill="url(#green)" font-size="100" font-family="Arial,sans-serif" font-weight="900">TRY ON</text>
+<text x="540" y="325" text-anchor="middle" fill="#fff" font-size="45" font-family="Arial,sans-serif">نتیجه طبیعی‌تر = ورودی بهتر</text>
+<rect x="90" y="390" width="900" height="1250" rx="50" fill="#07110f" stroke="#0ecdb0" stroke-width="3"/>
+<text x="145" y="485" fill="#d8a83b" font-size="38" font-family="Arial,sans-serif" font-weight="700">۳ نکته برای نتیجه بهتر</text>
+<g font-family="Arial,sans-serif" fill="#fff">
+<circle cx="155" cy="585" r="35" fill="#0b9e8d"/><text x="155" y="598" text-anchor="middle" font-size="34" font-weight="700">۱</text>
+<text x="220" y="575" font-size="34" font-weight="700">عکس لباس</text><text x="220" y="625" font-size="29">کامل، صاف و بدون برش باشد</text>
+<circle cx="155" cy="760" r="35" fill="#0b9e8d"/><text x="155" y="773" text-anchor="middle" font-size="34" font-weight="700">۲</text>
+<text x="220" y="750" font-size="34" font-weight="700">سلفی</text><text x="220" y="800" font-size="29">روبه‌رو + نور یکنواخت + بدن واضح</text>
+<circle cx="155" cy="935" r="35" fill="#0b9e8d"/><text x="155" y="948" text-anchor="middle" font-size="34" font-weight="700">۳</text>
+<text x="220" y="925" font-size="34" font-weight="700">Prompt دقیق</text><text x="220" y="975" font-size="27">فقط لباس را تغییر بده؛ هویت و فرم</text><text x="220" y="1015" font-size="27">چهره و بدن را حفظ کن</text>
+</g>
+<rect x="135" y="1085" width="810" height="300" rx="30" fill="#031c19" stroke="#d8a83b" stroke-width="3"/>
+<text x="180" y="1145" fill="#d8a83b" font-size="34" font-family="Arial,sans-serif" font-weight="700">Prompt قابل کپی</text>
+<text x="180" y="1210" fill="#fff" font-size="27" font-family="Arial,sans-serif">«لباس را طبیعی روی عکس من قرار بده؛</text>
+<text x="180" y="1255" fill="#fff" font-size="27" font-family="Arial,sans-serif">چهره، فرم بدن و رنگ پوست را حفظ کن</text>
+<text x="180" y="1300" fill="#fff" font-size="27" font-family="Arial,sans-serif">و فقط لباس را جایگزین کن.»</text>
+<rect x="135" y="1440" width="810" height="125" rx="30" fill="#071b18" stroke="#0ecdb0" stroke-width="2"/>
+<text x="540" y="1495" text-anchor="middle" fill="#d8a83b" font-size="28" font-family="Arial,sans-serif" font-weight="700">نکته</text>
+<text x="540" y="1540" text-anchor="middle" fill="#fff" font-size="25" font-family="Arial,sans-serif">یک لباس را با ۳ رنگ مختلف امتحان کن</text>
+<text x="540" y="1775" text-anchor="middle" fill="#d8a83b" font-size="25" font-family="Arial,sans-serif" letter-spacing="4">MOBILE AI • TRY ON • 06 OCT 2026</text>
+</svg>
