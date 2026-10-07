@@ -1,0 +1,30 @@
+# دسته ۱: هشتگ‌های اصلی و داغ فارسی
+#هوش_مصنوعی
+#اوپن_ای_آی
+#ایجنت_هوش_مصنوعی
+#فناوری
+#تکنولوژی_روز
+#برنامه_نویسی
+#دولوپر
+#آموزش_هوش_مصنوعی
+#آینده_شغل
+#اتوماسیون_هوشمند
+#دیجیتال_مارکتینگ
+#طراحی_سیستم
+
+# دسته ۲: هشتگ‌های تخصصی و انگلیسی
+#OpenAI
+#DotsAgents
+#GPT6
+#GPT6Sol
+#GPT6Astra
+#DevDay2026
+#AutonomousAgents
+#AgenticAI
+#ArtificialIntelligence
+#MachineLearning
+#TechNews
+#SoftwareEngineering
+#CloudComputing
+#AIAutomation
+#FutureOfWork
