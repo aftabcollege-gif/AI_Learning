@@ -16,29 +16,29 @@
 <g font-family="DejaVu Sans, sans-serif" direction="rtl">
 <g><rect x="45" y="245" width="990" height="190" rx="26" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
 <rect x="75" y="268" width="170" height="44" rx="22" fill="url(#g)"/><text x="160" y="298" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">خودرو</text>
-<text x="995" y="315" text-anchor="end" fill="#f6d77a" font-size="29" font-weight="700">هوش فیزیکی برای کارخانه‌های خودکار</text>
-<text x="995" y="358" text-anchor="end" fill="#d9e8e3" font-size="22">هیتاچی و Agile Robots برای توسعه سیستم‌های Physical AI جهت خودکارسازی کارهای پیچیده صنعتی همکاری می‌کنند.</text>
-<text x="995" y="397" text-anchor="end" fill="#8edbc9" font-size="18">روند مهم: AI از نرم‌افزار به رباتیک و محیط واقعی می‌رود.</text></g>
+<text x="995" y="315" text-anchor="start" fill="#f6d77a" font-size="29" font-weight="700">هوش فیزیکی برای کارخانه‌های خودکار</text>
+<text x="995" y="358" text-anchor="start" fill="#d9e8e3" font-size="22">هیتاچی و Agile Robots برای توسعه سیستم‌های Physical AI جهت خودکارسازی کارهای پیچیده صنعتی همکاری می‌کنند.</text>
+<text x="995" y="397" text-anchor="start" fill="#8edbc9" font-size="18">روند مهم: AI از نرم‌افزار به رباتیک و محیط واقعی می‌رود.</text></g>
 <g><rect x="45" y="455" width="990" height="190" rx="26" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
 <rect x="75" y="478" width="170" height="44" rx="22" fill="url(#g)"/><text x="160" y="508" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">هوافضا</text>
-<text x="995" y="525" text-anchor="end" fill="#f6d77a" font-size="29" font-weight="700">پردازش AI در مدار؛ از ایده به آزمایش</text>
-<text x="995" y="568" text-anchor="end" fill="#d9e8e3" font-size="22">پروژه‌های محاسبات مداری در حال آزمایش انتقال پردازش داده و مدل‌های AI به ماهواره‌ها هستند.</text>
-<text x="995" y="607" text-anchor="end" fill="#8edbc9" font-size="18">هنوز مرحله آزمایشی؛ نه یک فناوری تجاری فراگیر.</text></g>
+<text x="995" y="525" text-anchor="start" fill="#f6d77a" font-size="29" font-weight="700">پردازش AI در مدار؛ از ایده به آزمایش</text>
+<text x="995" y="568" text-anchor="start" fill="#d9e8e3" font-size="22">پروژه‌های محاسبات مداری در حال آزمایش انتقال پردازش داده و مدل‌های AI به ماهواره‌ها هستند.</text>
+<text x="995" y="607" text-anchor="start" fill="#8edbc9" font-size="18">هنوز مرحله آزمایشی؛ نه یک فناوری تجاری فراگیر.</text></g>
 <g><rect x="45" y="665" width="990" height="190" rx="26" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
 <rect x="75" y="688" width="170" height="44" rx="22" fill="url(#g)"/><text x="160" y="718" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">پزشکی</text>
-<text x="995" y="735" text-anchor="end" fill="#f6d77a" font-size="29" font-weight="700">AI برای تصویر‌برداری سه‌بعدی پزشکی</text>
-<text x="995" y="778" text-anchor="end" fill="#d9e8e3" font-size="22">سامانه AI سه‌بعدی IntelliGen در تایوان در حال آزمایش است و هدف آن توسعه استفاده در مراکز پزشکی است.</text>
-<text x="995" y="817" text-anchor="end" fill="#8edbc9" font-size="18">کاربرد: تحلیل تصویر و پشتیبانی تصمیم؛ جایگزین پزشک نیست.</text></g>
+<text x="995" y="735" text-anchor="start" fill="#f6d77a" font-size="29" font-weight="700">AI برای تصویر‌برداری سه‌بعدی پزشکی</text>
+<text x="995" y="778" text-anchor="start" fill="#d9e8e3" font-size="22">سامانه AI سه‌بعدی IntelliGen در تایوان در حال آزمایش است و هدف آن توسعه استفاده در مراکز پزشکی است.</text>
+<text x="995" y="817" text-anchor="start" fill="#8edbc9" font-size="18">کاربرد: تحلیل تصویر و پشتیبانی تصمیم؛ جایگزین پزشک نیست.</text></g>
 <g><rect x="45" y="875" width="990" height="190" rx="26" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
 <rect x="75" y="898" width="170" height="44" rx="22" fill="url(#g)"/><text x="160" y="928" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">برق</text>
-<text x="995" y="945" text-anchor="end" fill="#f6d77a" font-size="29" font-weight="700">رشد مراکز داده؛ مسئله جدید شبکه برق</text>
-<text x="995" y="988" text-anchor="end" fill="#d9e8e3" font-size="22">رشد ظرفیت مراکز داده AI، اتصال به شبکه، هزینه برق و محدودیت زیرساخت را به موضوعی کلیدی تبدیل کرده است.</text>
-<text x="995" y="1027" text-anchor="end" fill="#8edbc9" font-size="18">Reuters: چشم‌انداز رشد مراکز داده آمریکا همچنان قوی است.</text></g>
+<text x="995" y="945" text-anchor="start" fill="#f6d77a" font-size="29" font-weight="700">رشد مراکز داده؛ مسئله جدید شبکه برق</text>
+<text x="995" y="988" text-anchor="start" fill="#d9e8e3" font-size="22">رشد ظرفیت مراکز داده AI، اتصال به شبکه، هزینه برق و محدودیت زیرساخت را به موضوعی کلیدی تبدیل کرده است.</text>
+<text x="995" y="1027" text-anchor="start" fill="#8edbc9" font-size="18">Reuters: چشم‌انداز رشد مراکز داده آمریکا همچنان قوی است.</text></g>
 <g><rect x="45" y="1085" width="990" height="190" rx="26" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
 <rect x="75" y="1108" width="280" height="44" rx="22" fill="url(#g)"/><text x="215" y="1138" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">عامل‌های خودمختار</text>
-<text x="995" y="1155" text-anchor="end" fill="#f6d77a" font-size="29" font-weight="700">عامل‌ها؛ نرم‌افزار از ابزار به اجراکننده</text>
-<text x="995" y="1198" text-anchor="end" fill="#d9e8e3" font-size="22">رشد عامل‌های همیشه‌فعال و چندمرحله‌ای، اپلیکیشن‌ها را به سمت اجرای خودکار کارها می‌برد.</text>
-<text x="995" y="1237" text-anchor="end" fill="#8edbc9" font-size="18">محور امروز: حریم خصوصی، مجوزها و کنترل کاربر.</text></g>
+<text x="995" y="1155" text-anchor="start" fill="#f6d77a" font-size="29" font-weight="700">عامل‌ها؛ نرم‌افزار از ابزار به اجراکننده</text>
+<text x="995" y="1198" text-anchor="start" fill="#d9e8e3" font-size="22">رشد عامل‌های همیشه‌فعال و چندمرحله‌ای، اپلیکیشن‌ها را به سمت اجرای خودکار کارها می‌برد.</text>
+<text x="995" y="1237" text-anchor="start" fill="#8edbc9" font-size="18">محور امروز: حریم خصوصی، مجوزها و کنترل کاربر.</text></g>
 </g>
 <rect x="70" y="1290" width="940" height="2" fill="url(#gold)"/>
 <text x="540" y="1325" text-anchor="middle" fill="#a8bcb7" font-family="DejaVu Sans, sans-serif" font-size="17" direction="rtl">منتخب منابع تازه و معتبر • حذف شایعات و خبرهای تکراری • AI_Learning</text>
