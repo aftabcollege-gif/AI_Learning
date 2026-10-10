@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020504"/><stop offset=".55" stop-color="#061412"/><stop offset="1" stop-color="#010202"/></linearGradient>
+ <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#16e0bf"/><stop offset="1" stop-color="#087c72"/></linearGradient>
+ <linearGradient id="gold"><stop stop-color="#fff0a8"/><stop offset=".5" stop-color="#d8a83b"/><stop offset="1" stop-color="#fff0a8"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<path d="M0 160 Q190 15 390 0 L0 0Z" fill="#063c36"/><path d="M0 160 Q190 15 390 0" fill="none" stroke="#d8a83b" stroke-width="4"/>
+<path d="M1080 1740 Q900 1900 690 1920 L1080 1920Z" fill="#063c36"/><path d="M1080 1740 Q900 1900 690 1920" fill="none" stroke="#d8a83b" stroke-width="4"/>
+<text x="540" y="125" text-anchor="middle" fill="url(#gold)" font-size="42" font-family="Arial,sans-serif" font-weight="700">آموزش روز هوش مصنوعی</text>
+<text x="540" y="225" text-anchor="middle" fill="url(#gold)" font-size="58" font-family="Arial,sans-serif" font-weight="700">CHATGPT</text>
+<text x="540" y="315" text-anchor="middle" fill="url(#green)" font-size="76" font-family="Arial,sans-serif" font-weight="900">INTELLIGENT UI</text>
+<text x="540" y="390" text-anchor="middle" fill="#fff" font-size="39" font-family="Arial,sans-serif">از پاسخ متنی، ابزار تعاملی بساز</text>
+<rect x="55" y="445" width="420" height="860" rx="46" fill="#080e13" stroke="#0ecdb0" stroke-width="4"/>
+<rect x="75" y="490" width="380" height="770" rx="28" fill="#071b20" stroke="#124f4a" stroke-width="2"/>
+<text x="265" y="540" text-anchor="middle" fill="#fff" font-size="25" font-family="Arial,sans-serif">بودجه ماهانه</text>
+<rect x="100" y="570" width="330" height="100" rx="18" fill="#0b302f" stroke="#0ecdb0" stroke-width="2"/>
+<text x="265" y="610" text-anchor="middle" fill="#d8a83b" font-size="22" font-family="Arial,sans-serif">درآمد ماهانه</text>
+<text x="265" y="645" text-anchor="middle" fill="#fff" font-size="28" font-family="Arial,sans-serif">۵۰٬۰۰۰٬۰۰۰ تومان</text>
+<rect x="100" y="695" width="330" height="245" rx="18" fill="#0b2023" stroke="#116f65" stroke-width="2"/>
+<text x="265" y="735" text-anchor="middle" fill="#fff" font-size="26" font-family="Arial,sans-serif">هزینه‌ها</text>
+<text x="125" y="785" fill="#fff" font-size="21" font-family="Arial,sans-serif">مسکن</text><rect x="210" y="765" width="190" height="18" rx="9" fill="#183d40"/><rect x="210" y="765" width="132" height="18" rx="9" fill="#16e0bf"/>
+<text x="125" y="835" fill="#fff" font-size="21" font-family="Arial,sans-serif">خوراک</text><rect x="210" y="815" width="190" height="18" rx="9" fill="#183d40"/><rect x="210" y="815" width="86" height="18" rx="9" fill="#d8a83b"/>
+<text x="125" y="885" fill="#fff" font-size="21" font-family="Arial,sans-serif">حمل‌ونقل</text><rect x="235" y="865" width="165" height="18" rx="9" fill="#183d40"/><rect x="235" y="865" width="54" height="18" rx="9" fill="#29b6f6"/>
+<rect x="100" y="965" width="330" height="120" rx="18" fill="#032b26" stroke="#d8a83b" stroke-width="2"/>
+<text x="265" y="1005" text-anchor="middle" fill="#d8a83b" font-size="22" font-family="Arial,sans-serif">مانده قابل‌پس‌انداز</text>
+<text x="265" y="1050" text-anchor="middle" fill="#fff" font-size="32" font-family="Arial,sans-serif">۱۸٬۰۰۰٬۰۰۰</text>
+<circle cx="265" cy="1160" r="60" fill="none" stroke="#143d3a" stroke-width="22"/><circle cx="265" cy="1160" r="60" fill="none" stroke="#16e0bf" stroke-width="22" stroke-dasharray="245 377" transform="rotate(-90 265 1160)"/>
+<text x="265" y="1168" text-anchor="middle" fill="#fff" font-size="23" font-family="Arial,sans-serif">۳۶٪</text>
+<text x="265" y="1228" text-anchor="middle" fill="#d8a83b" font-size="20" font-family="Arial,sans-serif">نمودار به‌روزشونده</text>
+<rect x="510" y="455" width="515" height="455" rx="34" fill="#061411" stroke="#0ecdb0" stroke-width="3"/>
+<text x="770" y="515" text-anchor="middle" fill="#d8a83b" font-size="38" font-family="Arial,sans-serif" font-weight="700">مراحل استفاده</text>
+<g font-family="Arial,sans-serif" fill="#fff">
+<circle cx="570" cy="585" r="29" fill="url(#green)"/><text x="570" y="596" text-anchor="middle" font-size="28" font-weight="700">۱</text><text x="620" y="595" font-size="28">اپ ChatGPT را باز کن</text>
+<circle cx="570" cy="690" r="29" fill="url(#green)"/><text x="570" y="701" text-anchor="middle" font-size="28" font-weight="700">۲</text><text x="620" y="680" font-size="27">مسئله و ورودی‌های لازم</text><text x="620" y="718" font-size="27">را دقیق مشخص کن</text>
+<circle cx="570" cy="810" r="29" fill="url(#green)"/><text x="570" y="821" text-anchor="middle" font-size="28" font-weight="700">۳</text><text x="620" y="800" font-size="27">فرم، نمودار یا ماشین‌حساب</text><text x="620" y="838" font-size="27">قابل‌تعامل درخواست کن</text>
+</g>
+<rect x="510" y="950" width="515" height="250" rx="30" fill="#071b18" stroke="#d8a83b" stroke-width="3"/>
+<text x="770" y="1005" text-anchor="middle" fill="#d8a83b" font-size="35" font-family="Arial,sans-serif" font-weight="700">مثال کاربردی</text>
+<text x="770" y="1060" text-anchor="middle" fill="#fff" font-size="27" font-family="Arial,sans-serif">ماشین‌حساب بودجه ماهانه</text>
+<text x="770" y="1105" text-anchor="middle" fill="#fff" font-size="27" font-family="Arial,sans-serif">با ورودی درآمد و هزینه‌ها؛</text>
+<text x="770" y="1150" text-anchor="middle" fill="#fff" font-size="27" font-family="Arial,sans-serif">نمایش مانده و نمودار دسته‌ها</text>
+<rect x="55" y="1350" width="970" height="300" rx="32" fill="#041c19" stroke="#0ecdb0" stroke-width="3"/>
+<text x="540" y="1410" text-anchor="middle" fill="#d8a83b" font-size="37" font-family="Arial,sans-serif" font-weight="700">Prompt قابل کپی</text>
+<text x="540" y="1470" text-anchor="middle" fill="#fff" font-size="29" font-family="Arial,sans-serif">«یک ابزار تعاملی بودجه ماهانه بساز؛</text>
+<text x="540" y="1515" text-anchor="middle" fill="#fff" font-size="29" font-family="Arial,sans-serif">ورودی‌ها قابل تغییر باشند، نتیجه فوراً</text>
+<text x="540" y="1560" text-anchor="middle" fill="#fff" font-size="29" font-family="Arial,sans-serif">به‌روزرسانی شود و نمودار نشان بده.»</text>
+<text x="540" y="1695" text-anchor="middle" fill="#d8a83b" font-size="27" font-family="Arial,sans-serif">نکته: اگر فقط متن دیدی، صریحاً رابط تعاملی بخواه.</text>
+<text x="540" y="1795" text-anchor="middle" fill="#d8a83b" font-size="25" font-family="Arial,sans-serif" letter-spacing="3">MOBILE AI • DAILY BRIEF • 10 OCT 2026</text>
+</svg>
