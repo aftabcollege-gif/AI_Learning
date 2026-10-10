@@ -351,7 +351,7 @@ def ink_extent(profile: Sequence[int]) -> Optional[Tuple[int, int]]:
 # roughly a factor of four.
 LAYOUT_MAD_FAIL = 0.020
 LAYOUT_MAD_WARN = 0.010
-LAYOUT_EXTENT_FAIL_PX = 8
+LAYOUT_EXTENT_WARN_PX = 8
 
 
 def layout_agreement(tc: Toolchain, a: str, b: str, width: int, height: int,
@@ -382,9 +382,14 @@ def layout_agreement(tc: Toolchain, a: str, b: str, width: int, height: int,
                        abs(ea_c[0] - eb_c[0]), abs(ea_c[1] - eb_c[1]))
 
     verdict = "PASS"
-    if worst > LAYOUT_MAD_FAIL or extent_delta > LAYOUT_EXTENT_FAIL_PX:
+    # Projection disagreement is the primary layout signal. Font shaping and
+    # glyph fallback can change the outermost ink extent by several pixels (or
+    # more) while line/block placement remains stable. Treat extent-only
+    # differences as warnings; actual edge clipping is independently rejected
+    # by the border-ink check.
+    if worst > LAYOUT_MAD_FAIL:
         verdict = "FAIL"
-    elif worst > LAYOUT_MAD_WARN:
+    elif worst > LAYOUT_MAD_WARN or extent_delta > LAYOUT_EXTENT_WARN_PX:
         verdict = "WARN"
 
     return {
@@ -397,8 +402,9 @@ def layout_agreement(tc: Toolchain, a: str, b: str, width: int, height: int,
         "ink_rows_a": ea_r, "ink_rows_b": eb_r,
         "ink_cols_a": ea_c, "ink_cols_b": eb_c,
         "reason": (f"row/col ink projections differ by {worst:.4f} "
-                   f"(fail > {LAYOUT_MAD_FAIL}) and ink extents differ by "
-                   f"{extent_delta}px (fail > {LAYOUT_EXTENT_FAIL_PX}px)"),
+                   f"(fail > {LAYOUT_MAD_FAIL}); ink extents differ by "
+                   f"{extent_delta}px (extent-only differences warn above "
+                   f"{LAYOUT_EXTENT_WARN_PX}px; edge clipping is checked separately)"),
     }
 
 
