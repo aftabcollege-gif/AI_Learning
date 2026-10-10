@@ -1,0 +1,43 @@
+name: Render Instagram JPEG
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'posts/*.svg'
+      - '.github/workflows/render-instagram-jpeg.yml'
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install renderer
+        run: pip install cairosvg pillow
+      - name: Render SVG as Instagram JPEG
+        run: |
+          python - <<'PY'
+          import cairosvg
+          from PIL import Image
+          from io import BytesIO
+          source = "posts/2026-10-10-ai-daily-bulletin-full.svg"
+          target = "posts/2026-10-10-ai-daily-bulletin.jpg"
+          png = cairosvg.svg2png(url=source, output_width=1080, output_height=1350)
+          image = Image.open(BytesIO(png)).convert("RGB")
+          image.save(target, "JPEG", quality=92, optimize=True, progressive=True, subsampling=0)
+          check = Image.open(target)
+          assert check.format == "JPEG" and check.size == (1080, 1350)
+          print(f"Validated {target}: {check.format} {check.size}")
+          PY
+      - name: Commit generated JPEG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts/2026-10-10-ai-daily-bulletin.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "Render Instagram-ready JPEG from daily bulletin SVG [skip ci]"
+            git push
+          fi
