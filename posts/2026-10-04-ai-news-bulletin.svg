@@ -5,12 +5,13 @@
 <linearGradient id="a"><stop stop-color="#f6d37a"/><stop offset="1" stop-color="#9d7629"/></linearGradient>
 </defs>
 <rect width="1080" height="1350" fill="url(#b)"/>
+<g transform="translate(30 0) scale(0.94 1)">
 <circle cx="870" cy="160" r="190" fill="#063d35" opacity=".5"/><circle cx="930" cy="220" r="90" fill="#6b183d" opacity=".22"/>
-<text x="70" y="80" fill="#f4d277" font-family="Tahoma,Arial" font-size="27" font-weight="bold" direction="rtl">۴ اکتبر ۲۰۲۶</text>
-<text x="1010" y="92" text-anchor="end" fill="#fff" font-family="Tahoma,Arial" font-size="61" font-weight="bold" direction="rtl">بولتن روزانه هوش مصنوعی</text>
-<text x="1010" y="140" text-anchor="end" fill="#9de8d5" font-family="Tahoma,Arial" font-size="25" direction="rtl">منتخب مهم‌ترین نوآوری‌ها و روندهای معنادار ۲۴ ساعت اخیر</text>
+<text x="70" y="80" fill="#f4d277" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="bold" direction="rtl">۴ اکتبر ۲۰۲۶</text>
+<text x="1010" y="92" text-anchor="end" fill="#fff" font-family="DejaVu Sans, sans-serif" font-size="61" font-weight="bold" direction="rtl">بولتن روزانه هوش مصنوعی</text>
+<text x="1010" y="140" text-anchor="end" fill="#9de8d5" font-family="DejaVu Sans, sans-serif" font-size="25" direction="rtl">منتخب مهم‌ترین نوآوری‌ها و روندهای معنادار ۲۴ ساعت اخیر</text>
 <rect x="70" y="168" width="940" height="3" fill="url(#a)"/>
-<g font-family="Tahoma,Arial" direction="rtl">
+<g font-family="DejaVu Sans, sans-serif" direction="rtl">
 <rect x="50" y="205" width="980" height="195" rx="28" fill="#06100e" stroke="#12cda5" stroke-width="2"/>
 <rect x="760" y="225" width="220" height="46" rx="23" fill="url(#g)"/><text x="870" y="256" text-anchor="middle" fill="#fff" font-size="25" font-weight="bold">خودرو</text>
 <text x="990" y="310" text-anchor="end" fill="#f6d47b" font-size="31" font-weight="bold">خودروهای AI-محور و رباتیک</text>
@@ -42,5 +43,6 @@
 <text x="990" y="1244" text-anchor="end" fill="#8edbc9" font-size="18">محور ترند: اجرای خودکار • ابزارها • مجوزها • ایمنی</text>
 </g>
 <rect x="70" y="1285" width="940" height="2" fill="url(#a)"/>
-<text x="540" y="1322" text-anchor="middle" fill="#a8bdb7" font-family="Tahoma,Arial" font-size="17" direction="rtl">منابع معتبر • حذف شایعات و خبرهای تکراری • AI_Learning</text>
+<text x="540" y="1322" text-anchor="middle" fill="#a8bdb7" font-family="DejaVu Sans, sans-serif" font-size="17" direction="rtl">منابع معتبر • حذف شایعات و خبرهای تکراری • AI_Learning</text>
+</g>
 </svg>
