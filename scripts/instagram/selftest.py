@@ -509,6 +509,7 @@ def _cross_renderer_check(suite: Suite, tc: Toolchain, workdir: str, root: str) 
     with open(probe, "w", encoding="utf-8") as fh:
         fh.write('<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" '
                  'viewBox="0 0 1080 1350"><rect width="1080" height="1350" fill="#07110f"/>'
+                 '<rect x="120" y="500" width="360" height="500" fill="#ffffff"/>'
                  '<text x="540" y="300" text-anchor="middle" font-family="DejaVu Sans" '
                  'font-size="70" fill="#ffffff">CALIBRATION</text>'
                  '<text x="540" y="420" text-anchor="middle" font-family="DejaVu Sans" '
