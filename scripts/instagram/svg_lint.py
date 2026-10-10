@@ -588,16 +588,32 @@ def _analyse_text(root: ET.Element, result: LintResult, fonts: FontResolver,
     if needs_arabic_coverage(codepoints):
         has_arabic = False
         for family in families_used:
-            resolved = fonts.resolve(family, False)
+            resolved = fonts.resolve(family, False) or fonts.resolve(family, True)
             if resolved and fonts.coverage(resolved[0]):
                 cov = fonts.coverage(resolved[0]) or set()
                 if any(0x0600 <= cp <= 0x06FF for cp in cov):
                     has_arabic = True
                     break
         if not has_arabic:
-            result.findings.append(Finding(
-                "fail", "FONT_NO_ARABIC_COVERAGE",
-                "Persian/Arabic text present but no resolved font provides Arabic glyphs"))
+            # SVGs may declare a Latin-first stack (for example Arial,sans-serif)
+            # while librsvg/fontconfig correctly falls back to Noto Arabic at render
+            # time. Fail only when no installed font can render the actual Arabic
+            # characters; otherwise surface the fallback as a warning.
+            arabic_cps = [cp for cp in codepoints
+                          if 0x0600 <= cp <= 0x06FF or 0x0750 <= cp <= 0x077F
+                          or 0xFB50 <= cp <= 0xFEFF]
+            fallback_ok = bool(arabic_cps) and all(
+                fonts.any_font_has(cp) for cp in arabic_cps
+            )
+            if fallback_ok:
+                result.findings.append(Finding(
+                    "warn", "FONT_ARABIC_FALLBACK",
+                    "Persian/Arabic glyphs are available through an installed fallback font; "
+                    "rendering uses system font fallback"))
+            else:
+                result.findings.append(Finding(
+                    "fail", "FONT_NO_ARABIC_COVERAGE",
+                    "Persian/Arabic text present but no installed font provides the required Arabic glyphs"))
 
 
 def _check_text_overflow(root: ET.Element, result: LintResult, fonts: FontResolver,
