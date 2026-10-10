@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-10T15:08:38Z",
-  "run_id": "38062295488",
-  "commit_sha": "61d6790b86cb62c92bc99c1e90dbad17fed1aead",
+  "generated_at": "2026-10-10T16:30:05Z",
+  "run_id": "38067788371",
+  "commit_sha": "be6e21e4d361be569df3599790be9dd85e7e7127",
   "quality": 95,
   "assets": {
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-03-ai-news-bulletin.jpg": {
@@ -10,7 +10,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "fe4cd04c62f9b3eef496f70afbdeea24d6f146ba6dca9e23576827c76193ddf8",
-      "rendered_at": "2026-10-10T15:08:33Z"
+      "rendered_at": "2026-10-10T16:30:01Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-04-ai-news-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -18,7 +18,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "bd28fc60f00d680c3a5a959f460ab4b1922d59110b640d16895eb81302a39763",
-      "rendered_at": "2026-10-10T15:08:34Z"
+      "rendered_at": "2026-10-10T16:30:02Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-05-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -26,7 +26,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "f269dfaca00776161e0d5fa5eb811dce68b3c309eacac2fd8adbc1874b09ee99",
-      "rendered_at": "2026-10-10T15:08:34Z"
+      "rendered_at": "2026-10-10T16:30:02Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-06-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -34,7 +34,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "4459ca8225ae3ef917d92e309760245da721e7ddddfd209692ee68d157ebaf10",
-      "rendered_at": "2026-10-10T15:08:35Z"
+      "rendered_at": "2026-10-10T16:30:02Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-07-ai-daily-bulletin-final.jpg": {
       "renderer": "rsvg-convert",
@@ -42,7 +42,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "2ddf99069ed60c1a0c899d606de3be3fb7b67e45d8fc93a0963befe0f078b712",
-      "rendered_at": "2026-10-10T15:08:35Z"
+      "rendered_at": "2026-10-10T16:30:03Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-07-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -50,7 +50,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "9499e68c24be0cbf2aee130a6b7d541a31fd37da9e1620e7b37f92dba67f81c4",
-      "rendered_at": "2026-10-10T15:08:36Z"
+      "rendered_at": "2026-10-10T16:30:03Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-09-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -58,7 +58,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "8d870c5737c59068e752afe4cb562457d6b4548b9ef98ee51496e9e345a96bc8",
-      "rendered_at": "2026-10-10T15:08:37Z"
+      "rendered_at": "2026-10-10T16:30:04Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-10-ai-daily-bulletin-full.jpg": {
       "renderer": "rsvg-convert",
@@ -66,7 +66,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "7f12a262417942db25106bc95b2085647214fa861c4dfbf42589ec48f421c567",
-      "rendered_at": "2026-10-10T15:08:37Z"
+      "rendered_at": "2026-10-10T16:30:04Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-10-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -74,7 +74,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "3d89e891fc130f12837874eaa8a639d797e63b22321a3cfd201b2023f7fa253f",
-      "rendered_at": "2026-10-10T15:08:38Z"
+      "rendered_at": "2026-10-10T16:30:05Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-09-14/story01-ai-photo-editing.jpg": {
       "renderer": "rsvg-convert",
@@ -82,7 +82,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "c1ea0a3766133c4fd71321a30744ed86d54250c788578e0d1da3e2a8d63f056f",
-      "rendered_at": "2026-10-10T15:08:28Z"
+      "rendered_at": "2026-10-10T16:29:57Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-09-18/01-ai-photo-editing-prompts.jpg": {
       "renderer": "rsvg-convert",
@@ -90,7 +90,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "bea3bda179bffb71dd171c71deb115f0660d1c7045cb15d3c66f1d32b952f5ed",
-      "rendered_at": "2026-10-10T15:08:29Z"
+      "rendered_at": "2026-10-10T16:29:57Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-02/01-ai-agent-prompt.jpg": {
       "renderer": "rsvg-convert",
@@ -98,7 +98,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "0c7811fb09fa194913dae9d6e95e8daff83433a47f4d18336557a7a337af7db4",
-      "rendered_at": "2026-10-10T15:08:30Z"
+      "rendered_at": "2026-10-10T16:29:59Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-03/01-guided-vision-story.jpg": {
       "renderer": "rsvg-convert",
@@ -106,7 +106,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "c3791346987bac3864bdc20e3b757320dcbf218ab5b461735ae997aafeedee6c",
-      "rendered_at": "2026-10-10T15:08:31Z"
+      "rendered_at": "2026-10-10T16:29:59Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-04/gemini-guided-vision-story.jpg": {
       "renderer": "rsvg-convert",
@@ -114,7 +114,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "0c74092b5defb6acf9145b808745a5fa78a57825e94622005f2a7e3581b15a22",
-      "rendered_at": "2026-10-10T15:08:32Z"
+      "rendered_at": "2026-10-10T16:30:01Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-06/chatgpt-try-on-natural-results.jpg": {
       "renderer": "rsvg-convert",
@@ -122,7 +122,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "45baa88252ed7567416f05667f3d6d52be14d78165e152f3cf6bcf005c070286",
-      "rendered_at": "2026-10-10T15:08:29Z"
+      "rendered_at": "2026-10-10T16:29:58Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-10/chatgpt-intelligent-ui-budget-tool.jpg": {
       "renderer": "rsvg-convert",
@@ -130,7 +130,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "c3a27029b817c5c153383efb660cf122e1da0acc84392127ed5dd1a54875349f",
-      "rendered_at": "2026-10-10T15:08:32Z"
+      "rendered_at": "2026-10-10T16:30:00Z"
     }
   }
 }

@@ -365,3 +365,55 @@
 | `posts/2026-10-10-ai-daily-bulletin-full.jpg` | post | 1080x1350 | 206 KB | sRGB | `posts/2026-10-10-ai-daily-bulletin-full.svg` | `7f12a262417942db…` | PASS |
 | `posts/2026-10-10-ai-daily-bulletin.jpg` | post | 1080x1350 | 41 KB | sRGB | `posts/2026-10-10-ai-daily-bulletin.svg` | `3d89e891fc130f12…` | PASS |
 | `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |
+
+## Validation run 2026-10-10T16:31:44Z
+
+- run: `38067788371` commit: `be6e21e4d361be569df3599790be9dd85e7e7127`
+- renderer: `rsvg-convert` imagemagick: `Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org`
+- **FINAL STATUS: PASS**
+
+| asset | kind | dimensions | size | colorspace | source | sha256 | result |
+|---|---|---|---|---|---|---|---|
+| `stories/2026-09-14/story01-ai-photo-editing.jpg` | story | 1080x1920 | 336 KB | sRGB | `stories/2026-09-14/story01-ai-photo-editing.svg` | `c1ea0a3766133c4f…` | PASS |
+| `stories/2026-09-18/01-ai-photo-editing-prompts.jpg` | story | 1080x1920 | 266 KB | sRGB | `stories/2026-09-18/01-ai-photo-editing-prompts.svg` | `bea3bda179bffb71…` | PASS |
+| `stories/2026-10-06/chatgpt-try-on-natural-results.jpg` | story | 1080x1920 | 244 KB | sRGB | `stories/2026-10-06/chatgpt-try-on-natural-results.svg` | `45baa88252ed7567…` | PASS |
+| `stories/2026-10-02/01-ai-agent-prompt.jpg` | story | 1080x1920 | 291 KB | sRGB | `stories/2026-10-02/01-ai-agent-prompt.svg` | `0c7811fb09fa1949…` | PASS |
+| `stories/2026-10-03/01-guided-vision-story.jpg` | story | 1080x1920 | 259 KB | sRGB | `stories/2026-10-03/01-guided-vision-story.svg` | `c3791346987bac38…` | PASS |
+| `stories/2026-10-10/chatgpt-intelligent-ui-budget-tool.jpg` | story | 1080x1920 | 338 KB | sRGB | `stories/2026-10-10/chatgpt-intelligent-ui-budget-tool.svg` | `c3a27029b817c5c1…` | PASS |
+| `stories/2026-10-04/gemini-guided-vision-story.jpg` | story | 1080x1920 | 276 KB | sRGB | `stories/2026-10-04/gemini-guided-vision-story.svg` | `0c74092b5defb6ac…` | PASS |
+| `posts/2026-10-03-ai-news-bulletin.jpg` | post | 1080x1350 | 314 KB | sRGB | `posts/2026-10-03-ai-news-bulletin.svg` | `fe4cd04c62f9b3ee…` | PASS |
+| `posts/2026-10-04-ai-news-bulletin.jpg` | post | 1080x1350 | 264 KB | sRGB | `posts/2026-10-04-ai-news-bulletin.svg` | `bd28fc60f00d680c…` | PASS |
+| `posts/2026-10-05-ai-daily-bulletin.jpg` | post | 1080x1350 | 297 KB | sRGB | `posts/2026-10-05-ai-daily-bulletin.svg` | `f269dfaca0077616…` | PASS |
+| `posts/2026-10-06-ai-daily-bulletin.jpg` | post | 1080x1350 | 72 KB | sRGB | `posts/2026-10-06-ai-daily-bulletin.svg` | `4459ca8225ae3ef9…` | PASS |
+| `posts/2026-10-07-ai-daily-bulletin-final.jpg` | post | 1080x1350 | 181 KB | sRGB | `posts/2026-10-07-ai-daily-bulletin-final.svg` | `2ddf99069ed60c1a…` | PASS |
+| `posts/2026-10-07-ai-daily-bulletin.jpg` | post | 1080x1350 | 37 KB | sRGB | `posts/2026-10-07-ai-daily-bulletin.svg` | `9499e68c24be0cbf…` | PASS |
+| `posts/2026-10-09-ai-daily-bulletin.jpg` | post | 1080x1350 | 319 KB | sRGB | `posts/2026-10-09-ai-daily-bulletin.svg` | `8d870c5737c59068…` | PASS |
+| `posts/2026-10-10-ai-daily-bulletin-full.jpg` | post | 1080x1350 | 206 KB | sRGB | `posts/2026-10-10-ai-daily-bulletin-full.svg` | `7f12a262417942db…` | PASS |
+| `posts/2026-10-10-ai-daily-bulletin.jpg` | post | 1080x1350 | 41 KB | sRGB | `posts/2026-10-10-ai-daily-bulletin.svg` | `3d89e891fc130f12…` | PASS |
+| `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |
+
+## Validation run 2026-10-10T16:32:36Z
+
+- run: `38067788371` commit: `be6e21e4d361be569df3599790be9dd85e7e7127`
+- renderer: `rsvg-convert` imagemagick: `Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org`
+- **FINAL STATUS: PASS**
+
+| asset | kind | dimensions | size | colorspace | source | sha256 | result |
+|---|---|---|---|---|---|---|---|
+| `stories/2026-09-14/story01-ai-photo-editing.jpg` | story | 1080x1920 | 336 KB | sRGB | `stories/2026-09-14/story01-ai-photo-editing.svg` | `c1ea0a3766133c4f…` | PASS |
+| `stories/2026-09-18/01-ai-photo-editing-prompts.jpg` | story | 1080x1920 | 266 KB | sRGB | `stories/2026-09-18/01-ai-photo-editing-prompts.svg` | `bea3bda179bffb71…` | PASS |
+| `stories/2026-10-06/chatgpt-try-on-natural-results.jpg` | story | 1080x1920 | 244 KB | sRGB | `stories/2026-10-06/chatgpt-try-on-natural-results.svg` | `45baa88252ed7567…` | PASS |
+| `stories/2026-10-02/01-ai-agent-prompt.jpg` | story | 1080x1920 | 291 KB | sRGB | `stories/2026-10-02/01-ai-agent-prompt.svg` | `0c7811fb09fa1949…` | PASS |
+| `stories/2026-10-03/01-guided-vision-story.jpg` | story | 1080x1920 | 259 KB | sRGB | `stories/2026-10-03/01-guided-vision-story.svg` | `c3791346987bac38…` | PASS |
+| `stories/2026-10-10/chatgpt-intelligent-ui-budget-tool.jpg` | story | 1080x1920 | 338 KB | sRGB | `stories/2026-10-10/chatgpt-intelligent-ui-budget-tool.svg` | `c3a27029b817c5c1…` | PASS |
+| `stories/2026-10-04/gemini-guided-vision-story.jpg` | story | 1080x1920 | 276 KB | sRGB | `stories/2026-10-04/gemini-guided-vision-story.svg` | `0c74092b5defb6ac…` | PASS |
+| `posts/2026-10-03-ai-news-bulletin.jpg` | post | 1080x1350 | 314 KB | sRGB | `posts/2026-10-03-ai-news-bulletin.svg` | `fe4cd04c62f9b3ee…` | PASS |
+| `posts/2026-10-04-ai-news-bulletin.jpg` | post | 1080x1350 | 264 KB | sRGB | `posts/2026-10-04-ai-news-bulletin.svg` | `bd28fc60f00d680c…` | PASS |
+| `posts/2026-10-05-ai-daily-bulletin.jpg` | post | 1080x1350 | 297 KB | sRGB | `posts/2026-10-05-ai-daily-bulletin.svg` | `f269dfaca0077616…` | PASS |
+| `posts/2026-10-06-ai-daily-bulletin.jpg` | post | 1080x1350 | 72 KB | sRGB | `posts/2026-10-06-ai-daily-bulletin.svg` | `4459ca8225ae3ef9…` | PASS |
+| `posts/2026-10-07-ai-daily-bulletin-final.jpg` | post | 1080x1350 | 181 KB | sRGB | `posts/2026-10-07-ai-daily-bulletin-final.svg` | `2ddf99069ed60c1a…` | PASS |
+| `posts/2026-10-07-ai-daily-bulletin.jpg` | post | 1080x1350 | 37 KB | sRGB | `posts/2026-10-07-ai-daily-bulletin.svg` | `9499e68c24be0cbf…` | PASS |
+| `posts/2026-10-09-ai-daily-bulletin.jpg` | post | 1080x1350 | 319 KB | sRGB | `posts/2026-10-09-ai-daily-bulletin.svg` | `8d870c5737c59068…` | PASS |
+| `posts/2026-10-10-ai-daily-bulletin-full.jpg` | post | 1080x1350 | 206 KB | sRGB | `posts/2026-10-10-ai-daily-bulletin-full.svg` | `7f12a262417942db…` | PASS |
+| `posts/2026-10-10-ai-daily-bulletin.jpg` | post | 1080x1350 | 41 KB | sRGB | `posts/2026-10-10-ai-daily-bulletin.svg` | `3d89e891fc130f12…` | PASS |
+| `stories/2026-09-14/story01-ai-photo-editing.png` | story | 1080x1920 | 279 KB | sRGB | - | `bb6ce5520ca13faf…` | PASS |
