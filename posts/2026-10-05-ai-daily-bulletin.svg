@@ -6,13 +6,14 @@
 <filter id="glow"><feGaussianBlur stdDeviation="12"/></filter>
 </defs>
 <rect width="1080" height="1350" fill="url(#bg)"/>
+<g transform="translate(30 0) scale(0.94 1)">
 <circle cx="850" cy="120" r="180" fill="#063a31" opacity=".45" filter="url(#glow)"/>
 <circle cx="170" cy="1150" r="180" fill="#25102b" opacity=".25" filter="url(#glow)"/>
-<text x="540" y="92" text-anchor="middle" fill="#f4cf6d" font-family="Tahoma,Arial,sans-serif" font-size="28" font-weight="700">۴ اکتبر ۲۰۲۶</text>
-<text x="540" y="155" text-anchor="middle" fill="#fff" font-family="Tahoma,Arial,sans-serif" font-size="60" font-weight="700">بولتن روزانه هوش مصنوعی</text>
-<text x="540" y="198" text-anchor="middle" fill="#9fe7d6" font-family="Tahoma,Arial,sans-serif" font-size="24">مهم‌ترین نوآوری‌ها و روندهای قابل‌اتکا در ۲۴ ساعت اخیر</text>
+<text x="540" y="92" text-anchor="middle" fill="#f4cf6d" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="700">۴ اکتبر ۲۰۲۶</text>
+<text x="540" y="155" text-anchor="middle" fill="#fff" font-family="DejaVu Sans, sans-serif" font-size="60" font-weight="700">بولتن روزانه هوش مصنوعی</text>
+<text x="540" y="198" text-anchor="middle" fill="#9fe7d6" font-family="DejaVu Sans, sans-serif" font-size="24">مهم‌ترین نوآوری‌ها و روندهای قابل‌اتکا در ۲۴ ساعت اخیر</text>
 <rect x="60" y="220" width="960" height="3" fill="url(#gold)"/>
-<g font-family="Tahoma,Arial,sans-serif" direction="rtl">
+<g font-family="DejaVu Sans, sans-serif" direction="rtl">
 <g><rect x="45" y="245" width="990" height="190" rx="26" fill="#07110f" stroke="#0ccaa0" stroke-width="2"/>
 <rect x="75" y="268" width="170" height="44" rx="22" fill="url(#g)"/><text x="160" y="298" text-anchor="middle" fill="#fff" font-size="23" font-weight="700">خودرو</text>
 <text x="995" y="315" text-anchor="end" fill="#f6d77a" font-size="29" font-weight="700">هوش فیزیکی برای کارخانه‌های خودکار</text>
@@ -40,5 +41,6 @@
 <text x="995" y="1237" text-anchor="end" fill="#8edbc9" font-size="18">محور امروز: حریم خصوصی، مجوزها و کنترل کاربر.</text></g>
 </g>
 <rect x="70" y="1290" width="940" height="2" fill="url(#gold)"/>
-<text x="540" y="1325" text-anchor="middle" fill="#a8bcb7" font-family="Tahoma,Arial,sans-serif" font-size="17" direction="rtl">منتخب منابع تازه و معتبر • حذف شایعات و خبرهای تکراری • AI_Learning</text>
+<text x="540" y="1325" text-anchor="middle" fill="#a8bcb7" font-family="DejaVu Sans, sans-serif" font-size="17" direction="rtl">منتخب منابع تازه و معتبر • حذف شایعات و خبرهای تکراری • AI_Learning</text>
+</g>
 </svg>
