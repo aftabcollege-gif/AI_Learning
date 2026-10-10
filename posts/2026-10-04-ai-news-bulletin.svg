@@ -8,39 +8,39 @@
 <g transform="translate(30 0) scale(0.94 1)">
 <circle cx="870" cy="160" r="190" fill="#063d35" opacity=".5"/><circle cx="930" cy="220" r="90" fill="#6b183d" opacity=".22"/>
 <text x="70" y="80" fill="#f4d277" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="bold" direction="rtl">۴ اکتبر ۲۰۲۶</text>
-<text x="1010" y="92" text-anchor="start" fill="#fff" font-family="DejaVu Sans, sans-serif" font-size="61" font-weight="bold" direction="rtl">بولتن روزانه هوش مصنوعی</text>
-<text x="1010" y="140" text-anchor="start" fill="#9de8d5" font-family="DejaVu Sans, sans-serif" font-size="25" direction="rtl">منتخب مهم‌ترین نوآوری‌ها و روندهای معنادار ۲۴ ساعت اخیر</text>
+<text x="650" y="92" text-anchor="middle" fill="#fff" font-family="DejaVu Sans, sans-serif" font-size="61" font-weight="bold" direction="rtl">بولتن روزانه هوش مصنوعی</text>
+<text x="650" y="140" text-anchor="middle" fill="#9de8d5" font-family="DejaVu Sans, sans-serif" font-size="25" direction="rtl">منتخب مهم‌ترین نوآوری‌ها و روندهای معنادار ۲۴ ساعت اخیر</text>
 <rect x="70" y="168" width="940" height="3" fill="url(#a)"/>
 <g font-family="DejaVu Sans, sans-serif" direction="rtl">
 <rect x="50" y="205" width="980" height="195" rx="28" fill="#06100e" stroke="#12cda5" stroke-width="2"/>
 <rect x="760" y="225" width="220" height="46" rx="23" fill="url(#g)"/><text x="870" y="256" text-anchor="middle" fill="#fff" font-size="25" font-weight="bold">خودرو</text>
-<text x="990" y="310" text-anchor="start" fill="#f6d47b" font-size="31" font-weight="bold">خودروهای AI-محور و رباتیک</text>
-<text x="990" y="352" text-anchor="start" fill="#e2ece9" font-size="22">هیوندای در مسیر نسل بعدی خودروهای هوش‌محور، خودران و رباتیک</text>
-<text x="990" y="384" text-anchor="start" fill="#8edbc9" font-size="18">تمرکز بر AI، خودران و ربات‌های انسان‌نما</text>
+<text x="650" y="310" text-anchor="middle" fill="#f6d47b" font-size="31" font-weight="bold">خودروهای AI-محور و رباتیک</text>
+<text x="650" y="352" text-anchor="middle" fill="#e2ece9" font-size="22">هیوندای در مسیر نسل بعدی خودروهای هوش‌محور، خودران و رباتیک</text>
+<text x="650" y="384" text-anchor="middle" fill="#8edbc9" font-size="18">تمرکز بر AI، خودران و ربات‌های انسان‌نما</text>
 
 <rect x="50" y="420" width="980" height="195" rx="28" fill="#06100e" stroke="#12cda5" stroke-width="2"/>
 <rect x="760" y="440" width="220" height="46" rx="23" fill="url(#g)"/><text x="870" y="471" text-anchor="middle" fill="#fff" font-size="25" font-weight="bold">هوافضا</text>
-<text x="990" y="525" text-anchor="start" fill="#f6d47b" font-size="31" font-weight="bold">AI در مدار زمین؛ آزمایش واقعی</text>
-<text x="990" y="567" text-anchor="start" fill="#e2ece9" font-size="22">Project Suncatcher برای آزمون پردازش AI با TPU در فضا وارد مرحله عملی شده است</text>
-<text x="990" y="599" text-anchor="start" fill="#8edbc9" font-size="18">چالش کلیدی: تابش، گرما و خنک‌سازی تراشه‌ها</text>
+<text x="650" y="525" text-anchor="middle" fill="#f6d47b" font-size="31" font-weight="bold">AI در مدار زمین؛ آزمایش واقعی</text>
+<text x="650" y="567" text-anchor="middle" fill="#e2ece9" font-size="22">Project Suncatcher برای آزمون پردازش AI با TPU در فضا وارد مرحله عملی شده است</text>
+<text x="650" y="599" text-anchor="middle" fill="#8edbc9" font-size="18">چالش کلیدی: تابش، گرما و خنک‌سازی تراشه‌ها</text>
 
 <rect x="50" y="635" width="980" height="195" rx="28" fill="#06100e" stroke="#12cda5" stroke-width="2"/>
 <rect x="760" y="655" width="220" height="46" rx="23" fill="url(#g)"/><text x="870" y="686" text-anchor="middle" fill="#fff" font-size="25" font-weight="bold">پزشکی</text>
-<text x="990" y="740" text-anchor="start" fill="#f6d47b" font-size="31" font-weight="bold">AI؛ تشخیص و پیش‌بینی زودتر</text>
-<text x="990" y="782" text-anchor="start" fill="#e2ece9" font-size="22">مدل‌های AI در حال گسترش برای شناسایی ریسک و کمک به تصمیم‌گیری بالینی هستند</text>
-<text x="990" y="814" text-anchor="start" fill="#8edbc9" font-size="18">AI ابزار کمک‌تصمیم است؛ نظارت متخصص همچنان ضروری است</text>
+<text x="650" y="740" text-anchor="middle" fill="#f6d47b" font-size="31" font-weight="bold">AI؛ تشخیص و پیش‌بینی زودتر</text>
+<text x="650" y="782" text-anchor="middle" fill="#e2ece9" font-size="22">مدل‌های AI در حال گسترش برای شناسایی ریسک و کمک به تصمیم‌گیری بالینی هستند</text>
+<text x="650" y="814" text-anchor="middle" fill="#8edbc9" font-size="18">AI ابزار کمک‌تصمیم است؛ نظارت متخصص همچنان ضروری است</text>
 
 <rect x="50" y="850" width="980" height="195" rx="28" fill="#06100e" stroke="#12cda5" stroke-width="2"/>
 <rect x="760" y="870" width="220" height="46" rx="23" fill="url(#g)"/><text x="870" y="901" text-anchor="middle" fill="#fff" font-size="25" font-weight="bold">برق</text>
-<text x="990" y="955" text-anchor="start" fill="#f6d47b" font-size="31" font-weight="bold">AI و جهش تقاضای برق</text>
-<text x="990" y="997" text-anchor="start" fill="#e2ece9" font-size="22">گسترش مراکز داده AI فشار تازه‌ای بر شبکه، ظرفیت تولید و اتصال به برق ایجاد می‌کند</text>
-<text x="990" y="1029" text-anchor="start" fill="#8edbc9" font-size="18">چالش آینده: هم‌زمانی رشد محاسبات و پایداری شبکه</text>
+<text x="650" y="955" text-anchor="middle" fill="#f6d47b" font-size="31" font-weight="bold">AI و جهش تقاضای برق</text>
+<text x="650" y="997" text-anchor="middle" fill="#e2ece9" font-size="22">گسترش مراکز داده AI فشار تازه‌ای بر شبکه، ظرفیت تولید و اتصال به برق ایجاد می‌کند</text>
+<text x="650" y="1029" text-anchor="middle" fill="#8edbc9" font-size="18">چالش آینده: هم‌زمانی رشد محاسبات و پایداری شبکه</text>
 
 <rect x="50" y="1065" width="980" height="195" rx="28" fill="#06100e" stroke="#12cda5" stroke-width="2"/>
 <rect x="690" y="1085" width="290" height="46" rx="23" fill="url(#g)"/><text x="835" y="1116" text-anchor="middle" fill="#fff" font-size="25" font-weight="bold">عامل‌های خودمختار</text>
-<text x="990" y="1170" text-anchor="start" fill="#f6d47b" font-size="31" font-weight="bold">AI از «پاسخ» به «اقدام»</text>
-<text x="990" y="1212" text-anchor="start" fill="#e2ece9" font-size="22">عامل‌های پایدار و چندمرحله‌ای می‌توانند کارهای واقعی را در ابزارها و اپ‌ها اجرا کنند</text>
-<text x="990" y="1244" text-anchor="start" fill="#8edbc9" font-size="18">محور ترند: اجرای خودکار • ابزارها • مجوزها • ایمنی</text>
+<text x="650" y="1170" text-anchor="middle" fill="#f6d47b" font-size="31" font-weight="bold">AI از «پاسخ» به «اقدام»</text>
+<text x="650" y="1212" text-anchor="middle" fill="#e2ece9" font-size="22">عامل‌های پایدار و چندمرحله‌ای می‌توانند کارهای واقعی را در ابزارها و اپ‌ها اجرا کنند</text>
+<text x="650" y="1244" text-anchor="middle" fill="#8edbc9" font-size="18">محور ترند: اجرای خودکار • ابزارها • مجوزها • ایمنی</text>
 </g>
 <rect x="70" y="1285" width="940" height="2" fill="url(#a)"/>
 <text x="540" y="1322" text-anchor="middle" fill="#a8bdb7" font-family="DejaVu Sans, sans-serif" font-size="17" direction="rtl">منابع معتبر • حذف شایعات و خبرهای تکراری • AI_Learning</text>
