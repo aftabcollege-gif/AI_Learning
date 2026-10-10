@@ -79,10 +79,10 @@ jobs:
 
       # Failures are echoed as GitHub error annotations so the reason is visible
       # even when the raw log download endpoint is unavailable.
-      - name: Lint SVG sources and publication metadata
+      - name: Run synthetic media-gate self-test
         run: |
           set +e
-          python3 scripts/instagram/selftest.py --root . 2>&1 | tee /tmp/selftest.log
+          python3 scripts/instagram/selftest.py --gate-rules --root . 2>&1 | tee /tmp/selftest.log
           status=${PIPESTATUS[0]}
           if [ "$status" -ne 0 ]; then
             {
