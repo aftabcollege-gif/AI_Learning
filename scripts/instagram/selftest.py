@@ -517,8 +517,11 @@ def _cross_renderer_check(suite: Suite, tc: Toolchain, workdir: str, root: str) 
     render_mod.rasterize(independent[0], probe, base, 1080, 1350, 0)
     if os.path.exists(base) and os.path.getsize(base) > 0:
         shifted = os.path.join(workdir, "calibration-shifted.png")
-        subprocess.run([tc._im("convert")[0], "convert", base, "-crop", "1080x1350+120+0",
-                        "+repage", shifted], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # Shift the rendered content while preserving the original canvas dimensions.
+        # Cropping at +120 only removed the right edge and did not simulate a layout
+        # translation, so sparse text could incorrectly pass the comparator calibration.
+        subprocess.run([tc._im("convert")[0], "convert", base, "-roll", "+120+0",
+                        shifted], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         control = mc.layout_agreement(tc, base, shifted, 1080, 1350)
         suite.record("layout comparator detects a 120px shift (calibration)",
                      not control.get("ok"),
