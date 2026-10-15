@@ -1,0 +1,105 @@
+name: Publish via Metricool
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: publish-metricool-queue
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+    env:
+      QUEUE_DIR: stories/2026-09-17
+      MCR_BASE: https://app.metricool.com/api
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify Metricool credentials
+        env:
+          MCR_USER_TOKEN: ${{ secrets.MCR_USER_TOKEN }}
+          MCR_USER_ID: ${{ secrets.MCR_USER_ID }}
+          MCR_BLOG_ID: ${{ secrets.MCR_BLOG_ID }}
+        run: |
+          if [ -z "$MCR_USER_TOKEN" ] || [ -z "$MCR_USER_ID" ] || [ -z "$MCR_BLOG_ID" ]; then
+            echo "::error::Secrets MCR_USER_TOKEN / MCR_USER_ID / MCR_BLOG_ID are not configured."
+            exit 1
+          fi
+
+      - name: Detect Instagram provider id
+        env:
+          MCR_USER_TOKEN: ${{ secrets.MCR_USER_TOKEN }}
+          MCR_USER_ID: ${{ secrets.MCR_USER_ID }}
+          MCR_BLOG_ID: ${{ secrets.MCR_BLOG_ID }}
+          MCR_IG_PROVIDER_ID: ${{ secrets.MCR_IG_PROVIDER_ID }}
+        run: |
+          if [ -n "$MCR_IG_PROVIDER_ID" ]; then
+            echo "PROVIDER_ID=$MCR_IG_PROVIDER_ID" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          curl -s "$MCR_BASE/admin/blog/profiles?userId=$MCR_USER_ID&blogId=$MCR_BLOG_ID" \
+            -H "X-Mc-Auth: $MCR_USER_TOKEN" -H "Accept: application/json" > profiles.json
+          cat profiles.json | head -c 2000
+          pid=$(jq -r '.. | objects | select(.network? == "instagram") | .id' profiles.json 2>/dev/null | head -1)
+          if [ -z "$pid" ] || [ "$pid" = "null" ]; then
+            echo "::error::Could not auto-detect the Instagram provider id. Copy it from the JSON above and add secret MCR_IG_PROVIDER_ID."
+            exit 1
+          fi
+          echo "PROVIDER_ID=$pid" >> "$GITHUB_ENV"
+
+      - name: Schedule all queue posts (60s apart)
+        env:
+          MCR_USER_TOKEN: ${{ secrets.MCR_USER_TOKEN }}
+          MCR_USER_ID: ${{ secrets.MCR_USER_ID }}
+          MCR_BLOG_ID: ${{ secrets.MCR_BLOG_ID }}
+          TZ_NAME: Asia/Tehran
+        run: |
+          queue="$QUEUE_DIR/queue.json"
+          base="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_REF_NAME}/${QUEUE_DIR}"
+          total=$(jq '.items | length' "$queue")
+          interval=$(jq -r '.schedule.interval_seconds // 60' "$queue")
+          lead=120
+          ok=0; fail=0
+          echo "| # | File | Schedule (Tehran) | Status |" > "$QUEUE_DIR/metricool-log.md"
+          echo "|---|------|-------------------|--------|" >> "$QUEUE_DIR/metricool-log.md"
+          for i in $(seq 0 $((total-1))); do
+            file=$(jq -r ".items[$i].file" "$queue")
+            caption=$(jq -r ".items[$i].caption" "$queue")
+            offset=$((lead + i * interval))
+            when=$(date -d "+${offset} seconds" '+%Y-%m-%dT%H:%M:%S')
+            payload=$(jq -n \
+              --arg pid "$PROVIDER_ID" \
+              --arg when "$when" \
+              --arg tz "$TZ_NAME" \
+              --arg text "$caption" \
+              --arg url "$base/$file" \
+              '{providers:[{network:"instagram", id:$pid, status:"PUBLISHING"}],
+                publicationDate:{dataTime:$when, timezone:$tz},
+                text:$text, firstCommentText:"", media:[{url:$url}]}')
+            resp=$(curl -s -X POST "$MCR_BASE/v2/scheduler/posts?userId=$MCR_USER_ID&blogId=$MCR_BLOG_ID" \
+              -H "X-Mc-Auth: $MCR_USER_TOKEN" -H "Content-Type: application/json" -d "$payload")
+            echo "[$((i+1))/$total] $file @ $when -> $resp"
+            if echo "$resp" | jq -e '.id // .data.id // empty' >/dev/null 2>&1 && [ -n "$(echo "$resp" | jq -r '.id // .data.id // empty')" ]; then
+              echo "| $((i+1)) | $file | $when | OK |" >> "$QUEUE_DIR/metricool-log.md"
+              ok=$((ok+1))
+            else
+              echo "| $((i+1)) | $file | $when | FAILED |" >> "$QUEUE_DIR/metricool-log.md"
+              echo "::warning::Schedule failed for $file: $resp"
+              fail=$((fail+1))
+            fi
+          done
+          echo "Scheduled OK=$ok FAILED=$fail"
+
+      - name: Commit schedule log
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$QUEUE_DIR/metricool-log.md"
+          git diff --cached --quiet && exit 0
+          git commit -m "Metricool schedule log"
+          git push
