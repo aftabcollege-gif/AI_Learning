@@ -1,0 +1,3 @@
+GitHub write-access verification test.
+Created on 2026-10-16 in the isolated access-test branch.
+No existing files or images were modified.
