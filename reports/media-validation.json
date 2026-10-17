@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-11T13:50:17Z",
-  "run_id": "38144398433",
-  "commit_sha": "c755be46f6ea7d8bf3799efd1ba62204c02f09b2",
+  "generated_at": "2026-10-17T12:07:38Z",
+  "run_id": "39030721038",
+  "commit_sha": "1c47e843301ee8bff5fe05237c66ed7207c7ee8b",
   "status": "PASS",
   "renderer": "rsvg-convert",
   "renderers": {
@@ -975,29 +975,29 @@
       "kind": "post",
       "role": "canonical",
       "status": "PASS",
-      "sha256": "7f12a262417942db25106bc95b2085647214fa861c4dfbf42589ec48f421c567",
-      "size_bytes": 211123,
+      "sha256": "edb3671cf58f634b3a7e8cc602cf6fbfd8631cf2f54cad7f46385c1eb79789ec",
+      "size_bytes": 192581,
       "dimensions": "1080x1350",
       "colorspace": "sRGB",
       "source_svg": "posts/2026-10-10-ai-daily-bulletin-full.svg",
-      "source_sha256": "b22e3f4675891c9668f01f7907647d657a19c1a502d7da0f6eb925b1bf98a906",
+      "source_sha256": "3477e683059b61855b72eaf1885da2eaab20a83d5f7e5f5bffb6e35342e30992",
       "renderer": "rsvg-convert",
       "renderer_version": "rsvg-convert version 2.58.0",
       "metrics": {
-        "gray_std": 0.12379,
-        "gray_mean": 0.08023,
-        "unique_colors": 16192,
+        "gray_std": 0.14383,
+        "gray_mean": 0.09675,
+        "unique_colors": 14300,
         "channel_means": [
-          0.03995,
-          0.09249,
-          0.07737
+          0.05674,
+          0.1094,
+          0.08917
         ],
         "jpeg_sampling": "1x1,1x1,1x1",
         "jpeg_depth": 8,
         "border_ink": {
           "top": 0.0,
           "bottom": 0.0,
-          "left": 0.0,
+          "left": 0.008889,
           "right": 0.0
         }
       },
@@ -1020,12 +1020,12 @@
         {
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
-          "detail": "std=0.1238 mean=0.0802 colors=16192"
+          "detail": "std=0.1438 mean=0.0967 colors=14300"
         },
         {
-          "status": "PASS",
-          "code": "EDGE_CLEAR",
-          "detail": "no bright ink on the canvas border (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.0, 'right': 0.0})"
+          "status": "WARN",
+          "code": "CONTENT_NEAR_EDGE",
+          "detail": "0.89% of the left border is bright ink (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.008889, 'right': 0.0})"
         },
         {
           "status": "PASS",
@@ -1085,6 +1085,134 @@
           "status": "PASS",
           "code": "VISUAL_INTEGRITY",
           "detail": "std=0.0457 mean=0.0324 colors=4360"
+        },
+        {
+          "status": "PASS",
+          "code": "EDGE_CLEAR",
+          "detail": "no bright ink on the canvas border (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.0, 'right': 0.0})"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "posts/2026-10-11-ai-daily-bulletin-full.jpg",
+      "kind": "post",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "e7043cd7569764d74e12a06cd59f4dad10c8a16af9982a6e48fc17979b656e45",
+      "size_bytes": 192680,
+      "dimensions": "1080x1350",
+      "colorspace": "sRGB",
+      "source_svg": "posts/2026-10-11-ai-daily-bulletin-full.svg",
+      "source_sha256": "133dad7e2713cb79e9ee841aeb8a5efcf9d8d9db0c776daadee1223c345198b0",
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "metrics": {
+        "gray_std": 0.14382,
+        "gray_mean": 0.09674,
+        "unique_colors": 14297,
+        "channel_means": [
+          0.05674,
+          0.1094,
+          0.08917
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.008889,
+          "right": 0.0
+        }
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1350 matches post target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1438 mean=0.0967 colors=14297"
+        },
+        {
+          "status": "WARN",
+          "code": "CONTENT_NEAR_EDGE",
+          "detail": "0.89% of the left border is bright ink (ink={'top': 0.0, 'bottom': 0.0, 'left': 0.008889, 'right': 0.0})"
+        },
+        {
+          "status": "PASS",
+          "code": "MANIFEST_HASH",
+          "detail": "matches the recorded manifest hash"
+        }
+      ]
+    },
+    {
+      "path": "posts/2026-10-12-ai-daily-bulletin-full.jpg",
+      "kind": "post",
+      "role": "canonical",
+      "status": "PASS",
+      "sha256": "d6012eb6d3a9c1f25185c971d8b020d212f55a85875f42201f06572a98ae575b",
+      "size_bytes": 163123,
+      "dimensions": "1080x1350",
+      "colorspace": "sRGB",
+      "source_svg": "posts/2026-10-12-ai-daily-bulletin-full.svg",
+      "source_sha256": "0fd09e9a43d663744a2739cb9243177ea67f8a6015cb1d5688ed099f92c53d24",
+      "renderer": "rsvg-convert",
+      "renderer_version": "rsvg-convert version 2.58.0",
+      "metrics": {
+        "gray_std": 0.13328,
+        "gray_mean": 0.13018,
+        "unique_colors": 15804,
+        "channel_means": [
+          0.04081,
+          0.15641,
+          0.13356
+        ],
+        "jpeg_sampling": "1x1,1x1,1x1",
+        "jpeg_depth": 8,
+        "border_ink": {
+          "top": 0.0,
+          "bottom": 0.0,
+          "left": 0.0,
+          "right": 0.0
+        }
+      },
+      "checks": [
+        {
+          "status": "PASS",
+          "code": "DIMENSIONS",
+          "detail": "1080x1350 matches post target"
+        },
+        {
+          "status": "PASS",
+          "code": "COLORSPACE",
+          "detail": "sRGB"
+        },
+        {
+          "status": "PASS",
+          "code": "CHROMA_SUBSAMPLING",
+          "detail": "4:4:4"
+        },
+        {
+          "status": "PASS",
+          "code": "VISUAL_INTEGRITY",
+          "detail": "std=0.1333 mean=0.1302 colors=15804"
         },
         {
           "status": "PASS",
