@@ -124,3 +124,29 @@ exists for this asset.
 - The pending bulletin's SVG source (if one exists) has also not been
   committed; the render pipeline therefore cannot validate the package until
   either the source or the final JPEG is ingested.
+
+## 9. Follow-up test with a real chat attachment (2026-10-19)
+
+A user-supplied attachment exercised the bridge through the exact intake
+channel proposed for the pending bulletin (chat attachment → workspace →
+Git Data API):
+
+- **Attachment:** `CDCB4ECC-7F10-4012-A81E-3CAFFB802CD3.png` — 2108039 bytes,
+  valid PNG (signature + IEND), 1122×1402, sha256
+  `c7eb77b1868fab501901d2075e9dce17c5d06f8ed04b8df352cf6d51ba661bcd`,
+  byte-identical to the file already at the repository root (uploaded
+  manually in `12601e5`). It is **not** the pending bulletin — it was used
+  purely as a test payload, as requested.
+
+| Test | Scenario | Result |
+|---|---|---|
+| 1 | attachment vs `main` at the existing identical path | **SKIP_IDENTICAL**, zero writes, exit 0 — a re-upload of the same bytes can never create a duplicate commit |
+| 2 | full transfer of the attachment (base64 **2810720 chars in one request**) to scratch branch `transfer-selftest-20261019` → commit `a57ffc70` | **PASS** — API blob read-back: 2108039 bytes, sha256 == attachment |
+| 3 | re-run of test 2 | **SKIP_IDENTICAL**, no duplicate commit |
+| 4 | independent verification via the git protocol (`git fetch` + `git cat-file`): blob `5070e10a…` — size 2108039, sha256 `c7eb77b1…` == attachment | **PASS** |
+| — | cleanup: scratch branch deleted; `main` still at `12601e5d`; branch list back to its original state | **PASS** |
+
+The payload used here (2.1 MB / 2.8 M base64 chars) is 2.4× the pending
+bulletin (886785 bytes / 1182380 base64 chars), so the exact channel
+proposed for the real transfer is proven with meaningful headroom. The
+pending `2026-10-18-ai-daily-bulletin.jpg` itself is still awaited.
