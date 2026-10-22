@@ -11,6 +11,11 @@ name: Render Instagram Images
 # GitHub always executes the workflow file from the commit being built, so a
 # run started by an older commit uses that commit's revision of these scripts.
 on:
+  # Iran time (UTC+03:30): 07:00 bulletin and 22:00 night tutorial.
+  # GitHub Actions cron is UTC, so these run at 03:30 and 18:30 UTC.
+  schedule:
+    - cron: '30 3 * * *'
+    - cron: '30 18 * * *'
   push:
     paths:
       - 'stories/**/*.svg'
