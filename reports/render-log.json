@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-28T09:58:30Z",
-  "run_id": "40668072260",
-  "commit_sha": "5670d6f14e73d107bdcd8b6c7b2866ce7440785b",
+  "generated_at": "2026-10-28T22:49:25Z",
+  "run_id": "40782567861",
+  "commit_sha": "dd4badb7a7195af05b301109c26e84f3db8c39b7",
   "quality": 95,
   "assets": {
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-03-ai-news-bulletin.jpg": {
@@ -10,7 +10,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "fe4cd04c62f9b3eef496f70afbdeea24d6f146ba6dca9e23576827c76193ddf8",
-      "rendered_at": "2026-10-28T09:58:24Z"
+      "rendered_at": "2026-10-28T22:49:19Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-04-ai-news-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -18,7 +18,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "bd28fc60f00d680c3a5a959f460ab4b1922d59110b640d16895eb81302a39763",
-      "rendered_at": "2026-10-28T09:58:25Z"
+      "rendered_at": "2026-10-28T22:49:19Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-05-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -26,7 +26,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "f269dfaca00776161e0d5fa5eb811dce68b3c309eacac2fd8adbc1874b09ee99",
-      "rendered_at": "2026-10-28T09:58:25Z"
+      "rendered_at": "2026-10-28T22:49:20Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-06-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -34,7 +34,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "4459ca8225ae3ef917d92e309760245da721e7ddddfd209692ee68d157ebaf10",
-      "rendered_at": "2026-10-28T09:58:26Z"
+      "rendered_at": "2026-10-28T22:49:21Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-07-ai-daily-bulletin-final.jpg": {
       "renderer": "rsvg-convert",
@@ -42,7 +42,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "2ddf99069ed60c1a0c899d606de3be3fb7b67e45d8fc93a0963befe0f078b712",
-      "rendered_at": "2026-10-28T09:58:27Z"
+      "rendered_at": "2026-10-28T22:49:21Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-07-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -50,7 +50,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "9499e68c24be0cbf2aee130a6b7d541a31fd37da9e1620e7b37f92dba67f81c4",
-      "rendered_at": "2026-10-28T09:58:27Z"
+      "rendered_at": "2026-10-28T22:49:22Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-09-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -58,7 +58,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "8d870c5737c59068e752afe4cb562457d6b4548b9ef98ee51496e9e345a96bc8",
-      "rendered_at": "2026-10-28T09:58:28Z"
+      "rendered_at": "2026-10-28T22:49:22Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-10-ai-daily-bulletin-full.jpg": {
       "renderer": "rsvg-convert",
@@ -66,7 +66,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "edb3671cf58f634b3a7e8cc602cf6fbfd8631cf2f54cad7f46385c1eb79789ec",
-      "rendered_at": "2026-10-28T09:58:28Z"
+      "rendered_at": "2026-10-28T22:49:23Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-10-ai-daily-bulletin.jpg": {
       "renderer": "rsvg-convert",
@@ -74,7 +74,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "3d89e891fc130f12837874eaa8a639d797e63b22321a3cfd201b2023f7fa253f",
-      "rendered_at": "2026-10-28T09:58:29Z"
+      "rendered_at": "2026-10-28T22:49:24Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-11-ai-daily-bulletin-full.jpg": {
       "renderer": "rsvg-convert",
@@ -82,7 +82,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "e7043cd7569764d74e12a06cd59f4dad10c8a16af9982a6e48fc17979b656e45",
-      "rendered_at": "2026-10-28T09:58:30Z"
+      "rendered_at": "2026-10-28T22:49:24Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/posts/2026-10-12-ai-daily-bulletin-full.jpg": {
       "renderer": "rsvg-convert",
@@ -90,7 +90,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "d6012eb6d3a9c1f25185c971d8b020d212f55a85875f42201f06572a98ae575b",
-      "rendered_at": "2026-10-28T09:58:30Z"
+      "rendered_at": "2026-10-28T22:49:25Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-09-14/story01-ai-photo-editing.jpg": {
       "renderer": "rsvg-convert",
@@ -98,7 +98,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "c1ea0a3766133c4fd71321a30744ed86d54250c788578e0d1da3e2a8d63f056f",
-      "rendered_at": "2026-10-28T09:58:22Z"
+      "rendered_at": "2026-10-28T22:49:16Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-09-18/01-ai-photo-editing-prompts.jpg": {
       "renderer": "rsvg-convert",
@@ -106,7 +106,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "bea3bda179bffb71dd171c71deb115f0660d1c7045cb15d3c66f1d32b952f5ed",
-      "rendered_at": "2026-10-28T09:58:20Z"
+      "rendered_at": "2026-10-28T22:49:15Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-02/01-ai-agent-prompt.jpg": {
       "renderer": "rsvg-convert",
@@ -114,7 +114,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "0c7811fb09fa194913dae9d6e95e8daff83433a47f4d18336557a7a337af7db4",
-      "rendered_at": "2026-10-28T09:58:19Z"
+      "rendered_at": "2026-10-28T22:49:14Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-03/01-guided-vision-story.jpg": {
       "renderer": "rsvg-convert",
@@ -122,7 +122,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "c3791346987bac3864bdc20e3b757320dcbf218ab5b461735ae997aafeedee6c",
-      "rendered_at": "2026-10-28T09:58:18Z"
+      "rendered_at": "2026-10-28T22:49:13Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-04/gemini-guided-vision-story.jpg": {
       "renderer": "rsvg-convert",
@@ -130,7 +130,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "0c74092b5defb6acf9145b808745a5fa78a57825e94622005f2a7e3581b15a22",
-      "rendered_at": "2026-10-28T09:58:23Z"
+      "rendered_at": "2026-10-28T22:49:17Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-06/chatgpt-try-on-natural-results.jpg": {
       "renderer": "rsvg-convert",
@@ -138,7 +138,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "45baa88252ed7567416f05667f3d6d52be14d78165e152f3cf6bcf005c070286",
-      "rendered_at": "2026-10-28T09:58:23Z"
+      "rendered_at": "2026-10-28T22:49:18Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-10/chatgpt-intelligent-ui-budget-tool.jpg": {
       "renderer": "rsvg-convert",
@@ -146,7 +146,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "c3a27029b817c5c153383efb660cf122e1da0acc84392127ed5dd1a54875349f",
-      "rendered_at": "2026-10-28T09:58:18Z"
+      "rendered_at": "2026-10-28T22:49:12Z"
     },
     "/home/runner/work/AI_Learning/AI_Learning/stories/2026-10-11/chatgpt-audio-upload-notes.jpg": {
       "renderer": "rsvg-convert",
@@ -154,7 +154,7 @@
       "attempt": "retry 1: rsvg-convert (primary options)",
       "quality": 95,
       "output_sha256": "5a569de5617aff42f9884429b5dd697401f286d4c28159e543d0bcd556905a80",
-      "rendered_at": "2026-10-28T09:58:21Z"
+      "rendered_at": "2026-10-28T22:49:15Z"
     }
   }
 }
