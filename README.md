@@ -171,6 +171,68 @@ re-trigger the workflow. Concurrency is grouped per branch with
 `cancel-in-progress: false`, so two renders never race, and the push step
 rebases onto any new remote commit instead of overwriting it.
 
+## External media intake (Git Data API bridge)
+
+The render pipeline covers SVG sources committed to this repository. Some
+assets (AI-generated bulletins) are produced *outside* it — in an agent
+sandbox whose chat-side GitHub tools cannot read local files and only accept
+UTF-8 text. The 2026-10-18 incident lost a finished bulletin JPEG that way:
+the tool was given a local path it could not open, the bytes were never
+transferred, and no branch ever contained the file (verified against every
+branch, tag and workflow artifact).
+
+`scripts/github/commit_asset.py` is the contract between the generation step
+and the repository. It runs **where the file actually is** (a machine or
+sandbox holding a GitHub token) and transfers the bytes themselves through
+the Git Data API:
+
+```
+GENERATOR (image file + declared size / sha256)
+   └─ commit_asset.py --file <local> --repo-path posts/<date>-…jpg
+        1. PRECHECK   magic bytes, size == declared size, ≤ 8 MB, sha256
+        2. IDENTITY   skip when the exact bytes already exist (re-runs can
+                      never create a duplicate commit); refuse to overwrite
+                      a different existing file without --force-replace
+        3. BLOB       ONE base64 POST /git/blobs (no chunking); returned
+                      blob SHA cross-checked against the locally computed
+                      git blob SHA before anything is committed
+        4. COMMIT     tree on top of the branch head (base_tree keeps every
+                      existing path), fast-forward-only ref update, retries
+                      re-read the head so concurrent pushes are never lost
+        5. VERIFY     blob read back through the API and compared
+                      byte-for-byte (size + SHA-256); branch ref and tree
+                      confirmed to point at the new commit
+        6. REPORT     per-stage JSON log (reports/asset-transfer-log.json);
+                      exit 0 only when every stage passed
+```
+
+Example — the pending `2026-10-18-ai-daily-bulletin.jpg` (886785 bytes), once
+its original bytes are available in a machine that holds a GitHub token:
+
+```bash
+GH_TOKEN=… python3 scripts/github/commit_asset.py \
+  --file 2026-10-18-ai-daily-bulletin.jpg \
+  --repo-path posts/2026-10-18-ai-daily-bulletin.jpg \
+  --owner aftabcollege-gif --repo AI_Learning --branch main \
+  --expected-size 886785
+```
+
+Rules of the contract:
+
+- the **file bytes** are the input — never a local path alone, a URL, or a
+  text description of the image;
+- the generator declares the exact size (ideally also the SHA-256); the
+  transfer aborts on any mismatch — no silent substitution or regeneration;
+- a run whose read-back does not match (size or SHA-256) exits non-zero even
+  when every API call returned success — a green API response is not proof;
+- the token is read from `GH_TOKEN` / `GITHUB_TOKEN` and never appears in any
+  log or report;
+- intake does not bypass the media pipeline: publishing still requires the
+  FINAL PUBLISH GATE, the pinned public-URL verification and the publisher
+  receipts enforced by `publish.py`. Preferred for posts: commit the SVG
+  source through the normal path so CI renders and validates the package;
+  this bridge is for final binaries produced outside CI.
+
 ## Reports
 
 | File | Contents |
